@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Full Form Example</title>
+</head>
+<body>
+
+<h2>User Registration Form</h2>
+
+<form 
+  action="register.php" 
+  method="post" 
+  target="_blank" 
+  accept-charset="UTF-8"
+  enctype="multipart/form-data"
+  autocomplete="on"
+  novalidate
+  name="registrationForm"
+>
+
+  <!-- Hidden Field (User Type) -->
+  <input type="hidden" name="user_type" value="new_user">
+
+  <!-- Fieldset to group inputs -->
+  <fieldset>
+    <legend>Personal Information</legend>
+
+    First Name: <input type="text" name="firstName" required><br><br>
+    Last Name: <input type="text" name="lastName" required><br><br>
+    Email: <input type="email" name="email"><br><br>
+    Password: <input type="password" name="password"><br><br>
+    Age: <input type="number" name="age" min="1" max="100"><br><br>
+    Birth Date: <input type="date" name="dob"><br><br>
+  </fieldset>
+
+  <fieldset>
+    <legend>Preferences & Upload</legend>
+
+    Gender:<br>
+    <input type="radio" name="gender" value="male"> Male<br>
+    <input type="radio" name="gender" value="female"> Female<br><br>
+
+    Languages Known:<br>
+    <select name="languages[]" multiple>
+      <option value="english">English</option>
+      <option value="hindi">Hindi</option>
+      <option value="marathi">Marathi</option>
+    </select><br><br>
+
+    Upload Profile Picture:
+    <input type="file" name="profilePic"><br><br>
+
+    Agree to Terms: <input type="checkbox" name="terms" value="agree"><br><br>
+  </fieldset>
+
+  <input type="submit" value="Register">
+
+</form>
+
+</body>
+</html>

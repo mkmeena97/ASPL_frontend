@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Inclusion Example</title>
+
+  <!-- Section 13.2: Linking to an external JavaScript file -->
+  <script src="main.js"></script>
+
+  <!-- Section 13.4: Async script - executes as soon as downloaded -->
+  <script src="analytics.js" async></script>
+
+  <!-- Defer script - waits until the HTML is fully parsed -->
+  <script src="ui.js" defer></script>
+
+  <!-- With MIME type and charset specified -->
+  <script type="text/javascript" src="utf-script.js" charset="UTF-8"></script>
+
+  <!-- Crossorigin and Nonce example -->
+  <script 
+    src="https://cdn.example.com/script.js" 
+    crossorigin="anonymous" 
+    nonce="a1b2c3d4e5">
+  </script>
+
+  <!-- Section 13.1: Handling disabled JavaScript -->
+  <noscript>
+    <style>
+      body { background-color: #ffeeee; color: #000; }
+    </style>
+    <p><strong>JavaScript is disabled in your browser.</strong><br>
+    This site works best with JavaScript enabled.</p>
+  </noscript>
+</head>
+
+<body>
+
+  <h1>Welcome to JS Example Page</h1>
+
+  <!-- Section 13.3: Directly including JavaScript code -->
+  <script>
+    console.log("Hello from inline script!");
+    document.getElementById("output")?.innerText = "This text is set by JavaScript";
+  </script>
+
+  <p id="output">Loading...</p>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Sectioning + Nav Example</title>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>VoidWars Blog</h1>
+    <p>Welcome to the ultimate coding galaxy!</p>
+  </header>
+
+  <!-- NAVIGATION BAR -->
+  <nav role="navigation">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#articles">Articles</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- ARTICLE -->
+    <article>
+      <header>
+        <h2 id="articles">Understanding HTML5 Sectioning Elements</h2>
+        <time datetime="2025-06-16">June 16, 2025</time>
+      </header>
+
+      <p>In this article, we break down the HTML5 sectioning elements used to organize modern web content.</p>
+
+      <!-- SECTION 1 -->
+      <section>
+        <h3>Chapter 1: The <code>&lt;section&gt;</code> Element</h3>
+        <p>The <code>section</code> element groups related content thematically.</p>
+      </section>
+
+      <!-- SECTION 2 -->
+      <section>
+        <h3>Chapter 2: The <code>&lt;article&gt;</code> Element</h3>
+        <p>The <code>article</code> element is used for self-contained content that can be independently reused.</p>
+      </section>
+
+      <!-- SECTION 3: COMMENTS -->
+      <section>
+        <h3>Comments</h3>
+        <article id="comment1">
+          <p><strong>Tez:</strong> Bhai, mazza aa gaya. Solid explanation!</p>
+          <footer><time datetime="2025-06-16T12:30">12:30 PM</time></footer>
+        </article>
+        <article id="comment2">
+          <p><strong>Anonymous:</strong> Clear and concise, thanks!</p>
+          <footer><time datetime="2025-06-16T12:45">12:45 PM</time></footer>
+        </article>
+      </section>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 VoidWars Inc. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

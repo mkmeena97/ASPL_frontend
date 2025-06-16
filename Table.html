@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+  <style>
+    table {
+      width: 70%;
+      margin: 30px auto;
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    colgroup col:first-child {
+      background-color: rgb(117, 218, 139);
+      color: white;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #333;
+      color: white;
+    }
+
+    caption {
+      caption-side: top;
+      font-size: 1.4em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+    <h1>Simple Table</h1>
+    <p>Use &lt;colgroup&gt; and &lt;col&gt; for grouping and styling columns:</p>
+    <table>
+        <tr>
+            <th>Header 1</th><th>Header 2</th>
+        </tr>
+        <tr>
+            <td>Data 1</td><td>Data 2</td>
+        </tr>
+        <tr>
+            <td colspan="3">Spans 3 columns</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Spans 2 rows</td>
+            <td>Data</td><td>Data</td>
+        </tr>
+    </table>
+
+
+  <h2>Column Groups</h2>
+  <p>Use &lt;colgroup&gt; and &lt;col&gt; for grouping and styling columns:</p>
+
+  <table>
+    <caption>Product Inventory</caption>
+    <colgroup>
+      <col>
+      <col>
+    </colgroup>
+    <tr>
+      <th>Product</th>
+      <th>Stock Status</th>
+    </tr>
+    <tr>
+      <td>Laptop</td>
+      <td>In Stock</td>
+    </tr>
+    <tr>
+      <td>Wireless Mouse</td>
+      <td>Low Stock</td>
+    </tr>
+    <tr>
+      <td>Keyboard</td>
+      <td>Out of Stock</td>
+    </tr>
+    <tr>
+      <td>Monitor</td>
+      <td>In Stock</td>
+    </tr>
+  </table>
+      <table>
+        <colgroup>
+            <col id="MySpecialColumn" />
+            <col />
+        </colgroup>
+        <colgroup>
+            <col class="CoolColumn" />
+            <col class="NeatColumn" span="2" />
+        </colgroup>
+        <tr>
+            <th>Product</th>
+            <th>Stock Status</th>
+        </tr>
+        <tr>
+            <td>Laptop</td>
+            <td>In Stock</td>
+        </tr>
+        <tr>
+            <td>Wireless Mouse</td>
+            <td>Low Stock</td>
+        </tr>
+        <tr>
+            <td>Keyboard</td>
+            <td>Out of Stock</td>
+        </tr>
+        <tr>
+        <td>Monitor</td>
+        <td>In Stock</td>
+        </tr>
+    </table>
+
+<h1>Thead, Tbody, Tfoot, and Caption</h1>
+  <table>
+    <caption>Student Grades - Semester 1</caption> <!--| caption is the first child of table |-->
+
+    <thead> <!--======================| thead is after caption |-->
+      <tr>
+        <th>Student Name</th>
+        <th>Math</th>
+        <th>Science</th>
+        <th>English</th>
+      </tr>
+    </thead>
+
+    <tbody> <!--======================| tbody is after thead |-->
+      <tr>
+        <td>Alice</td>
+        <td>85</td>
+        <td>90</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>Bob</td>
+        <td>78</td>
+        <td>82</td>
+        <td>75</td>
+      </tr>
+      <tr>
+        <td>Charlie</td>
+        <td>92</td>
+        <td>95</td>
+        <td>93</td>
+      </tr>
+    </tbody>
+
+    <tfoot> <!--| tfoot can be placed before or after tbody, but not in a group of tbody. |-->        
+<!--| Regardless where tfoot is in markup, it is rendered at the bottom. |-->  
+      <tr>
+        <td>Average</td>
+        <td>85</td>
+        <td>89</td>
+        <td>85</td>
+      </tr>
+    </tfoot>
+  </table>
+
+
+
+
+</body>
+</html>

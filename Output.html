@@ -1,0 +1,20 @@
+<!-- FORM START -->
+<form id="form1" name="form1" oninput="
+  out1.value = 
+    parseInt(in1.value || 0, 10) + 
+    parseInt(in2.value || 0, 10);
+">
+  <fieldset>
+    <legend>Live Output Calculator</legend>
+
+    <input type="number" id="in1" name="in1" value="0">
+    +
+    <input type="number" id="in2" name="in2" value="0">
+    
+    <br><br>
+
+    Result: 
+    <!-- Output displayed dynamically -->
+    <output name="out1" for="in1 in2" form="form1">0</output>
+  </fieldset>
+</form>

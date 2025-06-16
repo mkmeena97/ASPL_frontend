@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Attributes Example</title>
+  <style>
+    .user-card {
+        background-color: antiquewhite;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+      width: 300px;
+    }
+    .user-card h3 {
+      margin: 0;
+    }
+    .user-card button {
+      background-color: rgb(43, 226, 150);
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>User Management</h1>
+
+  <div class="user-card" data-user-id="101" data-role="admin" data-active="true">
+    <h3>Tez</h3>
+    <p>Role: Admin</p>
+    <button onclick="toggleUserStatus(this)">Toggle Status</button>
+  </div>
+
+  <div class="user-card" data-user-id="102" data-role="guest" data-active="false">
+    <h3>Mahendra</h3>
+    <p>Role: Guest</p>
+    <button onclick="toggleUserStatus(this)">Toggle Status</button>
+  </div>
+
+  <script>
+    function toggleUserStatus(button) {
+      const card = button.closest('.user-card');
+      const userId = card.dataset.userId;
+      const currentStatus = card.dataset.active === "true";
+      
+      // Toggle the status
+      card.dataset.active = (!currentStatus).toString();
+      
+      alert(`User ID: ${userId} status changed to ${!currentStatus ? 'Active' : 'Inactive'}`);
+    }
+  </script>
+
+</body>
+</html>

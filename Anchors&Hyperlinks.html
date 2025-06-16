@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anchors and Hyperlinks</title>
+</head>
+<body>
+    <h1>Link to Another site</h1>
+    <a href="http://example.com/">Link to example.com</a><br>
+    <a href="http://example.com/" rel="external">example site</a> <br>
+    <a href="ftp://example.com/">This could be a link to a FTP site</a> <br>
+
+    <h1>Link to an Anchor: Linking to a section within the same page: </h1>
+    <h2 id="Topic1">First topic</h2>
+    <a href="#Topic1">Jump to First Topic</a> <br>
+    <a href="page1.html#Topic1">Look back in the First Topic</a>
+
+    <h1> Link to a Page on the Same Site</h1>
+    <a href="/example">Text Here</a> <br>
+    <a href="http://example.com/page">Text Here</a>
+
+    <h1>Link That Dials a Number</h1>
+    <a href="tel:11234567890">Call us</a>
+
+    <h1>Open Link in New Tab/Window</h1>
+    <a href="http://example.com/" target="_blank" rel="noopener">Text Here</a>
+
+    <h1>Link That Runs JavaScript</h1>
+    <a href="javascript:myFunction();">Run Code</a>
+    <h3>Better (with onclick and prevent default scroll):</h3>
+    <a href="#" onclick="myFunction(); return false;">Run Code</a>
+    <h3>Or use a slug that doesn't exist to avoid scrolling:</h3>
+    <a href="#!" onclick="myFunction();">Run Code</a>
+
+    <h1>Link That Opens Email Client</h1>
+    <a href="mailto:example@example.com">Send email</a>
+    <h3>Email with cc/bcc:</h3>
+    <a href="mailto:example@example.com?cc=john@example.com&bcc=jane@example.com">Send email</a>
+    <h3>Email with subject/body:</h3>
+    <a href="mailto:example@example.com?subject=Hello&body=How+are+you">Send email</a>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
