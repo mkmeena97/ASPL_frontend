@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Rule Structure and Formatting</title>
+  <style>
+    /* Section 2.1: Property Lists - Multiple text shadows */
+    .fancy-text {
+      text-shadow: yellow 0 0 3px, green 4px 4px 10px;
+    }
+
+    /* Alternate formatting - Same effect, better readability */
+    .alt-fancy-text {
+      text-shadow:
+        red 1px 1px 2px,
+        black 2px 2px 5px;
+    }
+
+    /* Section 2.2: Multiple Selectors */
+    div, p {
+      color: blue;
+      font-weight: bold;
+    }
+
+    /* Targeting multiple types: element, class, ID, descendant */
+    p, .blue, #first, div span {
+      font-style: italic;
+    }
+
+    /* Section 2.3: Rules, Selectors, Declaration Blocks */
+    h1 {
+      color: darkred;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1> CSS Rule Structure Demo</h1>
+
+  <p>This paragraph is blue, bold, and italic due to grouped selectors.</p>
+
+  <div>This <span>span inside a div</span> is blue and italic too!</div>
+
+  <p class="blue">This paragraph has the class "blue" — so it's italic too.</p>
+
+  <p id="first">This one has the ID "first". Same deal — italic.</p>
+
+  <span class="fancy-text">This span has multiple text shadows 👻</span><br><br>
+
+  <span class="alt-fancy-text">This one uses alternate formatting for shadow 😎</span>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Selectors Demo</title>
+  <style>
+    /* Section 4.1: Basic Selectors */
+
+    /* Universal selector: styles all elements */
+    * {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Tag selector: all <div> elements */
+    div {
+      background-color: #f0f0f0;
+      margin: 10px 0;
+      padding: 10px;
+    }
+
+    /* Class selector: elements with class 'blue' */
+    .blue {
+      color: blue;
+    }
+
+    /* Compound class selector: elements with BOTH 'blue' and 'red' */
+    .blue.red {
+      background-color: lightcoral;
+      color: white;
+    }
+
+    /* ID selector: element with id="headline" */
+    #headline {
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    /* Pseudo-class: first child of its parent */
+    p:first-child {
+      color: green;
+    }
+
+    /* Pseudo-element: insert content before a paragraph */
+    p::before {
+      content: "💡 ";
+    }
+
+    /* Language pseudo-class */
+    span:lang(en) {
+      border-bottom: 2px dashed orange;
+    }
+
+    /* Child selector: only direct p children of a div */
+    div > p {
+      background-color: #dff0d8;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="headline">CSS Selectors in Action</h1>
+
+  <div>
+    <p>This paragraph is the first child inside a div and will be green with 💡 icon.</p>
+    <p>This one is a sibling, so no green text.</p>
+  </div>
+
+  <p>This paragraph is not in a div.</p>
+
+  <span class="blue">This is a blue span using a class selector.</span><br>
+  <span class="blue red">This span has both 'blue' and 'red' classes.</span><br>
+
+  <p class="blue red">This paragraph also has both 'blue' and 'red' classes.</p>
+
+  <span lang="en">This span uses :lang(en) and will have a dashed orange underline.</span>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Combinators Demo</title>
+  <style>
+    /* Descendant Combinator: selects ALL nested <p> inside <div> */
+    div p {
+      color: red;
+    }
+
+    /* Child Combinator: selects ONLY <p> directly inside <section> */
+    section > p {
+      font-weight: bold;
+    }
+
+    /* Adjacent Sibling Combinator: selects <p> right after another <p> */
+    p + p {
+      background-color: lightyellow;
+    }
+
+    /* General Sibling Combinator: selects all <p> after a <h2> sibling */
+    h2 ~ p {
+      border: 1px solid blue;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎯 CSS Combinators Example</h1>
+
+  <h2>1. Descendant Combinator (<code>div p</code>)</h2>
+  <div>
+    <p>This is red (inside div)</p>
+    <section>
+      <p>This is also red (nested inside div > section)</p>
+    </section>
+  </div>
+  <p>This is NOT red (outside div)</p>
+
+  <hr>
+
+  <h2>2. Child Combinator (<code>section > p</code>)</h2>
+  <section>
+    <p>This is bold (direct child of section)</p>
+    <div>
+      <p>This is NOT bold (inside div inside section)</p>
+    </div>
+  </section>
+
+  <hr>
+
+  <h2>3. Adjacent Sibling Combinator (<code>p + p</code>)</h2>
+  <p>This has no sibling before it</p>
+  <p>This is yellow (comes right after a p)</p>
+  <p>This is also yellow (comes right after a p)</p>
+  <hr>
+  <p>This is not yellow (not adjacent to p due to HR)</p>
+
+  <hr>
+
+  <h2>4. General Sibling Combinator (<code>h2 ~ p</code>)</h2>
+  <p>This is after the H2 above → has blue border</p>
+  <p>Another paragraph after the same H2 → also blue border</p>
+  <div>
+    <p>Still applies → inside a div but after h2</p>
+  </div>
+
+</body>
+</html>

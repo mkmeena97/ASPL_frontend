@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS with JavaScript & List Styling</title>
+  <style>
+    /* Initial styles */
+    #myElement {
+      padding: 10px;
+      background-color: lightgray;
+      font-family: Arial, sans-serif;
+    }
+
+    .styled-list li {
+      list-style-type: square;
+      list-style-image: url('https://via.placeholder.com/10');
+      list-style-position: inside;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎯 CSS Change with JavaScript</h2>
+  <div id="myElement">This text will be styled using JavaScript</div>
+  <button onclick="changeStyle()">Change Style with JS</button>
+
+  <h2>💎 CSS Change with jQuery</h2>
+  <div id="jqueryElement">This text will be styled using jQuery</div>
+  <button id="jqueryBtn">Change Style with jQuery</button>
+
+  <h2>📋 Styled List Example</h2>
+  <ul class="styled-list">
+    <li>Milk</li>
+    <li>Bread</li>
+    <li>Eggs</li>
+  </ul>
+
+  <script>
+    function changeStyle() {
+      var el = document.getElementById("myElement");
+      el.style.opacity = 0.7;
+      el.style.fontFamily = 'Courier New, monospace';
+      el.style.color = 'blue';
+      el.style.border = '2px dashed navy';
+    }
+  </script>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $("#jqueryBtn").click(function () {
+      $("#jqueryElement").css({
+        "background-color": "lightblue",
+        fontSize: "20px",
+        padding: "10px",
+        border: "2px solid teal"
+      });
+    });
+  </script>
+
+</body>
+</html>

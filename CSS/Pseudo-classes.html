@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pseudo-Classes Demo</title>
+  <style>
+    a:link {
+      color: blue;
+    }
+
+    a:visited {
+      color: purple;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:active {
+      color: red;
+    }
+
+    input:focus {
+      background-color: lightyellow;
+    }
+
+    input:checked + label {
+      font-weight: bold;
+    }
+
+    input:disabled {
+      background-color: #ccc;
+    }
+
+    p:first-child {
+      color: green;
+    }
+
+    p:last-child {
+      color: orange;
+    }
+
+    li:nth-child(odd) {
+      background-color: #f0f0f0;
+    }
+
+    li:nth-child(even) {
+      background-color: #ddd;
+    }
+
+    .form input:optional {
+      border: 2px dashed blue;
+    }
+
+    .form input:required {
+      border: 2px solid red;
+    }
+
+    .form input:invalid {
+      background-color: #ffdddd;
+    }
+
+    div:empty {
+      height: 30px;
+      background-color: pink;
+    }
+
+    :root {
+      --main-color: teal;
+    }
+
+    h2 {
+      color: var(--main-color);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Pseudo-classes Example</h2>
+
+  <p>This is the first paragraph (green)</p>
+  <p>This is a middle paragraph</p>
+  <p>This is the last paragraph (orange)</p>
+
+  <ul>
+    <li>Odd item</li>
+    <li>Even item</li>
+    <li>Odd item</li>
+    <li>Even item</li>
+  </ul>
+
+  <hr>
+
+  <h3>Form Example</h3>
+  <form class="form">
+    <input type="text" placeholder="Required input" required><br><br>
+    <input type="email" placeholder="Optional input"><br><br>
+    <input type="checkbox" id="agree">
+    <label for="agree">I agree</label><br><br>
+    <input type="text" value="Disabled input" disabled>
+  </form>
+
+  <hr>
+
+  <h3>Links</h3>
+  <a href="#section">Unvisited Link</a><br>
+  <a href="https://example.com">Visited Link</a><br>
+
+  <hr>
+
+  <div></div> <!-- Will be pink (empty) -->
+
+</body>
+</html>

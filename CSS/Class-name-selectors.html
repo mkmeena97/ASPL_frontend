@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Class Name Selectors Demo</title>
+  <style>
+    .warning {
+      color: blue;
+      font-weight: bold;
+    }
+
+    .important {
+      color: orange;
+      font-style: italic;
+    }
+
+    .warning.important {
+      color: red;
+      text-decoration: underline;
+    }
+
+    .warning .important {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Class Name Selector Demo</h2>
+
+  <div class="warning">
+    <p>This is a warning – should be <strong>blue</strong>.</p>
+  </div>
+
+  <div class="important">
+    <p>This is important – should be <strong>orange</strong>.</p>
+  </div>
+
+  <div class="important warning">
+    <p>This is both important and a warning – should be <strong>red</strong>.</p>
+  </div>
+
+  <div class="warning">
+    <p class="important">This is a child with only "important" class – should be <strong>green</strong> due to space selector.</p>
+  </div>
+
+</body>
+</html>
