@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media Query Demo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2rem;
+      background-color: lightgray;
+      transition: all 0.5s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    /* Mobile: screen width less than 600px */
+    @media screen and (max-width: 599px) {
+      body {
+        background-color: #ffdddd;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Tablet: 600px to 1023px */
+    @media screen and (min-width: 600px) and (max-width: 1023px) {
+      body {
+        background-color: #ddffdd;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    /* Desktop: 1024px and above */
+    @media screen and (min-width: 1024px) {
+      body {
+        background-color: #ddddff;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    /* Portrait mode only */
+    @media (orientation: portrait) {
+      body {
+        border-top: 5px solid teal;
+      }
+    }
+
+    /* Landscape mode only */
+    @media (orientation: landscape) {
+      body {
+        border-top: 5px solid orange;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Resize me to see Media Queries in action!</h1>
+  <p>Try changing the screen width or rotating your device!</p>
+</body>
+</html>

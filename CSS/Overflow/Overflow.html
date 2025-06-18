@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Overflow Showcase</title>
+  <style>
+    .container {
+      margin-bottom: 30px;
+      padding: 10px;
+      border: 2px dashed #aaa;
+      font-family: Arial, sans-serif;
+    }
+
+    .visible {
+      width: 100px;
+      height: 100px;
+      overflow: visible;
+      background: #fdd;
+    }
+
+    .hidden {
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      background: #dfd;
+    }
+
+    .scroll {
+      width: 100px;
+      height: 100px;
+      overflow: scroll;
+      background: #ddf;
+    }
+
+    .auto {
+      width: 100px;
+      height: 100px;
+      overflow: auto;
+      background: #ffd;
+    }
+
+    .nowrap {
+      width: 100px;
+      outline: 1px solid #aaa;
+      overflow-wrap: normal;
+      background-color: #eef;
+    }
+
+    .breakword {
+      width: 100px;
+      outline: 1px solid #aaa;
+      overflow-wrap: break-word;
+      background-color: #fee;
+    }
+
+    .overflow-x {
+      width: 200px;
+      height: 100px;
+      overflow-x: hidden;
+      overflow-y: visible;
+      background: #eee;
+    }
+
+    .overflow-y {
+      width: 200px;
+      height: 100px;
+      overflow-x: visible;
+      overflow-y: hidden;
+      background: #eee;
+    }
+
+    .bfc-container {
+      overflow: hidden; /* triggers BFC */
+    }
+
+    .bfc-img {
+      float: left;
+      margin-right: 10px;
+    }
+
+    .bfc-text {
+      background-color: #fcf8e3;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container visible">
+    <strong>overflow: visible</strong><br>
+    This content is too big to fit in the box.
+  </div>
+
+  <div class="container hidden">
+    <strong>overflow: hidden</strong><br>
+    This content is too big to fit in the box.
+  </div>
+
+  <div class="container scroll">
+    <strong>overflow: scroll</strong><br>
+    This content is too big to fit in the box.
+    So scrollbars appear even if not needed.
+  </div>
+
+  <div class="container auto">
+    <strong>overflow: auto</strong><br>
+    Scrollbars will show up only if needed.
+  </div>
+
+  <div class="container nowrap">
+    <strong>overflow-wrap: normal</strong><br>
+    supercalifragilisticexpialidocious
+  </div>
+
+  <div class="container breakword">
+    <strong>overflow-wrap: break-word</strong><br>
+    supercalifragilisticexpialidocious
+  </div>
+
+  <div class="container overflow-x">
+    <strong>overflow-x: hidden</strong><br>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec.
+  </div>
+
+  <div class="container overflow-y">
+    <strong>overflow-y: hidden</strong><br>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </div>
+
+  <div class="container bfc-container">
+    <img src="https://via.placeholder.com/100" alt="float" class="bfc-img">
+    <div class="bfc-text">
+      <strong>Block Formatting Context</strong><br>
+      This paragraph aligns properly next to a floated image due to overflow:hidden.
+    </div>
+  </div>
+
+</body>
+</html>

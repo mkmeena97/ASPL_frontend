@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Typography Demo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: 900;
+      font-size: 36px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .font-style {
+      font-style: italic;
+    }
+
+    .font-variant {
+      font-variant: small-caps;
+    }
+
+    .font-weight {
+      font-weight: 700;
+    }
+
+    .font-size-line {
+      font-size: 20px;
+      line-height: 2;
+    }
+
+    .font-stack {
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .text-align {
+      text-align: justify;
+    }
+
+    .text-decoration {
+      text-decoration: underline dotted blue;
+    }
+
+    .text-transform {
+      text-transform: capitalize;
+    }
+
+    .letter-spacing {
+      letter-spacing: 2px;
+    }
+
+    .word-spacing {
+      word-spacing: 10px;
+    }
+
+    .text-indent {
+      text-indent: 50px;
+    }
+
+    .text-overflow {
+      width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .writing-mode {
+      writing-mode: vertical-rl;
+      border: 1px solid #aaa;
+      padding: 10px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Typography Showcase</h1>
+
+  <p class="font-style">This paragraph uses italic font-style.</p>
+  <p class="font-variant">this text is using small-caps variant.</p>
+  <p class="font-weight">This text is bold using font-weight 700.</p>
+  <p class="font-size-line">This paragraph has a larger font size and increased line-height.</p>
+  <p class="font-stack">This uses a monospace font stack.</p>
+  <p class="text-align">This paragraph is justified. It means all lines are stretched so that every line has equal width, and the left and right margins are aligned.</p>
+  <p class="text-decoration">This paragraph has dotted underline decoration in blue.</p>
+  <p class="text-transform">this text will be automatically capitalized.</p>
+  <p class="letter-spacing">This text has extra space between letters.</p>
+  <p class="word-spacing">This paragraph has extra space between words.</p>
+  <p class="text-indent">This paragraph starts with a text-indent of 50px, just like traditional printed documents.</p>
+
+  <div class="text-overflow">
+    This sentence is too long to fit in a small box and will be clipped.
+  </div>
+
+  <div class="writing-mode">
+    Vertical Writing Mode
+  </div>
+
+</body>
+</html>

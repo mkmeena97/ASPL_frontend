@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Border Showcase</title>
+  <style>
+    .section {
+      margin-bottom: 30px;
+      padding: 10px;
+    }
+
+    .radius-simple {
+      border: 2px solid black;
+      border-radius: 15px;
+      padding: 10px;
+    }
+
+    .circle {
+      width: 100px;
+      height: 100px;
+      background-color: tomato;
+      border-radius: 50%;
+      margin: auto;
+    }
+
+    .radius-complex {
+      width: 150px;
+      height: 150px;
+      background-color: lightblue;
+      border-radius: 20px 50px / 40px 80px;
+    }
+
+    .styled-borders {
+      border-style: dotted solid double dashed;
+      border-width: 4px;
+      border-color: red green blue black;
+      padding: 10px;
+    }
+
+    .outline-box {
+      border: 2px solid black;
+      outline: 4px solid purple;
+      width: 150px;
+      height: 100px;
+    }
+
+    .boxshadow-box {
+      border: 2px solid green;
+      box-shadow: 0 0 0 4px orange;
+      width: 150px;
+      height: 100px;
+    }
+
+    .pseudo-box {
+      position: relative;
+      border: 4px solid black;
+      width: 150px;
+      height: 100px;
+    }
+
+    .pseudo-box::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      right: -6px;
+      bottom: -6px;
+      border: 4px dashed blue;
+      z-index: -1;
+    }
+
+    .border-shorthand {
+      border: 3px solid maroon;
+      padding: 15px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 300px;
+      margin-top: 10px;
+    }
+
+    td, th {
+      border: 2px solid #000;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .border-img {
+      border-width: 20px;
+      border-style: solid;
+      border-image: url('https://via.placeholder.com/90') 30 stretch;
+      width: 150px;
+      height: 100px;
+    }
+
+    .border-gradient {
+      border: 10px solid;
+      border-image: linear-gradient(to right, red, yellow, green, blue, purple);
+      border-image-slice: 1;
+    }
+
+    .border-sides {
+      border-top: 5px solid red;
+      border-left: 5px solid blue;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section radius-simple">Simple Border Radius</div>
+
+  <div class="section circle"></div>
+
+  <div class="section radius-complex">Complex Radius</div>
+
+  <div class="section styled-borders">Styled Borders</div>
+
+  <div class="section outline-box">Outline Outside Border</div>
+
+  <div class="section boxshadow-box">Box Shadow as Border</div>
+
+  <div class="section pseudo-box">Pseudo Element as Border</div>
+
+  <div class="section border-shorthand">Shorthand Border</div>
+
+  <div class="section">
+    <strong>Border Collapse Table</strong>
+    <table>
+      <tr><th>Item</th><th>Qty</th></tr>
+      <tr><td>Apple</td><td>3</td></tr>
+      <tr><td>Orange</td><td>5</td></tr>
+    </table>
+  </div>
+
+  <div class="section border-img">Image Border</div>
+
+  <div class="section border-gradient">Gradient Border</div>
+
+  <div class="section border-sides">Border on Top and Left</div>
+
+</body>
+</html>
