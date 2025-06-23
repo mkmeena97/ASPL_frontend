@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Content Language Demo</title>
+</head>
+<body>
+
+  <h1>Chapter 30: Content Languages</h1>
+
+  <!-- Base language is English -->
+  <p>This paragraph is in English by default.</p>
+
+  <!-- French element -->
+  <p lang="fr">Ceci est un paragraphe en français.</p>
+
+  <!-- Multiple languages -->
+  <p lang="en">This sentence contains a German word: <span lang="de">Guten Tag</span>.</p>
+
+  <!-- Attributes in different languages -->
+  <p lang="en" title="This is an English paragraph">
+    <span lang="es" title="Hola Mundo">Hola Mundo</span> means Hello World in Spanish.
+  </p>
+
+  <!-- hreflang for multilingual links -->
+  <p>Visit our site in:
+    <a href="https://example.de" hreflang="de">German</a>,
+    <a href="https://example.fr" hreflang="fr">French</a>,
+    <a href="https://example.in" hreflang="hi">Hindi</a>
+  </p>
+
+</body>
+</html>

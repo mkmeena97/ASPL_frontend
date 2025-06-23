@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas Drawing Example</title>
+  <style>
+    canvas {
+      border: 2px solid gray;
+    }
+  </style>
+  <script>
+    // When the page is fully loaded
+    window.onload = function init() {
+      // 1. Get the canvas element
+      var canvas = document.getElementById('myCanvas');
+
+      // 2. Get 2D drawing context
+      var ctx = canvas.getContext('2d');
+
+      // 3. Fill canvas background in red
+      ctx.fillStyle = 'red';
+      ctx.fillRect(0, 0, 100, 100);
+
+      // 4. Draw another smaller green rectangle
+      ctx.fillStyle = 'green';
+      ctx.fillRect(25, 25, 50, 50);
+    };
+  </script>
+</head>
+<body>
+
+  <h2>Canvas Example: Two Rectangles</h2>
+
+  <!-- Fallback text if browser doesn't support canvas -->
+  <canvas id="myCanvas" width="300" height="200">
+    Cannot display graphic. Canvas is not supported by your browser.
+  </canvas>
+
+</body>
+</html>

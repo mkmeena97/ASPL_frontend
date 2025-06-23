@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contenteditable Demo</title>
+  <style>
+    .editable {
+      border: 2px dashed #0077cc;
+      padding: 10px;
+      width: 300px;
+    }
+    .noneditable {
+      color: gray;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Edit the below content</h3>
+
+  <p class="editable" contenteditable="true">
+    You can change this paragraph,
+    <span class="noneditable" contenteditable="false">but not this part.</span>
+  </p>
+
+</body>
+</html>

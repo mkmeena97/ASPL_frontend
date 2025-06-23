@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        img {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Image Examples</h1>
+
+    <!-- Basic Image -->
+    <h2>1. Basic Image</h2>
+    <img src="https://picsum.photos/200/300?grayscale" alt="Hello World" width="200">
+
+    <!-- Image from URL -->
+    <h2>2. Image from URL</h2>
+    <img src="https://picsum.photos/seed/picsum/200/300" alt="StackOverflow User" width="100">
+
+    <!-- Clickable Image -->
+    <h2>3. Clickable Image</h2>
+    <a href="https://example.com">
+        <img src="https://picsum.photos/200/300?grayscale" alt="Go to example.com" width="100">
+    </a>
+
+    <!-- Responsive Image with srcset and sizes -->
+    <h2>4. Responsive Image (srcset + sizes)</h2>
+    <img 
+        sizes="(min-width: 1200px) 580px,
+               (min-width: 640px) 48vw,
+               98vw"
+        srcset="img/hello-300.jpg 300w,
+                img/hello-600.jpg 600w,
+                img/hello-900.jpg 900w,
+                img/hello-1200.jpg 1200w"
+        src="img/photo-1507721999472-8ed4421c4af2.avif" 
+        alt="Hello Responsive">
+
+    <!-- Responsive Image with srcset and pixel ratio -->
+    <h2>5. Responsive Image (Pixel Ratio)</h2>
+    <img 
+        src="/img/photo-1508317469940-e3de49ba902e.avif" 
+        alt="Hello Pixel Ratio"
+        srcset="img/hello-300.jpg 1x,
+                img/hello-600.jpg 2x,
+                img/hello-1200.jpg 3x">
+
+    <!-- Responsive Image with picture tag -->
+    <h2>6. Responsive Image (Picture Element)</h2>
+    <picture>
+        <source media="(min-width: 600px)" srcset="img/large_image.jpg">
+        <source media="(min-width: 450px)" srcset="img/small_image.jpg">
+        <img src="/img/photo-1523437113738-bbd3cc89fb19.avif" alt="Default Responsive Image" style="width:auto;">
+    </picture>
+
+</body>
+</html>

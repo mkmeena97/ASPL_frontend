@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Code Markup Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-left: 4px solid #ccc;
+      overflow-x: auto;
+    }
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      color: #c7254e;
+      background-color: #f9f2f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Marking up Computer Code in HTML</h1>
+
+  <h2>Section 34.1: Block with &lt;pre&gt; and &lt;code&gt;</h2>
+  <p>Use this when indentation and formatting matter, like Python code:</p>
+
+  <pre><code>
+x = 42
+if x == 42:
+    print("x is 42")
+  </code></pre>
+
+  <p>Example showing HTML code (special characters must be escaped):</p>
+
+  <pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+
+  <h2>Section 34.2: Inline with &lt;code&gt;</h2>
+  <p>
+    Use the <code>&lt;code&gt;</code> element inline for small snippets like:
+    <br>
+    <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>, or <code>console.log()</code>
+  </p>
+
+  <p>
+    Example sentence: The <code>a</code> element creates a hyperlink.
+  </p>
+
+</body>
+</html>

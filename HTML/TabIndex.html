@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabindex Example</title>
+  <style>
+    .box {
+      padding: 10px;
+      border: 2px solid #0077cc;
+      margin: 8px;
+      width: 200px;
+      cursor: pointer;
+    }
+    .skip {
+      background-color: #eee;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Navigation Panel (with Tabindex)</h2>
+
+  <!-- Native focusable -->
+  <a href="#" tabindex="0">Home</a><br><br>
+
+  <!-- Custom Div as a Button -->
+  <div class="box" tabindex="0">Click Me (Div with tabindex=0)</div>
+
+  <!-- Removed from tab order -->
+  <button class="skip" tabindex="-1" onclick="alert('hello')">
+    Hidden Button (Tab skip)
+  </button><br><br>
+
+  <!-- Input field -->
+  <input type="text" placeholder="Enter your name"><br><br>
+
+  <!-- Custom Tab Order (not recommended, but for demo) -->
+  <div class="box" tabindex="3">Tab Order 3</div>
+  <div class="box" tabindex="1">Tab Order 1</div>
+  <div class="box" tabindex="2">Tab Order 2</div>
+
+</body>
+</html>

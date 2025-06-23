@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Events Demo</title>
+</head>
+<body>
+
+<h2>Form Events Example</h2>
+
+<form onsubmit="alert('Form submitted!'); return false;" onreset="alert('Form reset!')">
+  <input type="text" placeholder="Type something"
+         onfocus="console.log('Focused')"
+         onblur="console.log('Blurred')"
+         oninput="console.log('Typing...')"
+         onchange="console.log('Changed')"
+         onselect="console.log('Text selected')"
+         required oninvalid="alert('Please fill out this field')"
+  >
+  <br><br>
+  <input type="search" placeholder="Search here" onsearch="console.log('Search performed')">
+  <br><br>
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+</form>
+
+</body>
+</html>

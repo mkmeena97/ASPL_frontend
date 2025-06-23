@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quote Markup Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    blockquote {
+      background: #f9f9f9;
+      border-left: 5px solid #ccc;
+      margin: 1em 0;
+      padding: 1em;
+    }
+    footer {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 10px;
+    }
+    cite a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    cite a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Chapter 35: Marking-up Quotes</h1>
+
+  <h2>Section 35.1: Inline Quotes with &lt;q&gt;</h2>
+
+  <p>
+    She wrote <q>The answer is 42.</q> and everyone agreed.
+  </p>
+
+  <p>
+    She wrote <q cite="http://example.com/blog/hello-world">The answer is 42.</q> and everyone agreed.
+    <br>
+    <small>Source: <a href="http://example.com/blog/hello-world" target="_blank">example.com</a></small>
+  </p>
+
+  <h2>Section 35.2: Block Quotes with &lt;blockquote&gt;</h2>
+
+  <blockquote>
+    <p>The answer is 42.</p>
+  </blockquote>
+
+  <blockquote cite="http://example.com/blog/hello-world">
+    <p>The answer is 42.</p>
+  </blockquote>
+
+  <p>
+    Source: <cite><a href="http://example.com/blog/hello-world" target="_blank">Hello World</a></cite>
+  </p>
+
+  <h3>HTML5 Style: Blockquote with Footer</h3>
+
+  <blockquote cite="http://example.com/blog/hello-world">
+    <p>The answer is 42.</p>
+    <footer>
+      <p>Source: <cite><a href="http://example.com/blog/hello-world" rel="external" target="_blank">Hello World</a></cite></p>
+    </footer>
+  </blockquote>
+
+</body>
+</html>

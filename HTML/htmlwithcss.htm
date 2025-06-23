@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML with CSS Demo</title>
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="general.css">
+    <link rel="stylesheet" type="text/css" href="specific.css">
+
+    <!-- CDN Stylesheet Example (Bootstrap) -->
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Internal Styles -->
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: darkgreen;
+        }
+    </style>
+
+    <!-- Another Internal Style (Will Apply Together) -->
+    <style type="text/css">
+        p {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to CSS Demo</h1>
+
+    <p>This paragraph is styled by internal CSS.</p>
+
+    <p style="color: red;">This paragraph uses inline style to make the text red.</p>
+
+    <div class="external-style">This div is styled by external stylesheet.</div>
+
+</body>
+</html>

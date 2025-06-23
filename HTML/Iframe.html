@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IFrame Demo</title>
+</head>
+<body>
+
+  <h2>Basic IFrame</h2>
+  <iframe src="htmlimage.html" width="600" height="400"></iframe>
+
+  <h2>IFrame with Sandbox</h2>
+  <iframe src="index.html" sandbox="allow-scripts allow-forms" width="600" height="300"></iframe>
+
+  <h2>IFrame with srcdoc</h2>
+  <iframe srcdoc="<h3>This is inline HTML!</h3><p>IFrames are cool!</p>" width="400" height="200"></iframe>
+
+  <h2>Change IFrame from a link</h2>
+  <iframe src="https://example.com" name="myIframe" width="600" height="300"></iframe>
+  <br>
+  <a href="https://w3schools.com" target="myIframe">Load W3Schools in IFrame</a>
+
+</body>
+</html>

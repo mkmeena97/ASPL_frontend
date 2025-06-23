@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Tag Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            color: #333;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        embed {
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>&lt;embed&gt; Tag Examples</h1>
+
+    <section>
+        <h2>📄 Embedded PDF</h2>
+        <p>This PDF is embedded using the <code>&lt;embed&gt;</code> tag:</p>
+        <embed src="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" 
+               type="application/pdf" 
+               width="100%" 
+               height="500px">
+    </section>
+
+    <section>
+        <h2>🎥 Embedded MP4 Video</h2>
+        <p>This MP4 video is embedded using the <code>&lt;embed&gt;</code> tag:</p>
+        <embed src="https://www.w3schools.com/html/mov_bbb.mp4" 
+               type="video/mp4" 
+               width="640" 
+               height="360">
+    </section>
+
+    <section>
+        <h2>🖼️ Embedded SVG Image</h2>
+        <p>This SVG image is embedded using the <code>&lt;embed&gt;</code> tag:</p>
+        <embed src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Bitmap_VS_SVG.svg" 
+               type="image/svg+xml" 
+               width="400" 
+               height="300">
+    </section>
+
+</body>
+</html>
