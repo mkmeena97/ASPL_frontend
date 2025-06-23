@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Count</title>
+</head>
+<body>
+
+  <textarea id="textArea" rows="4" cols="50">
+Hello world!
+How are you doing today?
+  </textarea>
+
+  <button onclick="check()">Count</button>
+  <pre id="output"></pre>
+
+  <script>
+    function wordCount(val) {
+      var wom = val.match(/\S+/g);
+      return {
+        charactersNoSpaces: val.replace(/\s+/g, '').length,
+        characters: val.length,
+        words: wom ? wom.length : 0,
+        lines: val.split(/\r*\n/).length
+      };
+    }
+
+    function check() {
+      let val = document.getElementById('textArea').value;
+      let stats = wordCount(val);
+      document.getElementById('output').textContent = JSON.stringify(stats, null, 2);
+    }
+  </script>
+
+</body>
+</html>

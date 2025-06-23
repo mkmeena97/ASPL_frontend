@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Basics Demo</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    canvas, svg, img { display: block; margin-top: 20px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Essentials Demo</h1>
+
+  <!-- Section 1.1: console.log -->
+  <script>
+    console.log("Hello, World from console!");
+    var foo = "bar";
+    console.log("foo variable value:", foo);
+    var greet = "Hello", who = "Tez Bhai";
+    console.log("%s, %s!", greet, who);
+    console.log({ Email: '', Id: 33, Title: 'TezUser' });
+  </script>
+
+  <!-- Section 1.2: DOM API -->
+  <p id="paragraph"></p>
+  <script>
+    document.getElementById("paragraph").textContent = "Hello, World from DOM!";
+    // Dynamically adding a <p> element
+    var newElement = document.createElement('p');
+    newElement.textContent = "This is a new paragraph added via JS.";
+    document.body.appendChild(newElement);
+  </script>
+
+  <!-- Section 1.3: window.alert -->
+  <script>
+    alert("Hello, World from alert box!");
+  </script>
+
+  <!-- Section 1.4: window.prompt -->
+  <script>
+    var age = prompt("How old are you?");
+    console.log("User entered age:", age);
+  </script>
+
+  <!-- Section 1.5: window.confirm -->
+  <script>
+    var confirmDelete = confirm("Are you sure you want to delete this?");
+    if (confirmDelete) {
+      console.log("User confirmed deletion.");
+    } else {
+      console.log("User cancelled deletion.");
+    }
+  </script>
+
+  <!-- Section 1.6: Canvas Graphics -->
+  <script>
+    var canvas = document.createElement('canvas');
+    canvas.width = 500;
+    canvas.height = 100;
+    var ctx = canvas.getContext('2d');
+    ctx.font = '30px Cursive';
+    ctx.fillText("Hello World via Canvas!", 50, 50);
+    document.body.appendChild(canvas);
+  </script>
+
+  <!-- Section 1.6: SVG Graphics -->
+  <script>
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', '500');
+    svg.setAttribute('height', '100');
+    var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    text.setAttribute('x', '0');
+    text.setAttribute('y', '50');
+    text.style.fontFamily = 'Times New Roman';
+    text.style.fontSize = '40';
+    text.textContent = 'Hello World via SVG!';
+    svg.appendChild(text);
+    document.body.appendChild(svg);
+  </script>
+
+  <!-- Section 1.6: Image from URL -->
+  <script>
+    var img = new Image();
+    img.src = 'https://i.ytimg.com/vi/zecueq-mo4M/maxresdefault.jpg';
+    img.alt = "Sample Image";
+    img.width = 500;
+    document.body.appendChild(img);
+  </script>
+
+</body>
+</html>
