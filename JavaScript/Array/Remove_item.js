@@ -35,6 +35,30 @@ const indexToRemove = 1;
 const newArr = arr1.filter((_, i) => i !== indexToRemove);
 console.log(newArr); // [10, 30]
 
+//7. Using filter()
+const arr2 = [1, 2, 3, 4, 2];
+const newArr1 = arr2.filter(val => val !== 2);
+console.log(newArr1); // [1, 3, 4]
+
+//8. Using indexOf() + splice() (for first occurrence only)
+const array = [1, 2, 3, 4, 2];
+const index = array.indexOf(2);
+if (index > -1) {
+  array.splice(index, 1);
+}
+console.log(array); // [1, 3, 4, 2]
+
+//9 .  Removing all occurrences with a loop
+let array1 = [1, 2, 2, 3, 4];
+let valueToRemove = 2;
+
+while (array1.indexOf(valueToRemove) !== -1) {
+  array1.splice(array1.indexOf(valueToRemove), 1);
+}
+console.log(array1); // [1, 3, 4]
+
+
+
 // Remove All Elements of an Array
 //1. length = 0  (Fastest & Mutates Original)
 const arr3 = [1, 2, 3];
@@ -58,3 +82,5 @@ console.log(arr5); // []
 let arr6 = [1, 2, 3];
 arr6 = [];
 console.log(arr6); // []
+
+//
