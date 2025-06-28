@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sine Wave Animation</title>
+  <style>
+    canvas {
+      background: #111;
+      display: block;
+      margin: 20px auto;
+      border: 2px solid #555;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="wave" width="600" height="200"></canvas>
+
+  <script>
+    const canvas = document.getElementById('wave');
+    const ctx = canvas.getContext('2d');
+
+    let t = 0;
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const x = t * 20;
+      const y = 100 + Math.sin(t) * 80;
+
+      // Circle
+      ctx.beginPath();
+      ctx.arc(x, y, 10, 0, Math.PI * 2);
+      ctx.fillStyle = 'lime';
+      ctx.fill();
+
+      t += 0.1;
+
+      if (x > canvas.width) {
+        t = 0;
+      }
+    }
+
+    setInterval(draw, 100);
+  </script>
+</body>
+</html>

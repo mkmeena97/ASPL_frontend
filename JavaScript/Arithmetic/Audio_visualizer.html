@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Visualizer with Sin Waves</title>
+  <style>
+    canvas {
+      background: black;
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" id="audioFile" accept="audio/*" />
+  <canvas id="visualizer" width="800" height="300"></canvas>
+
+  <script>
+    const audioFile = document.getElementById('audioFile');
+    const canvas = document.getElementById('visualizer');
+    const ctx = canvas.getContext('2d');
+
+    let audioCtx, analyser, source, bufferLength, dataArray, t = 0;
+
+    audioFile.onchange = function () {
+      const file = audioFile.files[0];
+      if (!file) return;
+
+      const audio = new Audio(URL.createObjectURL(file));
+      audio.crossOrigin = "anonymous";
+      audio.loop = true;
+      audio.play();
+
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      analyser = audioCtx.createAnalyser();
+      source = audioCtx.createMediaElementSource(audio);
+      source.connect(analyser);
+      analyser.connect(audioCtx.destination);
+
+      analyser.fftSize = 256;
+      bufferLength = analyser.frequencyBinCount;
+      dataArray = new Uint8Array(bufferLength);
+
+      draw();
+    };
+
+    function draw() {
+      requestAnimationFrame(draw);
+      analyser.getByteTimeDomainData(dataArray);
+
+      ctx.fillStyle = 'black';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.beginPath();
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = 'lime';
+
+      const sliceWidth = canvas.width / bufferLength;
+      let x = 0;
+
+      for (let i = 0; i < bufferLength; i++) {
+        const amplitude = dataArray[i] / 128 - 1;
+        const y = canvas.height / 2 + Math.sin(i * 0.2 + t) * amplitude * 100;
+
+        if (i === 0) {
+          ctx.moveTo(x, y);
+        } else {
+          ctx.lineTo(x, y);
+        }
+        x += sliceWidth;
+      }
+
+      ctx.stroke();
+      t += 0.05;
+    }
+  </script>
+</body>
+</html>
