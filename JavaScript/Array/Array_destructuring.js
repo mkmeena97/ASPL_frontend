@@ -18,7 +18,7 @@ const [d, e = 10] = arr2;
 console.log(d); // 5
 console.log(e); // 10 (default used)
 
-//3. Swap variables (🔥 cleanest swap)
+//3. Swap variables ( cleanest swap)
 let x = 1, y = 2;
 [x, y] = [y, x];
 console.log(x); // 2

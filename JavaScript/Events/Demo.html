@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Events with Image</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .loading {
+      display: none;
+      color: green;
+      font-weight: bold;
+    }
+    img {
+      width: 500px;
+      height: auto;
+      margin-top: 20px;
+      border: 2px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Image Load Demo</h1>
+  <p class="message">Initializing...</p>
+  <p class="loading">✅ All content loaded</p>
+
+  <!-- Heavy image to simulate loading delay -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg" alt="Heavy Image" />
+
+  <script>
+    // DOM is parsed but image may not be loaded yet
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".message").textContent = "📄 DOM Content Loaded!";
+      console.log("👉 DOMContentLoaded fired");
+    });
+
+    // Image and all resources are now fully loaded
+    window.addEventListener("load", () => {
+      document.querySelector(".loading").style.display = "block";
+      console.log("✅ window.load fired — all resources including image are ready");
+    });
+
+    // Warning when leaving page
+    window.addEventListener("beforeunload", (e) => {
+      e.preventDefault();
+      e.returnValue = ''; // Chrome shows confirmation
+    });
+  </script>
+</body>
+</html>

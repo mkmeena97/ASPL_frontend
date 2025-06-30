@@ -29,5 +29,3 @@ console.log(hasBholu); // true
 //6. every() — Checks if all match condition
 const allHaveId = users.every(user => user.id !== undefined);
 console.log(allHaveId); // true
-
-
