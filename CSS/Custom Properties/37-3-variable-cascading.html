@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Variable Cascading</title>
+  <style>
+    :root {
+      --color: black;
+    }
+
+    .parent {
+      --color: darkblue;
+      color: var(--color);
+    }
+
+    .child {
+      color: var(--color); /* Inherits from parent */
+    }
+
+    .override {
+      --color: crimson;
+      color: var(--color);
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    Parent Text
+    <div class="child">Child Text (inherits variable)</div>
+  </div>
+
+  <div class="override">Override Text</div>
+</body>
+</html>

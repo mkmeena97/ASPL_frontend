@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 300px;
+      height: 300px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      background-color: #fff;
+    }
+
+    .card-content {
+      flex-grow: 1;
+    }
+
+    .card-button {
+      margin-top: auto;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      align-self: flex-start;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-content">
+      <h2>Card Title</h2>
+      <p>This is some content inside the card. The button will always stay at the bottom.</p>
+    </div>
+    <button class="card-button">Action</button>
+  </div>
+</body>
+</html>

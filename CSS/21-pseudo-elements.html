@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pseudo-Elements Demo</title>
+  <style>
+    /* Section 21.1 - General Pseudo-Elements */
+    p::first-letter {
+      font-size: 2rem;
+      font-weight: bold;
+      color: darkred;
+    }
+
+    p::first-line {
+      color: darkblue;
+      font-weight: 600;
+    }
+
+    .highlight::before {
+      content: "👉 ";
+      color: orange;
+    }
+
+    .highlight::after {
+      content: " ✅";
+      color: green;
+    }
+
+    /* Section 21.2 - Pseudo-Elements in Lists */
+    ul.custom-list li::before {
+      content: "• ";
+      color: teal;
+      font-weight: bold;
+    }
+
+    ul.star-list li::before {
+      content: "★ ";
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>21.1: General Pseudo-Elements</h2>
+  <p>This paragraph uses <code>::first-letter</code> and <code>::first-line</code> pseudo-elements to highlight text.</p>
+
+  <div class="highlight">This line uses <code>::before</code> and <code>::after</code> pseudo-elements.</div>
+
+  <h2>21.2: Pseudo-Elements in Lists</h2>
+
+  <ul class="custom-list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <ul class="star-list">
+    <li>Responsive Design</li>
+    <li>Accessibility</li>
+    <li>Performance</li>
+  </ul>
+
+</body>
+</html>

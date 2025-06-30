@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>:focus-within Demo</title>
+  <style>
+    div {
+      height: 80px;
+      border: 2px solid #ccc;
+      padding: 10px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    input {
+      margin: 30px;
+    }
+
+    div:focus-within {
+      background-color: #1565C0;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Background is blue if the input is focused:</h3>
+  <div>
+    <input type="text" placeholder="Click me!">
+  </div>
+
+</body>
+</html>

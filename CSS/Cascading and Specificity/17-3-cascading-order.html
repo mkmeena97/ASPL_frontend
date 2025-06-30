@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    p {
+      color: blue;
+    }
+
+    .note {
+      color: green;
+    }
+
+    #highlight {
+      color: red;
+    }
+
+    /* This rule comes last and has the same specificity as #highlight */
+    #highlight {
+      color: purple;
+    }
+  </style>
+</head>
+<body>
+  <p id="highlight" class="note">Cascading Rule Example</p>
+</body>
+</html>
+

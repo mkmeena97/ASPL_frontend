@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Shadow Examples</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 40px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .shadow-box {
+      width: 300px;
+      padding: 20px;
+      margin: 40px auto;
+      border-radius: 8px;
+      background-color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Section 32.1: Bottom-only drop shadow using a pseudo-element */
+    .bottom-only {
+      position: relative;
+      z-index: 1;
+    }
+    .bottom-only::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 10px;
+      background: transparent;
+      box-shadow: 0 8px 6px -6px black;
+      z-index: -1;
+    }
+
+    /* Section 32.2: Drop shadow */
+    .drop-shadow {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Section 32.3: Inner drop shadow */
+    .inner-shadow {
+      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Section 32.4: Multiple shadows */
+    .multi-shadow {
+      box-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.3),
+        -2px -2px 5px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Chapter 32: Box Shadow</h2>
+
+  <!-- Section 32.1 -->
+  <div class="shadow-box bottom-only">
+    <strong>32.1:</strong> Bottom-only Shadow
+  </div>
+
+  <!-- Section 32.2 -->
+  <div class="shadow-box drop-shadow">
+    <strong>32.2:</strong> Regular Drop Shadow
+  </div>
+
+  <!-- Section 32.3 -->
+  <div class="shadow-box inner-shadow">
+    <strong>32.3:</strong> Inner Shadow
+  </div>
+
+  <!-- Section 32.4 -->
+  <div class="shadow-box multi-shadow">
+    <strong>32.4:</strong> Multiple Shadows
+  </div>
+
+</body>
+</html>

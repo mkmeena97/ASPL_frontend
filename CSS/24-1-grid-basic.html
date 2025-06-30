@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic CSS Grid Example</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
+      grid-gap: 20px;
+      padding: 20px;
+      background: #ddd;
+      border-radius: 10px;
+    }
+
+    .grid-item {
+      background-color: steelblue;
+      color: white;
+      padding: 30px;
+      font-size: 1.2rem;
+      text-align: center;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>24.1: Basic Grid Layout</h2>
+
+  <div class="grid-container">
+    <div class="grid-item">Item 1</div>
+    <div class="grid-item">Item 2</div>
+    <div class="grid-item">Item 3</div>
+    <div class="grid-item">Item 4</div>
+    <div class="grid-item">Item 5</div>
+    <div class="grid-item">Item 6</div>
+  </div>
+
+</body>
+</html>

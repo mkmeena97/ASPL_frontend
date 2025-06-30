@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Absolute Positioning</title>
+  <style>
+    .container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      border: 2px solid #000;
+      margin: 50px auto;
+      background-color: #f0f0f0;
+    }
+
+    .box {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      color: white;
+      text-align: center;
+      line-height: 100px;
+      font-weight: bold;
+    }
+
+    .top-left {
+      top: 0;
+      left: 0;
+      background-color: red;
+    }
+
+    .bottom-right {
+      bottom: 0;
+      right: 0;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box top-left">Top-Left</div>
+    <div class="box bottom-right">Bottom-Right</div>
+  </div>
+
+</body>
+</html>

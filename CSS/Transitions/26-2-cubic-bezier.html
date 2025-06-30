@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>cubic-bezier Example</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      transition: all 1s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* custom bounce */
+    }
+
+    .box:hover {
+      transform: translateX(200px);
+      background-color: purple;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>26.2: Transition with cubic-bezier</h2>
+  <p>Hover over the box to see a custom easing motion.</p>
+  <div class="box"></div>
+
+</body>
+</html>

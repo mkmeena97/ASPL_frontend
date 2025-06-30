@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Variable Color</title>
+  <style>
+    :root {
+      --main-bg: #282c34;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--main-bg);
+      color: var(--text-color);
+      font-family: sans-serif;
+      padding: 40px;
+    }
+
+    h1 {
+      border-bottom: 2px solid var(--text-color);
+    }
+  </style>
+</head>
+<body>
+  <h1>Using Variable for Color</h1>
+  <p>The background and text color are defined using custom properties.</p>
+</body>
+</html>

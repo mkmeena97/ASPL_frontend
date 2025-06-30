@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Counters</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f9f9f9;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* SECTION 35.2: Basic Counter */
+    .counter-list {
+      counter-reset: item;
+      list-style: none;
+      padding: 0;
+    }
+
+    .counter-list li {
+      counter-increment: item;
+      margin: 8px 0;
+    }
+
+    .counter-list li::before {
+      content: counter(item) ". ";
+      font-weight: bold;
+      color: #444;
+    }
+
+    /* SECTION 35.1: Roman Numerals */
+    .roman-counter {
+      counter-reset: roman;
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
+    }
+
+    .roman-counter li {
+      counter-increment: roman;
+      margin: 8px 0;
+    }
+
+    .roman-counter li::before {
+      content: counter(roman, upper-roman) ") ";
+      font-weight: bold;
+      color: darkred;
+    }
+
+    /* SECTION 35.3: Multi-Level Counters */
+    .multi-level {
+      counter-reset: section;
+    }
+
+    .multi-level h3 {
+      counter-increment: section;
+      counter-reset: sub-section;
+    }
+
+    .multi-level h3::before {
+      content: counter(section) ". ";
+      font-weight: bold;
+    }
+
+    .multi-level h4 {
+      counter-increment: sub-section;
+    }
+
+    .multi-level h4::before {
+      content: counter(section) "." counter(sub-section) " ";
+      font-weight: normal;
+      color: teal;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Chapter 35: CSS Counters</h2>
+
+  <!-- Section 35.2: Number Each Item -->
+  <h3>35.2: Numbered List Using CSS Counter</h3>
+  <ul class="counter-list">
+    <li>Introduction</li>
+    <li>Background</li>
+    <li>Problem Statement</li>
+    <li>Solution</li>
+  </ul>
+
+  <!-- Section 35.1: Roman Numerals -->
+  <h3>35.1: Roman Numerals Styling</h3>
+  <ul class="roman-counter">
+    <li>Alpha Phase</li>
+    <li>Beta Phase</li>
+    <li>Production</li>
+  </ul>
+
+  <!-- Section 35.3: Multi-level Counters -->
+  <div class="multi-level">
+    <h3>Features</h3>
+    <h4>Login</h4>
+    <h4>Dashboard</h4>
+
+    <h3>Settings</h3>
+    <h4>Profile</h4>
+    <h4>Security</h4>
+  </div>
+
+</body>
+</html>

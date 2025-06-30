@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Variables with Media Queries</title>
+  <style>
+    :root {
+      --bg-color: lightblue;
+    }
+
+    @media (max-width: 600px) {
+      :root {
+        --bg-color: lightcoral;
+      }
+    }
+
+    body {
+      background-color: var(--bg-color);
+      font-family: sans-serif;
+      padding: 40px;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <h1>Resize the window to see color change</h1>
+</body>
+</html>

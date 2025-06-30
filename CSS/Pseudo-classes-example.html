@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All CSS Pseudo-Classes</title>
+  <style>
+    /* --- User Interaction --- */
+    a:hover { color: orange; }
+    a:active { color: red; }
+    input:focus { background-color: lightyellow; }
+    input:checked + label { font-weight: bold; color: green; }
+    input:disabled { background-color: #eee; }
+    input:enabled { border: 1px solid green; }
+    input:default { background-color: lavender; } /* browser-dependent */
+
+    /* --- Structural --- */
+    p:first-child { color: darkgreen; }
+    p:last-child { color: navy; }
+    p:only-child { background-color: #eef; }
+    p:first-of-type { text-decoration: underline; }
+    p:last-of-type { font-style: italic; }
+    li:nth-child(odd) { background: #f9f9f9; }
+    li:nth-child(even) { background: #ddd; }
+    li:nth-of-type(3) { color: red; }
+
+    /* --- Form Validation --- */
+    input:required { border: 2px solid red; }
+    input:optional { border: 2px dashed blue; }
+    input:valid { background-color: #cfc; }
+    input:invalid { background-color: #fcc; }
+    input:in-range { border: 2px solid green; }
+    input:out-of-range { border: 2px solid red; }
+    input:read-only { background: #f4f4f4; }
+    input:read-write { background: #fff; }
+    input:placeholder-shown { font-style: italic; }
+
+    /* --- Link States --- */
+    a:link { color: blue; }
+    a:visited { color: purple; }
+
+    /* --- Targeting / Visibility --- */
+    #target:target { background: yellow; font-weight: bold; }
+
+    /* --- Content State --- */
+    div:empty { background: pink; height: 30px; }
+
+    /* --- Document Specific --- */
+    :root { --main-color: teal; }
+    h2 { color: var(--main-color); }
+
+    /* --- Negation --- */
+    p:not(.skip-this) { border-left: 4px solid green; padding-left: 6px; }
+
+    /* --- Experimental or Rare --- */
+    @page :first { margin-top: 20px; } /* Only in print */
+    @page :left { margin-left: 30px; }
+    @page :right { margin-right: 30px; }
+
+    /* --- Focus-Within --- */
+    .form:focus-within { background: #ffe; border: 2px solid gold; }
+
+    /* --- Fullscreen (visual only) --- */
+    :fullscreen { background-color: black; color: white; }
+
+    /* --- Scope: useful with scoped styles (experimental) --- */
+    :scope > p { font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h2>CSS Pseudo-Classes Demo</h2>
+
+  <hr>
+  <h3>Interaction</h3>
+  <input type="checkbox" id="check"><label for="check">Check me</label><br><br>
+  <input type="text" placeholder="Focus me"><br><br>
+  <input type="text" value="Disabled input" disabled><br><br>
+
+  <hr>
+  <h3>Structure</h3>
+  <div>
+    <p>This is the first paragraph</p>
+    <p>This is the second paragraph</p>
+    <p>This is the third paragraph</p>
+  </div>
+  <ul>
+    <li>Item 1</li><li>Item 2</li><li>Item 3</li><li>Item 4</li>
+  </ul>
+
+  <hr>
+  <h3>Form Validation</h3>
+  <form class="form">
+    <input type="text" placeholder="Required" required><br><br>
+    <input type="email" placeholder="Optional"><br><br>
+    <input type="number" min="1" max="5" value="10"><br><br>
+    <input type="text" value="read-only" readonly><br><br>
+  </form>
+
+  <hr>
+  <h3>Links</h3>
+  <a href="#target">Go to #target</a><br>
+  <a href="https://example.com">Visited example</a>
+
+  <hr>
+  <h3>Target</h3>
+  <div id="target">You clicked the target link!</div>
+
+  <hr>
+  <h3>Empty</h3>
+  <div></div>
+
+  <hr>
+  <h3>Negation</h3>
+  <p>This will have left border</p>
+  <p class="skip-this">This will be skipped</p>
+
+</body>
+</html>

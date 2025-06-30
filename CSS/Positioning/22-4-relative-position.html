@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Relative Position</title>
+  <style>
+    .container {
+      margin: 50px auto;
+      width: 300px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 2px solid #333;
+      font-family: sans-serif;
+    }
+
+    .normal-box {
+      background-color: lightgray;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .relative-box {
+      position: relative;
+      background-color: orange;
+      padding: 10px;
+      top: 20px;
+      left: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="normal-box">This is a normal box.</div>
+    <div class="relative-box">This is a relative box (moved down & right).</div>
+  </div>
+
+</body>
+</html>

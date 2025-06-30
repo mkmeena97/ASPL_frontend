@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stacking Context Example</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      color: white;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box1 {
+      top: 50px;
+      left: 50px;
+      background: red;
+      z-index: 1;
+    }
+
+    .box2 {
+      top: 100px;
+      left: 100px;
+      background: blue;
+      z-index: 2;
+      position: relative;
+    }
+
+    .box3 {
+      top: 150px;
+      left: 150px;
+      background: green;
+      opacity: 0.9; /* Creates a new stacking context */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box box1">z-index: 1</div>
+  <div class="box box2">z-index: 2</div>
+  <div class="box box3">opacity: 0.9</div>
+
+</body>
+</html>

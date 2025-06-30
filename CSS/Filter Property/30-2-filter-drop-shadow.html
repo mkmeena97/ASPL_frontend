@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filter: Drop Shadow</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #f4f4f4;
+      padding: 40px;
+      font-family: sans-serif;
+    }
+
+    .img-drop-shadow {
+      filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5));
+    }
+
+    .img-box-shadow {
+      box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    img {
+      width: 200px;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>30.2: Drop Shadow vs Box Shadow</h2>
+
+  <div>
+    <p><strong>filter: drop-shadow()</strong></p>
+    <img src="https://pngimg.com/uploads/star/star_PNG1599.png" class="img-drop-shadow" alt="Drop shadow PNG">
+  </div>
+
+  <div>
+    <p><strong>box-shadow</strong></p>
+    <img src="https://pngimg.com/uploads/star/star_PNG1599.png" class="img-box-shadow" alt="Box shadow PNG">
+  </div>
+
+</body>
+</html>

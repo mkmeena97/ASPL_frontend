@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List Styles</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f4f4f4;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    section {
+      background: white;
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    ul, ol {
+      margin-top: 10px;
+      padding-left: 30px;
+    }
+
+    .inside-bullets {
+      list-style-position: inside;
+    }
+
+    .no-bullets {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .custom-bullets ul {
+      list-style-type: square;
+    }
+
+    .custom-bullets ol {
+      list-style-type: upper-roman;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Chapter 34: List Styles</h2>
+
+  <!-- 34.1 Bullet Position -->
+  <section>
+    <h3>34.1: Bullet Position - <code>list-style-position</code></h3>
+    <ul class="inside-bullets">
+      <li>This bullet is inside the content block</li>
+      <li>Aligns more with paragraph flow</li>
+    </ul>
+  </section>
+
+  <!-- 34.2 Removing Bullets -->
+  <section>
+    <h3>34.2: Removing Bullets or Numbers</h3>
+    <ul class="no-bullets">
+      <li>No bullet here</li>
+      <li>Just plain text-style list</li>
+    </ul>
+  </section>
+
+  <!-- 34.3 Custom Bullet Types -->
+  <section class="custom-bullets">
+    <h3>34.3: Custom Bullet and Numbering Types</h3>
+    <ul>
+      <li>Square bullet</li>
+      <li>Another item</li>
+    </ul>
+
+    <ol>
+      <li>Roman numeral one</li>
+      <li>Roman numeral two</li>
+    </ol>
+  </section>
+
+</body>
+</html>

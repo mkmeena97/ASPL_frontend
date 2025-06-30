@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> select an element using the ID as a value for an attribute selector to avoid the high specificity of
+ the ID selector</title>
+  <style>
+    /* High specificity: will override class selectors and most others */
+    #element {
+      background-color: red;
+      color: white;
+      padding: 10px;
+    }
+
+    /* Lower specificity: easier to override */
+    [id="element"] {
+      background-color: lightgreen;
+    }
+
+    /* Even lower specificity: a class */
+    .override {
+      background-color: orange;
+    }
+
+    /* High specificity again: directly fights with #element */
+    div#element.override {
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="element">This uses the ID "element"</div>
+
+  <br>
+
+  <div id="element" class="override">This uses ID and class "override"</div>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Caption Side Example</title>
+  <style>
+    table {
+      width: 300px;
+      border: 2px solid black;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+
+    caption {
+      caption-side: top; /* Try changing to 'bottom' */
+      font-weight: bold;
+      font-size: 1.1em;
+      padding: 10px;
+    }
+
+    td, th {
+      border: 1px solid gray;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>25.5: caption-side</h2>
+
+  <table>
+    <caption>Top Caption</caption>
+    <tr>
+      <th>Item</th>
+      <th>Qty</th>
+    </tr>
+    <tr>
+      <td>Apples</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Oranges</td>
+      <td>5</td>
+    </tr>
+  </table>
+
+  <table>
+    <caption style="caption-side: bottom;">Bottom Caption</caption>
+    <tr>
+      <th>Item</th>
+      <th>Qty</th>
+    </tr>
+    <tr>
+      <td>Bananas</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Mangoes</td>
+      <td>12</td>
+    </tr>
+  </table>
+
+</body>
+</html>

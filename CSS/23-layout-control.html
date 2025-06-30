@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Display Property & Div Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    .block {
+      display: block;
+      background-color: lightblue;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .inline {
+      display: inline;
+      background-color: lightgreen;
+      padding: 5px;
+    }
+
+    .inline-block {
+      display: inline-block;
+      background-color: coral;
+      padding: 10px;
+      width: 100px;
+      margin-right: 10px;
+    }
+
+    .fake-table {
+      display: table;
+      border-collapse: collapse;
+      margin-top: 20px;
+      border: 2px solid black;
+    }
+
+    .fake-row {
+      display: table-row;
+    }
+
+    .fake-cell {
+      display: table-cell;
+      border: 1px solid gray;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>23.1: Display Property Examples</h2>
+  <div class="block">Block Element</div>
+  <span class="inline">Inline 1</span>
+  <span class="inline">Inline 2</span>
+  <div class="inline-block">Inline-Block 1</div>
+  <div class="inline-block">Inline-Block 2</div>
+
+  <h2>23.2: Table Layout Using Divs</h2>
+  <div class="fake-table">
+    <div class="fake-row">
+      <div class="fake-cell"><strong>Name</strong></div>
+      <div class="fake-cell"><strong>Age</strong></div>
+      <div class="fake-cell"><strong>Country</strong></div>
+    </div>
+    <div class="fake-row">
+      <div class="fake-cell">Alice</div>
+      <div class="fake-cell">25</div>
+      <div class="fake-cell">USA</div>
+    </div>
+    <div class="fake-row">
+      <div class="fake-cell">Bob</div>
+      <div class="fake-cell">30</div>
+      <div class="fake-cell">UK</div>
+    </div>
+  </div>
+
+</body>
+</html>

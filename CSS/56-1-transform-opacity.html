@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Transform and Opacity Animation</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #3498db;
+      margin: 50px auto;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-20px) scale(1.1);
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">Hover to Animate (GPU Optimized)</h2>
+  <div class="box"></div>
+</body>
+</html>

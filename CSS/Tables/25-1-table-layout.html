@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Table Layout</title>
+  <style>
+    table {
+      border: 1px solid black;
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed; /* Try changing to 'auto' */
+    }
+
+    td, th {
+      border: 1px solid black;
+      padding: 10px;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>25.1: table-layout: fixed</h2>
+  <table>
+    <tr>
+      <th style="width: 100px;">Short</th>
+      <th>Long Text Column</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>This is a very long text that will wrap inside the column due to fixed layout.</td>
+    </tr>
+  </table>
+
+</body>
+</html>

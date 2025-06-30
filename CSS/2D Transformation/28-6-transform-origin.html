@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transform Origin</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: forestgreen;
+      transition: transform 0.4s;
+      transform-origin: top left;
+    }
+
+    .box:hover {
+      transform: rotate(45deg);
+    }
+
+    .label {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>28.6: Transform Origin</h2>
+  <p class="label">Hover over the box (rotation happens from top-left corner)</p>
+  <div class="box"></div>
+
+</body>
+</html>

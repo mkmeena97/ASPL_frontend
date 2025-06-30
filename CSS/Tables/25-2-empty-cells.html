@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Empty Cells Example</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 300px;
+      empty-cells: hide;
+    }
+
+    td {
+      border: 1px solid black;
+      height: 50px;
+      text-align: center;
+    }
+
+    .with-empty-cells {
+      empty-cells: show;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>25.2: empty-cells: hide</h2>
+  <table>
+    <tr>
+      <td>1</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>4</td>
+    </tr>
+  </table>
+
+  <h2>25.2: empty-cells: show</h2>
+  <table class="with-empty-cells">
+    <tr>
+      <td>1</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>4</td>
+    </tr>
+  </table>
+
+</body>
+</html>

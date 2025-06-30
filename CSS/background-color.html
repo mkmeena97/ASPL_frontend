@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Background Showcase</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      color: white;
+
+      /* 🌌 Background shorthand combo: color + image + repeat + position + size */
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), 
+                  url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1470&q=80') 
+                  no-repeat center center / cover;
+
+      /* Fixed parallax effect */
+      background-attachment: fixed;
+    }
+
+    header {
+        padding: 4rem 2rem;
+        height: 300px;
+        background: 
+            url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1470&q=80') center center / cover no-repeat,
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)); /* semi-transparent overlay */
+    }
+
+    section {
+      padding: 4rem 2rem;
+      background-color: hsl(240, 100%, 20%); /* deep blue */
+    }
+
+    .rgb-box {
+      background-color: rgb(0, 128, 128); /* teal */
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .rgba-box {
+      background-color: rgba(255, 0, 0, 0.5); /* red with 50% opacity */
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .hsl-box {
+      background-color: hsl(120, 100%, 40%); /* green */
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    .hsla-box {
+      background-color: hsla(50, 100%, 50%, 0.4); /* yellow with opacity */
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+
+    footer {
+      padding: 1rem;
+      text-align: center;
+      background-color: #000;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎨 CSS Background Showcase</h1>
+    <p>All types of color & background tricks in action</p>
+  </header>
+
+  <section>
+    <div class="rgb-box">RGB Color Box: <code>rgb(0, 128, 128)</code></div>
+    <div class="rgba-box">RGBA Color Box: <code>rgba(255, 0, 0, 0.5)</code></div>
+    <div class="hsl-box">HSL Color Box: <code>hsl(120, 100%, 40%)</code></div>
+    <div class="hsla-box">HSLA Color Box: <code>hsla(50, 100%, 50%, 0.4)</code></div>
+  </section>
+
+  <footer>
+    &copy; 2025 | Built with ❤️ and background magic by Tilak
+  </footer>
+
+</body>
+</html>

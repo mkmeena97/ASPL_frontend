@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>:not() Demo</title>
+  <style>
+    input:not([disabled]):not(.example) {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    Phone: <input type="tel" class="example"><br>
+    E-mail: <input type="email" disabled="disabled"><br>
+    Password: <input type="password"><br>
+  </form>
+
+</body>
+</html>
+

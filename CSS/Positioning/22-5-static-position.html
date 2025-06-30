@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Static Position Example</title>
+  <style>
+    .box {
+      width: 200px;
+      padding: 20px;
+      margin: 20px;
+      background-color: lightcoral;
+      color: white;
+      font-weight: bold;
+    }
+
+    .static-box {
+      position: static; /* default - even if you omit it */
+    }
+
+    .attempt-move {
+      position: static;
+      top: 20px;   /* these will be ignored */
+      left: 20px;  /* these will be ignored */
+      background-color: teal;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box static-box">Static Position</div>
+  <div class="box attempt-move">Top/Left Have No Effect</div>
+
+</body>
+</html>

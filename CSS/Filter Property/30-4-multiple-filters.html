@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiple CSS Filters</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .img-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      text-align: center;
+    }
+
+    img {
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: filter 0.5s ease;
+    }
+
+    .multi-filter {
+      filter: grayscale(100%) blur(2px) brightness(1.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>30.4: Multiple Filter Values</h2>
+
+  <div class="img-container">
+    <div class="box">
+      <p>Original Image</p>
+      <img src="https://picsum.photos/id/1025/300/200" alt="Original Image">
+    </div>
+
+    <div class="box">
+      <p>Filtered Image</p>
+      <img src="https://picsum.photos/id/1025/300/200" class="multi-filter" alt="Filtered Image">
+    </div>
+  </div>
+
+</body>
+</html>

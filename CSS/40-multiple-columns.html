@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiple Columns Example</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      padding: 30px;
+    }
+
+    .multi-column {
+      column-count: 3;               /* Number of columns */
+      column-gap: 25px;              /* Space between columns */
+      column-rule: 2px solid #ccc;   /* Divider line between columns */
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Chapter 40: Multiple Columns</h2>
+
+  <div class="multi-column">
+    <p>
+      CSS Multiple Columns are used to format text into columns similar to newspapers.
+      You can use `column-count` to specify how many columns to create, and `column-width`
+      to set an ideal width per column. The browser handles overflow and line-breaking.
+    </p>
+    <p>
+      It's ideal for articles, blog posts, documentation, or any long-form content. With properties like
+      `column-gap`, you can adjust the space between columns. And `column-rule` allows you to show
+      a visual separator between them.
+    </p>
+    <p>
+      Remember that not all elements behave naturally in columns (like tables), so use this primarily
+      for text, images, and paragraphs. This is a lightweight and responsive alternative to Grid or Flexbox
+      for simple layouts.
+    </p>
+  </div>
+
+</body>
+</html>

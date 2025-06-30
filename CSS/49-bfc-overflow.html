@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BFC with Overflow</title>
+  <style>
+    .container {
+      border: 2px solid #333;
+      margin: 40px;
+    }
+
+    .no-bfc {
+      border: 2px dashed red;
+    }
+
+    .with-bfc {
+      border: 2px dashed green;
+      overflow: hidden; /* Triggers BFC */
+    }
+
+    .float-box {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: steelblue;
+      margin-right: 10px;
+    }
+
+    .text {
+      background: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Without BFC (content collapses)</h2>
+  <div class="container no-bfc">
+    <div class="float-box"></div>
+    <div class="text">This text wraps beside the floated box but the container doesn't expand properly.</div>
+  </div>
+
+  <h2>With BFC (container grows to fit float)</h2>
+  <div class="container with-bfc">
+    <div class="float-box"></div>
+    <div class="text">This text wraps beside the floated box, and the container correctly surrounds its content.</div>
+  </div>
+
+</body>
+</html>

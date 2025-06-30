@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transform with Prefixes</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #2ecc71;
+      transition: transform 0.5s;
+      -webkit-transition: -webkit-transform 0.5s; /* Safari */
+    }
+
+    .box:hover {
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg); /* Safari */
+      -ms-transform: rotate(45deg);     /* IE 9 */
+    }
+  </style>
+</head>
+<body>
+  <h2>Transform with Prefixes</h2>
+  <div class="box"></div>
+</body>
+</html>

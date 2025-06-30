@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filter: Blur</title>
+  <style>
+    body {
+      text-align: center;
+      padding: 40px;
+      font-family: sans-serif;
+    }
+
+    .image {
+      width: 300px;
+      filter: blur(5px);
+      transition: filter 0.4s ease;
+    }
+
+    .image:hover {
+      filter: blur(0px);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>30.1: Blur Filter</h2>
+  <p>Hover over the image to remove the blur.</p>
+  <img src="../images/pexels-eberhardgross-1366913.jpg" class="image" alt="Blurred Image">
+
+</body>
+</html>

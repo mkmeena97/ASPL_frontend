@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Length Units Demo</title>
+  <style>
+    html {
+      font-size: 16px; /* 1rem = 16px */
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: sans-serif;
+    }
+
+    .container {
+      width: 80%;
+      height: 50vh;
+      background-color: #f0f0f0;
+      border: 2px solid #ccc;
+      margin: auto;
+    }
+
+    .title {
+      font-size: 2rem; /* 2 x 16px = 32px */
+      margin-bottom: 1em; /* 1 x current font-size (32px) */
+      color: darkblue;
+    }
+
+    .text {
+      font-size: 1em; /* same as parent */
+      width: 90%;     /* 90% of parent container */
+      background-color: #cce5ff;
+      padding: 1em;
+      border-radius: 0.5vmax; /* rounded corners based on max of width/height */
+    }
+
+    .footer {
+      font-size: 1rem;
+      margin-top: 2vmin; /* space based on smaller of width/height */
+      background-color: #e6ffe6;
+      padding: 2vh 2vw;  /* responsive padding */
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">🌐 Length Units in CSS</div>
+    <div class="text">
+      This text box uses:
+      <ul>
+        <li><strong>rem</strong> for font size</li>
+        <li><strong>em</strong> for padding and margin</li>
+        <li><strong>%</strong> for width</li>
+        <li><strong>vw/vh</strong> for padding</li>
+        <li><strong>vmin/vmax</strong> for spacing and radius</li>
+      </ul>
+    </div>
+    <div class="footer">
+      Footer with vh, vw, and vmin-based styling.
+    </div>
+  </div>
+</body>
+</html>

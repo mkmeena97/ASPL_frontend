@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cursor Styling</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 40px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .example-box {
+      margin: 30px 0;
+      padding: 20px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 31.1: Changing cursor type */
+    .cursor-demo button {
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cursor-help { cursor: help; }
+    .cursor-wait { cursor: wait; }
+    .cursor-move { cursor: move; }
+    .cursor-not-allowed { cursor: not-allowed; }
+
+    /* 31.2: pointer-events */
+    .pointer-demo .disabled-box {
+      background-color: #eee;
+      padding: 20px;
+      text-align: center;
+      pointer-events: none; /* disables all mouse interactions */
+      border: 2px dashed red;
+    }
+
+    .pointer-demo .normal-box {
+      background-color: #c1f0c1;
+      padding: 20px;
+      text-align: center;
+      border: 2px solid green;
+    }
+
+    /* 31.3: caret-color */
+    .caret-demo input, .caret-demo textarea {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      caret-color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Chapter 31: Cursor Styling</h2>
+
+  <!-- 31.1: cursor -->
+  <div class="example-box cursor-demo">
+    <h3>31.1: Cursor Types</h3>
+    <button class="cursor-help">Help Cursor</button>
+    <button class="cursor-wait">Wait Cursor</button>
+    <button class="cursor-move">Move Cursor</button>
+    <button class="cursor-not-allowed">Not Allowed</button>
+  </div>
+
+  <!-- 31.2: pointer-events -->
+  <div class="example-box pointer-demo">
+    <h3>31.2: Pointer Events</h3>
+    <div class="normal-box">This box is clickable!</div>
+    <div class="disabled-box">This box is <strong>not</strong> clickable (pointer-events: none)</div>
+  </div>
+
+  <!-- 31.3: caret-color -->
+  <div class="example-box caret-demo">
+    <h3>31.3: Caret Color</h3>
+    <label for="name">Type here:</label>
+    <input type="text" id="name" placeholder="Red caret in this field" />
+    <textarea rows="4" placeholder="Caret will also be red here..."></textarea>
+  </div>
+
+</body>
+</html>

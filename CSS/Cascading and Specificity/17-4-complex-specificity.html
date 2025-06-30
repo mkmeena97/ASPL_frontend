@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    span {
+      color: gray;
+    }
+
+    .highlight {
+      color: green; /* Specificity: (0,1,0) */
+    }
+
+    div span.highlight {
+      color: blue;  /* Specificity: (0,1,2) */
+    }
+
+    #main span {
+      color: red;   /* Specificity: (1,0,1) → Highest! */
+    }
+  </style>
+</head>
+<body>
+  <div id="main">
+    <span class="highlight">Which color wins?</span>
+  </div>
+</body>
+</html>

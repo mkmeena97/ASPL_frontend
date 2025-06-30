@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Keyframe Animation</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: coral;
+      position: relative;
+      animation-name: slideRight;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes slideRight {
+      0%   { left: 0; background-color: coral; }
+      100% { left: 200px; background-color: mediumseagreen; }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>27.1: Animation with keyframes</h2>
+  <div class="box"></div>
+
+</body>
+</html>

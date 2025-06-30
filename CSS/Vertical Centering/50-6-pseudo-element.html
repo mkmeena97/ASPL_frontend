@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pseudo Element Centering</title>
+  <style>
+    .wrapper {
+      position: relative;
+      height: 100vh;
+      background: #f8bbd0;
+    }
+
+    .wrapper::before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    .content {
+      display: inline-block;
+      vertical-align: middle;
+      background: #f06292;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="content">Centered with pseudo-element</div>
+  </div>
+</body>
+</html>

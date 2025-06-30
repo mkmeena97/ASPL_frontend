@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valid / Invalid Variables</title>
+  <style>
+    :root {
+      --valid-color: green;
+      /* --1invalid: red;  // Invalid - cannot start with a digit */
+    }
+
+    .example {
+      color: var(--valid-color, black); /* fallback: black */
+    }
+
+    .fallback {
+      color: var(--undefined-color, gray); /* undefined, so fallback */
+    }
+  </style>
+</head>
+<body>
+  <p class="example">This uses a valid custom property.</p>
+  <p class="fallback">This uses fallback because the variable is undefined.</p>
+</body>
+</html>

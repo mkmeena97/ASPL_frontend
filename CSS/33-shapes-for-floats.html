@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 33: Shapes for Floats</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 40px;
+      background: #f2f2f2;
+    }
+
+    .shape-example {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .circle-shape {
+      float: left;
+      width: 200px;
+      height: 200px;
+      margin: 0 20px 20px 0;
+      shape-outside: circle(50%);
+      clip-path: circle(50%);
+      -webkit-shape-outside: circle(50%);
+      -webkit-clip-path: circle(50%);
+      shape-margin: 15px; /* Section 33.2 */
+      background-image: url('https://picsum.photos/id/1025/200/200');
+      background-size: cover;
+    }
+
+    .text {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="shape-example">
+    <h2>Chapter 33: Shapes for Floats</h2>
+
+    <!-- Section 33.1 & 33.2 -->
+    <div class="circle-shape"></div>
+
+    <div class="text">
+      <p>
+        This text wraps around a circular image thanks to the `shape-outside: circle()` property. It allows us to float
+        elements in a way that feels more natural and visually engaging. Notice how the text follows the circular
+        outline instead of wrapping around a square box. This is particularly useful in magazine-style layouts and
+        custom blog designs.
+      </p>
+
+      <p>
+        We’ve also applied `shape-margin` to ensure that the text doesn’t sit directly on the edge of the image.
+        That gives it breathing space and improves readability. These techniques can only be applied to floated elements,
+        and the image must be visible for shape detection to work.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

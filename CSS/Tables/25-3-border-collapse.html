@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Border Collapse</title>
+  <style>
+    table {
+      width: 300px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    th, td {
+      border: 2px solid black;
+      padding: 10px;
+    }
+
+    .separate {
+      border-collapse: separate;
+      border-spacing: 10px; /* visible only in separate mode */
+    }
+
+    .collapse {
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>25.3: border-collapse: separate</h2>
+  <table class="separate">
+    <tr>
+      <td>Cell A</td>
+      <td>Cell B</td>
+    </tr>
+  </table>
+
+  <h2>25.3: border-collapse: collapse</h2>
+  <table class="collapse">
+    <tr>
+      <td>Cell A</td>
+      <td>Cell B</td>
+    </tr>
+  </table>
+
+</body>
+</html>

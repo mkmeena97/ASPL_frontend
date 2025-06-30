@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Print Page Break Example</title>
+  <style>
+    @media print {
+      .page-break {
+        page-break-before: always;
+      }
+
+      .no-break {
+        page-break-inside: avoid;
+      }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    section {
+      margin-bottom: 50px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <h2>Section 1</h2>
+    <p>This is the first section. It will appear on the first page when printed.</p>
+  </section>
+
+  <section class="page-break">
+    <h2>Section 2</h2>
+    <p>This section will start on a new printed page because of <code>page-break-before: always</code>.</p>
+  </section>
+
+  <section class="no-break">
+    <h2>Section 3 (No Break Inside)</h2>
+    <p>This section tries to avoid splitting across pages using <code>page-break-inside: avoid</code>.</p>
+  </section>
+
+</body>
+</html>

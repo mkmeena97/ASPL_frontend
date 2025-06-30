@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    h1 {
+      color: blue;           /* Specificity: 1 */
+    }
+    .heading {
+      color: green;          /* Specificity: 10 */
+    }
+    #main-title {
+      color: red;            /* Specificity: 100 */
+    }
+  </style>
+</head>
+<body>
+  <h1 id="main-title" class="heading">Specificity Test</h1>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Variable Dimensions</title>
+  <style>
+    :root {
+      --box-size: 150px;
+      --padding: 20px;
+    }
+
+    .box {
+      width: var(--box-size);
+      height: var(--box-size);
+      background-color: lightseagreen;
+      padding: var(--padding);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">Box</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Absolute Centering</title>
+  <style>
+    .outer {
+      position: relative;
+      height: 100vh;
+      background: #c8e6c9;
+    }
+    .inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #81c784;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="inner">Absolutely centered</div>
+  </div>
+</body>
+</html>

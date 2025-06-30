@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Attribute Selectors Demo</title>
+  <style>
+    /* [attr] – Any element with the attribute */
+    div[data-color] {
+      color: red;
+    }
+
+    /* [attr="value"] – Exact match */
+    div[data-color="green"] {
+      background-color: lightgreen;
+    }
+
+    /* [attr~="value"] – Contains word in space-separated list */
+    div[class~="highlight"] {
+      font-weight: bold;
+      border: 2px solid orange;
+    }
+
+    /* [attr^="value"] – Starts with */
+    div[class^="start"] {
+      background-color: lightyellow;
+    }
+
+    /* [attr$="value"] – Ends with */
+    div[class$="end"] {
+      background-color: lightblue;
+    }
+
+    /* [attr*="value"] – Contains substring */
+    div[class*="mid"] {
+      text-decoration: underline;
+    }
+
+    /* [attr|="value"] – Exact or value followed by '-' */
+    div[lang|="en"] {
+      color: darkgreen;
+    }
+
+    /* [attr="value" i] – Case-insensitive exact match */
+    div[lang="EN" i] {
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🎯 Attribute Selectors in Action</h2>
+
+  <!-- [attr] -->
+  <div data-color="blue">[data-color] → This is red text</div>
+
+  <!--[attr='val']<div attr="val"> 
+    Where attribute attr has value val-->
+  <div data-color="green">[data-color="green"] → This has green background</div>
+
+  <!-- [attr~='val']<div attr="val val2 val3">
+    Where val appears in the whitespace-separated list of attr-->
+  <div class="note highlight important">[class~="highlight"] → Orange border & bold</div>
+  <div class="note lowlight">This has no effect (no 'highlight')</div>
+
+  <!--  [attr^='val']<div attr="val1 val2"> 
+    Where attr's value begins with val -->
+  <div class="start-section">[class^="start"] → Light yellow background</div>
+
+  <!--  [attr$='val']<div attr="sth aval"> 
+    Where the attr's value ends with val -->
+  <div class="summary-end">[class$="end"] → Light blue background</div>
+
+  <!-- [attr*='val']<div attr="somevalhere"> 
+    Where attr contains val anywhere -->
+  <div class="custom-middle-value">[class*="mid"] → Underlined</div>
+
+  <!-- [attr|='val']<div attr="val-sth etc">
+  Where attr's value is exactly val,
+  or starts with val and immediately
+  followed by - (U+002D) -->
+  <div lang="en">[lang|="en"] → Green text</div>
+  <div lang="en-GB">[lang|="en"] → Green text</div>
+  <div lang="fr">Not matched by [lang|="en"]</div>
+
+  <!-- [attr='val' i]<div attr="val"> 
+    Where attr has value val,
+    ignoring val's letter casing -->
+  <div lang="EN">[lang="EN" i] → Italic text</div>
+  <div lang="en">[lang="EN" i] → Italic text</div>
+  <div lang="pt">Not matched by [lang="EN" i]</div>
+
+</body>
+</html>

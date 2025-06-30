@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Push Sidebar Controlled</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    #sidebarShown,
+    #darkThemeUsed {
+      display: none;
+    }
+
+    label {
+      display: inline-block;
+      margin: 10px 10px 0 0;
+      padding: 8px 16px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    #wrapper {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    #sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: #888;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translateX(-250px);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    #main {
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    #footer {
+      padding: 20px;
+      background: #f0f0f0;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Toggle sidebar visible */
+    #sidebarShown:checked ~ #wrapper #sidebar {
+      transform: translateX(0);
+    }
+
+    /* Push content only when sidebar is visible */
+    #sidebarShown:checked ~ #wrapper #main {
+      transform: translateX(250px);
+    }
+
+    /* Dark mode */
+    #darkThemeUsed:checked ~ #wrapper,
+    #darkThemeUsed:checked ~ #footer {
+      background-color: #222;
+      color: #eee;
+    }
+
+    #darkThemeUsed:checked ~ #footer {
+      background-color: #111;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toggles -->
+  <input type="checkbox" id="sidebarShown">
+  <input type="checkbox" id="darkThemeUsed">
+
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <p><strong>Sidebar Content</strong></p>
+      <p>Navigation, links, etc.</p>
+    </div>
+
+    <!-- Content -->
+    <div id="main">
+      <label for="sidebarShown">Toggle Sidebar</label>
+      <label for="darkThemeUsed">Toggle Dark Mode</label>
+
+      <h1>Hello, Tez 👋</h1>
+      <p>This content and the buttons move when sidebar is toggled.</p>
+      <p>Simple, elegant, and no JavaScript involved.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer">
+    All rights reserved &copy; 2025
+  </div>
+
+</body>
+</html>

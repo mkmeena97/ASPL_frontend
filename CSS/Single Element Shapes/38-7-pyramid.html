@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2D Pyramid with Pseudo Elements</title>
+  <style>
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .pyramid {
+      width: 100px;
+      height: 200px;
+      position: relative;
+    }
+
+    .pyramid::before,
+    .pyramid::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 50px solid;
+      top: 0;
+      left: 25px;
+    }
+
+    .pyramid::before {
+      border-color: transparent transparent #ff5656 transparent;
+      transform: scaleY(2) skewY(-40deg) rotate(45deg);
+      z-index: 1;
+    }
+
+    .pyramid::after {
+      border-color: transparent transparent #d64444 transparent;
+      transform: scaleY(2) skewY(40deg) rotate(-45deg);
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="pyramid"></div>
+</body>
+</html>

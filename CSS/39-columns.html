@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Multi-Column Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+
+    .columns {
+      column-count: 3;
+      column-width: 200px;
+      column-gap: 30px;
+      column-rule: 2px solid #ccc;
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>CSS Columns Example</h2>
+
+  <div class="columns">
+    <p>
+      This is an example of how content can be split across multiple columns using CSS.
+      The column-count property lets you define how many columns you want.
+      The column-width sets the ideal width for each column.
+      The browser adjusts based on available space.
+    </p>
+    <p>
+      You can also use other properties like column-gap (space between columns)
+      and column-rule (line between columns) to style them.
+      This makes it easier to format long content in a more readable layout.
+    </p>
+    <p>
+      Multi-column layouts are useful for blog posts, articles, documentation, and more.
+      They help in creating a balanced and newspaper-like design without using floats or grid.
+    </p>
+  </div>
+
+</body>
+</html>

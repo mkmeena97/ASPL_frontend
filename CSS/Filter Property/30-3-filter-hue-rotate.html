@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filter: Hue Rotate</title>
+  <style>
+    body {
+      text-align: center;
+      padding: 40px;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      text-align: center;
+    }
+
+    img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .hue-original {
+      filter: hue-rotate(0deg);
+    }
+
+    .hue-rotated {
+      filter: hue-rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>30.3: Hue Rotate</h2>
+
+  <div class="container">
+    <div class="box">
+      <p>Original Image</p>
+      <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=400" class="hue-original" alt="Original">
+    </div>
+
+    <div class="box">
+      <p>Hue-Rotated (180°)</p>
+      <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=400" class="hue-rotated" alt="Hue Rotated">
+    </div>
+  </div>
+
+</body>
+</html>

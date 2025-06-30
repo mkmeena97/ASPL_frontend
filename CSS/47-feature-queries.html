@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Feature Queries</title>
+  <style>
+    .box {
+      width: 100%;
+      padding: 20px;
+      background: lightgray;
+      text-align: center;
+      font-family: sans-serif;
+    }
+
+    /* Basic fallback style */
+    .box {
+      display: block;
+    }
+
+    /* Section 47.1: Basic @supports for grid */
+    @supports (display: grid) {
+      .box {
+        display: grid;
+        place-items: center;
+        background: lightgreen;
+        font-weight: bold;
+      }
+    }
+
+    /* Section 47.2: Chaining feature queries */
+    @supports ((display: grid) and (color: rebeccapurple)) {
+      .box {
+        background: rebeccapurple;
+        color: white;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    This box uses CSS Feature Queries
+  </div>
+
+</body>
+</html>

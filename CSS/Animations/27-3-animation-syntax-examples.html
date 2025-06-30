@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animation Syntax Examples</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+      background-color: teal;
+      position: relative;
+    }
+
+    /* Keyframe animation */
+    @keyframes slideFade {
+      from {
+        left: 0;
+        opacity: 0.2;
+      }
+      to {
+        left: 200px;
+        opacity: 1;
+      }
+    }
+
+    /* Different syntax examples */
+    .a {
+      animation-name: slideFade;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    .b {
+      animation: slideFade 2s linear infinite alternate;
+    }
+
+    .c {
+      animation: slideFade 3s ease-in 1;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>27.3: Animation Syntax Examples</h2>
+  <div class="box a">Longhand</div>
+  <div class="box b">Shorthand</div>
+  <div class="box c">One-time</div>
+
+</body>
+</html>

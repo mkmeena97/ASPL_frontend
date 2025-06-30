@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transition with Prefixes</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #3498db;
+      transition: background-color 0.5s;
+      -webkit-transition: background-color 0.5s; /* Safari */
+      -moz-transition: background-color 0.5s;    /* Firefox */
+      -o-transition: background-color 0.5s;      /* Opera */
+    }
+
+    .box:hover {
+      background-color: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+  <h2>Transition with Prefixes</h2>
+  <div class="box"></div>
+</body>
+</html>

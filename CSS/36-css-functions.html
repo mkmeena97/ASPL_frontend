@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chapter 36: CSS Functions</title>
+  <style>
+    :root {
+      --main-color: teal;
+      --padding-size: 20px;
+    }
+
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 30px;
+      background: #f0f0f0;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .box {
+      width: calc(100% - 60px); /* Section 36.1: calc() */
+      padding: var(--padding-size); /* Section 36.3: var() */
+      background: linear-gradient(to right, #00c6ff, #0072ff); /* Section 36.5 */
+      color: white;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .badge::after {
+      content: attr(data-label); /* Section 36.2: attr() */
+      display: inline-block;
+      margin-left: 10px;
+      padding: 2px 6px;
+      background: darkred;
+      color: white;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+
+    .radial {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: radial-gradient(circle, #f06, transparent 70%); /* Section 36.4 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Chapter 36: CSS Functions</h2>
+
+  <!-- Section 36.1, 36.3, 36.5 -->
+  <div class="box">
+    <p>This box uses:</p>
+    <ul>
+      <li><strong>calc()</strong> to calculate width: <code>width: calc(100% - 60px)</code></li>
+      <li><strong>var()</strong> for padding: <code>padding: var(--padding-size)</code></li>
+      <li><strong>linear-gradient()</strong> for background</li>
+    </ul>
+  </div>
+
+  <!-- Section 36.2 -->
+  <p class="badge" data-label="NEW">This paragraph uses <code>attr()</code> to show a badge →</p>
+
+  <!-- Section 36.4 -->
+  <div class="radial">Radial</div>
+
+</body>
+</html>

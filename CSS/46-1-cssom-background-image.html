@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSSOM Example - Add Background Image</title>
+  <style id="dynamic-style">
+    /* This will be filled by JavaScript */
+  </style>
+</head>
+<body>
+
+  <div id="banner">This is a banner</div>
+
+  <script>
+    const sheet = document.getElementById('dynamic-style').sheet;
+
+    sheet.insertRule(`
+      #banner {
+        background-image: url('https://placehold.co/600x100/2222aa/ffffff?text=Dynamic+Banner');
+        height: 100px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-family: sans-serif;
+      }
+    `, sheet.cssRules.length);
+  </script>
+
+</body>
+</html>
