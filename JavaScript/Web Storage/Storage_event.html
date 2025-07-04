@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Storage Event Explanation & Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; }
+    h2 { color: #007BFF; }
+    .box { border: 2px solid #007BFF; padding: 15px; margin: 20px 0; background: #fff; border-radius: 10px; }
+    button { padding: 10px 15px; margin-bottom: 10px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h2>📦 Web Storage Event – Explanation + Live Demo</h2>
+
+  <div class="box">
+    <h3>🧠 What is a <code>storage</code> event?</h3>
+    <p>The <strong><code>storage</code> event</strong> fires in <strong>other tabs/windows</strong> of the same origin when:</p>
+    <ul>
+      <li><code>localStorage.setItem()</code></li>
+      <li><code>localStorage.removeItem()</code></li>
+      <li><code>localStorage.clear()</code></li>
+    </ul>
+    <p><strong>⚠️ Important:</strong> It does <u>not</u> fire in the same tab where the change is made. It only fires in other open tabs of the same site.</p>
+  </div>
+
+  <button onclick="localStorage.setItem('demo', 'Updated-' + Date.now())">
+     Trigger Storage Change
+  </button>
+
+  <div class="box" id="event-log">
+    <strong>Waiting for storage event from another tab...</strong>
+  </div>
+
+  <script>
+    const logBox = document.getElementById("event-log");
+
+    window.addEventListener("storage", (event) => {
+      const html = `
+        <h3>📡 Storage Event Triggered:</h3>
+        <ul>
+          <li><strong>Key:</strong> ${event.key}</li>
+          <li><strong>Old Value:</strong> ${event.oldValue}</li>
+          <li><strong>New Value:</strong> ${event.newValue}</li>
+          <li><strong>URL:</strong> ${event.url}</li>
+          <li><strong>Storage Area:</strong> ${event.storageArea === localStorage ? "localStorage" : "Unknown"}</li>
+        </ul>
+      `;
+      logBox.innerHTML = html;
+    });
+  </script>
+</body>
+</html>
