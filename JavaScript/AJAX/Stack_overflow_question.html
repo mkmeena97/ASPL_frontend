@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Top JS Questions - Stack Overflow</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .question { margin-bottom: 15px; }
+    .question a { font-size: 18px; color: steelblue; text-decoration: none; }
+    .score { font-size: 14px; color: gray; }
+
+    /* Preloader center styling */
+    #preloader {
+      display: block;
+      margin: 30px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h2> Top JavaScript Questions of the Month</h2>
+
+  <!-- Preloader container -->
+  <div id="questions">
+    <!-- Preloader gets added here dynamically -->
+  </div>
+
+  <script>
+    //  Add preloader GIF
+    function addPreloader() {
+      if (!document.querySelector('#preloader')) {
+        const preloaderHTML = '<img id="preloader" src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif" />';
+        document.querySelector('#questions').innerHTML = preloaderHTML;
+      }
+    }
+
+    //  Remove preloader when done
+    function removePreloader() {
+      const preloader = document.querySelector('#preloader');
+      if (preloader) {
+        preloader.remove();
+      }
+    }
+
+    const container = document.getElementById("questions");
+
+    //  Start by showing preloader
+    addPreloader();
+
+    fetch("https://api.stackexchange.com/2.3/questions?order=desc&sort=month&tagged=javascript&site=stackoverflow")
+      .then(response => response.json())
+      .then(data => {
+        removePreloader(); //  Hide loader
+
+        data.items.forEach(question => {
+          const div = document.createElement("div");
+          div.className = "question";
+          div.innerHTML = `
+            <a href="${question.link}" target="_blank">${question.title}</a>
+            <div class="score">Score: ${question.score}</div>
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(error => {
+        removePreloader();
+        container.innerHTML = " Failed to load questions.";
+        console.error(error);
+      });
+  </script>
+
+</body>
+</html>

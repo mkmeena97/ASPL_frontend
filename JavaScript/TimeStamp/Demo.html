@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timestamp Benchmark Demo</title>
+  <style>
+    body { font-family: monospace; background: #f4f4f4; padding: 20px; }
+    button { padding: 10px 20px; font-size: 16px; }
+    pre { background: #fff; padding: 15px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+
+  <h2>⏳ Task Benchmark</h2>
+  <button onclick="benchmarkTask()">Run Benchmark</button>
+
+  <pre id="output">Press the button to begin...</pre>
+
+  <script>
+    function getHighResTimestamp() {
+      if (typeof performance !== "undefined" && performance.now) {
+        //High-resolution timestamp
+        return performance.now(); // in milliseconds with sub-millisecond precision
+      }
+      //Low-resolution + Legacy fallback
+      return new Date().getTime(); // legacy fallback (ms since epoch)
+    }
+
+    function getTimestampInSeconds() {
+      //Timestamp in seconds (UNIX timestamp)
+      return Math.floor(Date.now() / 1000);
+    }
+
+    function heavyTask() {
+      // Simulate a heavy operation like sorting large data
+      const arr = Array.from({ length: 500000 }, () => Math.random());
+      arr.sort();
+    }
+
+    function benchmarkTask() {
+      const output = document.getElementById('output');
+      
+      // Record start time (high-res if possible)
+      const start = getHighResTimestamp();
+      const startSeconds = getTimestampInSeconds();
+
+      heavyTask();
+
+      const end = getHighResTimestamp();
+      const endSeconds = getTimestampInSeconds();
+
+      const duration = (end - start).toFixed(3); // Keep precision
+
+      output.innerText = `
+Benchmark Results:
+
+Start Time       : ${start} ms
+End Time         : ${end} ms
+Execution Time   : ${duration} ms
+
+Start Timestamp  : ${startSeconds} seconds (Unix)
+End Timestamp    : ${endSeconds} seconds (Unix)
+
+High-res used?   : ${typeof performance !== "undefined" && performance.now ? "✅ Yes" : "❌ No (using fallback)"}
+      `.trim();
+    }
+  </script>
+
+</body>
+</html>
