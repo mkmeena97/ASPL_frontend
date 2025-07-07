@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Feature Detection</title></head>
+<body>
+  <script>
+    if ('geolocation' in navigator) {
+      document.body.innerText = "✅ Geolocation is supported!";
+    } else {
+      document.body.innerText = "❌ Geolocation is NOT supported.";
+    }
+  </script>
+</body>
+</html>

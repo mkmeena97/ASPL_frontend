@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vibration Support Check</title>
+</head>
+<body>
+  <h1>📱 Vibration Support</h1>
+  <p id="support"></p>
+
+  <script>
+    const el = document.getElementById("support");
+    if ("vibrate" in navigator) {
+      el.textContent = "✅ Your device supports the Vibration API!";
+    } else {
+      el.textContent = "❌ Vibration API not supported.";
+    }
+  </script>
+</body>
+</html>

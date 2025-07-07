@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Abstract Factory</title></head>
+<body>
+  <script>
+    function carFactory() {
+      return {
+        create: () => ({ type: 'Car', wheels: 4 })
+      };
+    }
+
+    function bikeFactory() {
+      return {
+        create: () => ({ type: 'Bike', wheels: 2 })
+      };
+    }
+
+    function vehicleProducer(type) {
+      return type === "car" ? carFactory() : bikeFactory();
+    }
+
+    const vehicle = vehicleProducer("bike").create();
+    document.body.innerText = `Type: ${vehicle.type}, Wheels: ${vehicle.wheels}`; // Type: Bike, Wheels: 2
+  </script>
+</body>
+</html>

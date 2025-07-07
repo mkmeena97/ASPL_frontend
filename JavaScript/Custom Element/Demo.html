@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom Elements Demo</title>
+</head>
+<body>
+    <!-- Extended native element -->
+    <button is="fancy-button">Fancy Button</button>
+
+    <!-- Autonomous custom element -->
+    <my-element></my-element>
+
+    <!-- Dynamic attribute handling -->
+    <color-box color="green"></color-box>
+
+    <!-- Shadow DOM example -->
+    <shadow-element></shadow-element>
+
+    <script>
+        // 1. Extending native elements
+        class FancyButton extends HTMLButtonElement {
+            constructor() {
+                super();
+                this.style.backgroundColor = "gold";
+            }
+        }
+        customElements.define("fancy-button", FancyButton, { extends: "button" });
+
+        // 2. Registering new elements
+        class MyElement extends HTMLElement {
+            constructor() {
+                super();
+                this.innerHTML = "<p>Hello, Custom Element!</p>";
+            }
+        }
+        customElements.define("my-element", MyElement);
+
+        // 3. Attribute handling
+        class ColorBox extends HTMLElement {
+            static get observedAttributes() { return ["color"]; }
+            attributeChangedCallback(name, oldVal, newVal) {
+                if (name === "color") this.style.backgroundColor = newVal;
+            }
+        }
+        customElements.define("color-box", ColorBox);
+
+        // 4. Shadow DOM
+        class ShadowElement extends HTMLElement {
+            constructor() {
+                super();
+                const shadow = this.attachShadow({ mode: "open" });
+                shadow.innerHTML = `<p>Shadow DOM content</p>`;
+            }
+        }
+        customElements.define("shadow-element", ShadowElement);
+    </script>
+</body>
+</html>

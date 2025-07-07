@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Delay Function Demo</title>
+</head>
+<body>
+  <h2> Delay Function Demo</h2>
+  <div id="log"></div>
+
+  <script>
+    //  Universal delay function
+    function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    //  Helper to log messages to the DOM
+    function log(msg) {
+      const div = document.getElementById("log");
+      div.innerHTML += `<p>${new Date().toLocaleTimeString()}: ${msg}</p>`;
+    }
+
+    // Example using async/await
+    async function runSteps() {
+      log("Step 1: Start loading...");
+      await delay(1000);
+
+      log("Step 2: Still loading...");
+      await delay(1000);
+
+      log("Step 3: Almost done...");
+      await delay(1000);
+
+      log(" Step 4: Loaded successfully!");
+    }
+
+    // Also showing .then() chaining
+    delay(500).then(() => {
+      log(" Chained .then(): This runs before async steps.");
+      runSteps(); // start async steps
+    });
+  </script>
+</body>
+</html>

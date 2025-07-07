@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Full Date & Time</title>
+</head>
+<body>
+  <h2>🕒 Full Date & Time with Time Zone</h2>
+  <pre id="fullTime"></pre>
+
+  <script>
+    const output = document.getElementById("fullTime");
+
+    const now = new Date();
+
+    const formatter = new Intl.DateTimeFormat("en-IN", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+      timeZoneName: "short"
+    });
+
+    output.textContent = formatter.format(now);
+  </script>
+</body>
+</html>

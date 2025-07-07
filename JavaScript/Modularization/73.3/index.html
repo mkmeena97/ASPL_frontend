@@ -1,0 +1,22 @@
+<!-- 73.3-iife.html -->
+<!DOCTYPE html>
+<html>
+<head><title>IIFE Module</title></head>
+<body>
+  <h2>⚡ IIFE Module Pattern</h2>
+  <p id="iife-output"></p>
+
+  <script>
+    const IIFE_Module = (function() {
+      const privateVar = "🔒 Hidden";
+      return {
+        publicMethod: function() {
+          return "Using IIFE! " + privateVar;
+        }
+      };
+    })();
+
+    document.getElementById("iife-output").textContent = IIFE_Module.publicMethod();
+  </script>
+</body>
+</html>

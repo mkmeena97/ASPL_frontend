@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency Formatting</title>
+</head>
+<body>
+  <h2>Currency Formatting</h2>
+  <script>
+    const amount = 123456.78;
+
+    console.log("💵 USD:", new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount));
+    console.log("🇮🇳 INR:", new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(amount));
+    console.log("💶 EUR:", new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(amount));
+  </script>
+</body>
+</html>

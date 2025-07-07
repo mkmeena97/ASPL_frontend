@@ -1,0 +1,18 @@
+<!-- sender.html -->
+<!DOCTYPE html>
+<html>
+<head><title>PostMessage Sender</title></head>
+<body>
+  <h2>📤 Sender Page</h2>
+  <button onclick="sendMessage()">Send Message</button>
+
+  <iframe id="receiverFrame" src="http://127.0.0.1:5501/receiver.html" width="400" height="200"></iframe>
+
+  <script>
+    function sendMessage() {
+      const iframe = document.getElementById("receiverFrame");
+      iframe.contentWindow.postMessage("Hello from Sender!", "http://127.0.0.1:5501");
+    }
+  </script>
+</body>
+</html>

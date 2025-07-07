@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="placeholder.jpg" data-src="big-image.jpg" class="lazy" />
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const lazyImages = document.querySelectorAll("img.lazy");
+    lazyImages.forEach(img => {
+      img.src = img.dataset.src;
+    });
+  });
+</script>
+
+</body>
+</html>

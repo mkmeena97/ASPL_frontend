@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency Formatting</title>
+</head>
+<body>
+  <h2>💵 Currency Format</h2>
+  <pre id="currency"></pre>
+
+  <script>
+    const currency = document.getElementById("currency");
+
+    const price = 9876543.21;
+
+    const currencies = [
+      { locale: "en-US", currency: "USD" },
+      { locale: "ja-JP", currency: "JPY" },
+      { locale: "en-IN", currency: "INR" },
+      { locale: "fr-FR", currency: "EUR" },
+    ];
+
+    let result = "";
+
+    currencies.forEach(({ locale, currency: curr }) => {
+      const formatter = new Intl.NumberFormat(locale, {
+        style: "currency",
+        currency: curr
+      });
+      result += `${locale} - ${curr}: ${formatter.format(price)}\n`;
+    });
+
+    currency.textContent = result;
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffe5b4;
+  text-align: center;
+  padding: 50px;
+}
+
+h1 {
+  color: #d62828;
+  font-size: 2.5rem;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  background-color: #f77f00;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #f48c06;
+}
+
+#orderPanel {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff3e0;
+  border: 2px dashed #d62828;
+  border-radius: 12px;
+}
+
+#orderPanel h2 {
+  color: #6a040f;
+}
+
+#pizzaOrder {
+  font-size: 1.3rem;
+  color: #370617;
+}
+
+#makePizzaPanel {
+  margin-top: 25px;
+  padding: 15px;
+  background-color: #fff8dc;
+  border: 2px solid #f77f00;
+  border-radius: 12px;
+}
+
+#makePizzaPanel button {
+  margin: 5px;
+  padding: 10px 20px;
+}
+
+#deliveryPanel {
+  margin-top: 30px;
+  background-color: #e0ffe0;
+  padding: 20px;
+  border: 2px solid #28a745;
+  border-radius: 10px;
+}

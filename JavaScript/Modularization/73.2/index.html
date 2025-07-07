@@ -1,0 +1,29 @@
+<!-- 73.2-umd.html -->
+<!DOCTYPE html>
+<html>
+<head><title>UMD Example</title></head>
+<body>
+  <h2>🌐 UMD Module</h2>
+  <p id="output"></p>
+
+  <script>
+    (function (root, factory) {
+      if (typeof define === 'function' && define.amd) {
+        define([], factory);
+      } else if (typeof module === 'object' && module.exports) {
+        module.exports = factory();
+      } else {
+        root.myModule = factory();
+      }
+    }(this, function () {
+      return {
+        greet: function (name) {
+          return "Hello " + name;
+        }
+      };
+    }));
+
+    document.getElementById("output").textContent = myModule.greet("Rajeshwari");
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>requestIdleCallback Demo</title>
+</head>
+<body>
+  <h2>⏳ Check Console for Idle Callback</h2>
+
+  <script>
+    console.log("🔥 Main thread running...");
+
+    requestIdleCallback((deadline) => {
+      console.log("😌 Browser is idle, let's do some light work...");
+
+      while (deadline.timeRemaining() > 0) {
+        console.log(`🕒 Time left: ${Math.floor(deadline.timeRemaining())}ms`);
+      }
+
+      console.log("✅ Finished light work during idle time.");
+    });
+
+    console.log("🛠️ Main thread still busy with other work...");
+
+    //For unsupported browsers, fall back to setTimeout:
+    window.requestIdleCallback = window.requestIdleCallback || function (cb) {
+  return setTimeout(() => {
+    const start = Date.now();
+    cb({
+      didTimeout: false,
+      timeRemaining: () => Math.max(0, 50 - (Date.now() - start))
+    });
+  }, 1);
+};
+
+  </script>
+</body>
+</html>

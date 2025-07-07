@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Advanced Try/Catch</title></head>
+<body>
+  <script>
+    try {
+      console.log("1️⃣ Start risky code");
+      riskyCode(); // Not defined
+      console.log("2️⃣ This will never run");
+    } catch (error) {
+      console.error("🧯 Caught:", error.message);
+    } finally {
+      console.log("✅ Cleanup/Always runs");
+    }
+  </script>
+</body>
+</html>

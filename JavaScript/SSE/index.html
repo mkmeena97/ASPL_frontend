@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Server-Sent Events</title>
+</head>
+<body>
+  <h2>📡 Live Clock</h2>
+  <div id="clock">⌛ Waiting for time...</div>
+
+  <script>
+    const eventSource = new EventSource("http://localhost:3000/events");
+
+    eventSource.onmessage = function (event) {
+      document.getElementById("clock").textContent = `⏰ ${event.data}`;
+    };
+
+    eventSource.onerror = function () {
+      document.getElementById("clock").textContent = "❌ Connection lost";
+    };
+  </script>
+</body>
+</html>

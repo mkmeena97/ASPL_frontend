@@ -1,0 +1,25 @@
+<!-- custom-button.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Custom Button Element</title>
+</head>
+<body>
+
+<button is="fancy-button">Click Me!</button>
+
+<script>
+  class FancyButton extends HTMLButtonElement {
+    constructor() {
+      super();
+      this.style.color = 'white';
+      this.style.backgroundColor = 'purple';
+      this.style.borderRadius = '10px';
+    }
+  }
+
+  customElements.define('fancy-button', FancyButton, { extends: 'button' });
+</script>
+
+</body>
+</html>

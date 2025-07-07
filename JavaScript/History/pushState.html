@@ -1,0 +1,18 @@
+<!-- pushState.html -->
+<!DOCTYPE html>
+<html>
+<body>
+  <button onclick="goToProfile()">Go to Profile</button>
+
+  <script>
+    function goToProfile() {
+      history.pushState({ page: "profile" }, "Profile Page", "?page=profile");
+      document.body.innerHTML += "<p>You’re on the profile page!</p>";
+    }
+
+    window.addEventListener("popstate", function(event) {
+      alert("⬅️ Back button was pressed!");
+    });
+  </script>
+</body>
+</html>

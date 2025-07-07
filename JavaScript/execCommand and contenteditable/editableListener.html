@@ -1,0 +1,13 @@
+<!-- editableListener.html -->
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="editor" contenteditable="true">Edit me!</div>
+
+  <script>
+    document.getElementById("editor").addEventListener("input", (e) => {
+      console.log("Content changed to:", e.target.innerText);
+    });
+  </script>
+</body>
+</html>

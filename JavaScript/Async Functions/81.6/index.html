@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parallel Async/Await</title>
+</head>
+<body>
+  <h2>⚡ Parallel Data Fetch</h2>
+  <button onclick="runParallel()">Start Parallel</button>
+
+  <script>
+    function fakeFetch(msg, delay) {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          console.log(msg + " ✅");
+          resolve(msg);
+        }, delay);
+      });
+    }
+
+    async function runParallel() {
+      console.time("⏱️ Parallel Time");
+
+      const promise1 = fakeFetch("Fetching Pizza", 2000);
+      const promise2 = fakeFetch("Fetching Burger", 1000);
+      const promise3 = fakeFetch("Fetching Fries", 1500);
+
+      const results = await Promise.all([promise1, promise2, promise3]);
+
+      console.log("🍽️ All food ready:", results);
+      console.timeEnd("⏱️ Parallel Time");
+    }
+  </script>
+</body>
+</html>

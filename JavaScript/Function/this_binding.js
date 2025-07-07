@@ -13,7 +13,7 @@ const user = {
   }
 };
 
-user.greet(); // Hello Tez ✅
+user.greet(); // Hello Tez
 
 
 //Problem: Losing this
@@ -31,8 +31,8 @@ function greet(greeting) {
 
 const person = { name: "Tez" };
 
-greet.call(person, "Hi");   // Hi, Tez ✅
-greet.apply(person, ["Hey"]); // Hey, Tez ✅
+greet.call(person, "Hi");   // Hi, Tez 
+greet.apply(person, ["Hey"]); // Hey, Tez 
 
 
 //Arrow functions don't have their own this — they inherit it from the parent scope:

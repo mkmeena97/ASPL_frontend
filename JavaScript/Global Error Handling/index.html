@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Global Error Handler</title>
+</head>
+<body>
+  <script>
+    // Global error handler
+    window.onerror = function (message, source, lineno, colno, error) {
+      console.error("🚨 Global Error Caught!");
+      console.log("🧾 Message:", message);
+      console.log("📁 Source:", source);
+      console.log("📍 Line:", lineno, "Column:", colno);
+      console.log("💥 Error Object:", error);
+
+      // Optional: Send error info to server
+      /*
+      fetch('/log-error', {
+        method: 'POST',
+        body: JSON.stringify({ message, source, lineno, colno }),
+        headers: { 'Content-Type': 'application/json' }
+      });
+      */
+
+      // Return true to suppress default error alert (optional)
+      return true;
+    };
+
+    // Trigger a runtime error
+    notDefinedFunction(); // BOOM! 💣
+
+    // This works for uncaught runtime errors only.
+
+    // window.onerror won't catch syntax errors or CORS errors.
+
+    // For Promise rejections, use:
+    window.onunhandledrejection = e => {
+         console.warn("⚠️ Unhandled Promise rejection:", e.reason);
+    };
+
+  </script>
+</body>
+</html>

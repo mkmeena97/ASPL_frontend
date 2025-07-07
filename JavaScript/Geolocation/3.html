@@ -1,0 +1,49 @@
+<!-- 71.3-location-error-handling.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Location Error Handling</title>
+</head>
+<body>
+  <h2>🧭 Try to get your location</h2>
+  <button onclick="locateUser()">Locate Me</button>
+  <p id="status">Waiting...</p>
+
+  <script>
+    function locateUser() {
+      const status = document.getElementById("status");
+
+      if (!navigator.geolocation) {
+        status.textContent = "❌ Geolocation not supported.";
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        pos => {
+          const { latitude, longitude } = pos.coords;
+          status.textContent = `✅ Latitude: ${latitude}, Longitude: ${longitude}`;
+        },
+        error => {
+          let message = "";
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              message = "User denied the request for Geolocation.";
+              break;
+            case error.POSITION_UNAVAILABLE:
+              message = "Location information is unavailable.";
+              break;
+            case error.TIMEOUT:
+              message = "The request to get user location timed out.";
+              break;
+            case error.UNKNOWN_ERROR:
+              message = "An unknown error occurred.";
+              break;
+          }
+          status.textContent = `⚠️ ${message}`;
+        }
+      );
+    }
+  </script>
+</body>
+</html>

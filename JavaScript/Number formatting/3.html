@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date Formatting</title>
+</head>
+<body>
+  <h2>Date Formatting</h2>
+  <script>
+    const now = new Date();
+
+    console.log("🇺🇸 US Date:", new Intl.DateTimeFormat('en-US').format(now));
+    console.log("🇬🇧 UK Date:", new Intl.DateTimeFormat('en-GB').format(now));
+    console.log("🇯🇵 Japanese Date:", new Intl.DateTimeFormat('ja-JP').format(now));
+  </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Promise Error Handling</title></head>
+<body>
+  <script>
+    function riskyOperation() {
+      return new Promise((_, reject) => {
+        setTimeout(() => reject(new Error("⛔ Operation failed")), 1000);
+      });
+    }
+
+    riskyOperation()
+      .then(result => console.log(result))
+      .catch(error => console.error("❌ Caught:", error.message));
+  </script>
+</body>
+</html>

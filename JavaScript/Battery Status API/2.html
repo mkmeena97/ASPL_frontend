@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Battery Monitor</title>
+</head>
+<body>
+  <h1>📉 Live Battery Level</h1>
+  <p id="status">Loading...</p>
+
+  <script>
+    if ("getBattery" in navigator) {
+      navigator.getBattery().then(function(battery) {
+        function updateStatus() {
+          const level = Math.round(battery.level * 100);
+          const charging = battery.charging ? "⚡ Charging" : "🔌 Not Charging";
+          document.getElementById("status").innerText = `Battery: ${level}% - ${charging}`;
+        }
+
+        updateStatus();
+
+        battery.addEventListener("levelchange", updateStatus);
+        battery.addEventListener("chargingchange", updateStatus);
+      });
+    } else {
+      document.getElementById("status").innerText = "Battery API not available ⚠️";
+    }
+  </script>
+</body>
+</html>

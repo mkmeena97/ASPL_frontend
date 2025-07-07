@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tilde (~) Operator - All in One Demo</title>
+</head>
+<body>
+  <h2>🌀 Open the console to see all the ~ action</h2>
+
+  <script>
+    console.log("👉 ~ INTEGER (Section 86.1)");
+    console.log("~5:", ~5);       // -6
+    console.log("~0:", ~0);       // -1
+    console.log("~(-1):", ~(-1)); // 0
+    console.log("---------------------------");
+
+    console.log("👉 ~~ DOUBLE TILDE (Section 86.2)");
+    console.log("~~5.9:", ~~5.9);     // 5
+    console.log("~~-3.14:", ~~(-3.14)); // -3
+    console.log("---------------------------");
+
+    console.log("👉 ~~ CONVERT NON-NUMERIC VALUES (Section 86.3)");
+    console.log('~~"42":', ~~"42");         // 42
+    console.log('~~"Rajesh":', ~~"Rajesh"); // 0
+    console.log("~~null:", ~~null);         // 0
+    console.log("~~undefined:", ~~undefined); // 0
+    console.log("---------------------------");
+
+    console.log("👉 ~ SHORTHAND for Array.indexOf (Section 86.4)");
+    const fruits = ["apple", "banana", "cherry"];
+    if (~fruits.indexOf("banana")) {
+      console.log("✅ Banana found");
+    } else {
+      console.log("❌ Banana not found");
+    }
+
+    if (~fruits.indexOf("grape")) {
+      console.log("✅ Grape found");
+    } else {
+      console.log("❌ Grape not found");
+    }
+    console.log("---------------------------");
+
+    console.log("👉 ~ DECIMAL (Section 86.5)");
+    console.log("~5.6:", ~5.6);     // -6
+    console.log("~(-1.2):", ~(-1.2)); // 0
+    console.log("~NaN:", ~NaN);     // -1
+    console.log("---------------------------");
+
+    console.log("✅ Tilde (~) Madness Complete!");
+  </script>
+</body>
+</html>

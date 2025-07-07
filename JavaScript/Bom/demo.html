@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BOM Demo</title>
+</head>
+<body>
+    <h1>Browser Object Model (BOM) Examples</h1>
+    <button onclick="showWindowSize()">Window Size</button>
+    <button onclick="redirectToGoogle()">Go to Google</button>
+    <button onclick="startTimer()">Start Timer</button>
+
+    <script>
+        // 1. Window properties
+        function showWindowSize() {
+            alert(`Viewport: ${window.innerWidth} x ${window.innerHeight}`);
+        }
+
+        // 2. Location (redirect)
+        function redirectToGoogle() {
+            window.location.href = "https://google.com";
+        }
+
+        // 3. Timer
+        function startTimer() {
+            let count = 0;
+            const timer = setInterval(() => {
+                console.log(`Interval: ${++count}`);
+                if (count >= 5) clearInterval(timer);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

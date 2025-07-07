@@ -1,0 +1,21 @@
+<!-- imageToBinary.html -->
+<!DOCTYPE html>
+<html>
+<body>
+<input type="file" id="upload" />
+<script>
+  document.getElementById('upload').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+      const arrayBuffer = event.target.result;
+      const byteArray = new Uint8Array(arrayBuffer);
+      console.log("Binary data:", byteArray);
+    };
+
+    reader.readAsArrayBuffer(file);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- 71.1-watch-location.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Location Tracker</title>
+</head>
+<body>
+  <h2>📍 Live Location Updates</h2>
+  <p id="output">Waiting for location...</p>
+
+  <script>
+    const output = document.getElementById("output");
+
+    if ("geolocation" in navigator) {
+      navigator.geolocation.watchPosition(
+        position => {
+          const { latitude, longitude } = position.coords;
+          output.textContent = `Latitude: ${latitude.toFixed(4)}, Longitude: ${longitude.toFixed(4)}`;
+        },
+        error => {
+          output.textContent = `⚠️ Error: ${error.message}`;
+        },
+        { enableHighAccuracy: true }
+      );
+    } else {
+      output.textContent = "❌ Geolocation not supported by your browser.";
+    }
+  </script>
+</body>
+</html>

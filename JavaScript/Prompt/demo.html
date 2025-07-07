@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Account Deletion Flow</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 30px;
+      background-color: antiquewhite;
+    }
+    #status {
+      margin-top: 20px;
+      padding: 10px;
+      border: 2px dashed #999;
+      background: #58dacf;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: rgb(88, 88, 232);
+    }
+  </style>
+</head>
+<body>
+
+  <h2> Danger Zone</h2>
+  <p>Click the button to delete your account.</p>
+  <button onclick="deleteAccount()">Delete Account</button>
+
+  <div id="status">Status: Account is active </div>
+
+  <script>
+    function deleteAccount() {
+      // Step 1: Confirm deletion
+      const confirmDelete = confirm("Are you sure you want to delete your account? This action is irreversible!");
+
+      if (!confirmDelete) {
+        alert("Phew! Account deletion canceled.");
+        return;
+      }
+
+      // Step 2: Ask why (optional input)
+      const reason = prompt("Please tell us why you're leaving (optional):", "No longer needed");
+
+      // Step 3: Final alert with reason
+      if (reason === null) {
+        alert("Deletion cancelled because you closed the prompt.");
+        return;
+      }
+
+      // Step 4: Actually 'delete' (simulate it)
+      document.getElementById("status").textContent = "Status: Account deleted ";
+      alert("Your account has been deleted.\nReason: " + reason);
+    }
+  </script>
+
+</body>
+</html>

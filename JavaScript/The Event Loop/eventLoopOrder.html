@@ -1,0 +1,24 @@
+<!-- eventLoopOrder.html -->
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Event Loop Execution Order</h2>
+  <pre id="output"></pre>
+
+  <script>
+    const log = [];
+
+    console.log("Start");
+
+    setTimeout(() => log.push("⏰ setTimeout - Macrotask"), 0);
+
+    Promise.resolve().then(() => log.push("✅ Promise - Microtask"));
+
+    log.push("🧠 Synchronous code");
+
+    setTimeout(() => {
+      document.getElementById("output").textContent = log.join('\n');
+    }, 10);
+  </script>
+</body>
+</html>

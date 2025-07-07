@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Short Date Formats</title>
+</head>
+<body>
+  <h2>📆 Short Date Styles</h2>
+  <pre id="short"></pre>
+
+  <script>
+    const output = document.getElementById("short");
+
+    const today = new Date();
+
+    const styles = ["full", "long", "medium", "short"];
+
+    let result = "";
+
+    styles.forEach(style => {
+      const formatter = new Intl.DateTimeFormat("en-US", {
+        dateStyle: style,
+        timeStyle: style
+      });
+      result += `${style}: ${formatter.format(today)}\n`;
+    });
+
+    output.textContent = result;
+  </script>
+</body>
+</html>

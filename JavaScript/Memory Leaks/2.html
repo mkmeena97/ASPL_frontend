@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>🎯 Event Listener Leak Fix</h3>
+  <button id="attach">Attach</button>
+  <button id="detach">Detach</button>
+
+  <script>
+    const button = document.getElementById("attach");
+    const detach = document.getElementById("detach");
+
+    function leakyHandler() {
+      console.log("Still listening...");
+    }
+
+    button.onclick = () => {
+      document.addEventListener("click", leakyHandler);
+      console.log("🔗 Attached!");
+    };
+
+    detach.onclick = () => {
+      document.removeEventListener("click", leakyHandler);
+      console.log("🧼 Detached!");
+    };
+  </script>
+</body>
+</html>

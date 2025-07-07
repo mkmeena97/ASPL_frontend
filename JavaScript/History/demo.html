@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History API Demo</title>
+</head>
+<body>
+    <h1>History API Examples</h1>
+    <button onclick="pushNewState()">Push New State</button>
+    <button onclick="replaceCurrentState()">Replace State</button>
+    <button onclick="goBack()">Go Back</button>
+    <button onclick="goForward()">Go Forward</button>
+
+    <script>
+        function pushNewState() {
+            history.pushState({ page: 1 }, "", "/page1");
+            console.log("Pushed: /page1");
+        }
+
+        function replaceCurrentState() {
+            history.replaceState({ page: 2 }, "", "/page2");
+            console.log("Replaced with: /page2");
+        }
+
+        function goBack() {
+            history.back();
+        }
+
+        function goForward() {
+            history.forward();
+        }
+
+        // Listen for back/forward navigation
+        window.addEventListener("popstate", (e) => {
+            console.log("Navigated to:", location.pathname, "State:", e.state);
+        });
+    </script>
+</body>
+</html>

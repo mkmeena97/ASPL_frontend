@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Async/Await Intro</title>
+</head>
+<body>
+  <h1>⏳ Async Function Test</h1>
+  <button onclick="start()">Start</button>
+
+  <script>
+    async function start() {
+      console.log("1️⃣ Before await");
+
+      const result = await new Promise(resolve => {
+        setTimeout(() => resolve("✅ Done waiting!"), 2000);
+      });
+
+      console.log("2️⃣ After await:", result);
+    }
+  </script>
+</body>
+</html>

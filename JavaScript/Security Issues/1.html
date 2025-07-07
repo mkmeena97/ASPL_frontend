@@ -1,0 +1,17 @@
+<!-- reflected-xss.html -->
+<!DOCTYPE html>
+<html>
+<head><title>Reflected XSS Demo</title></head>
+<body>
+  <h2>Search Result:</h2>
+  <p id="output"></p>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const query = params.get("q");
+
+    // UNSAFE: directly writing user input to DOM (XSS vulnerability)
+    document.getElementById("output").innerHTML = `You searched for: ${query}`;
+  </script>
+</body>
+</html>

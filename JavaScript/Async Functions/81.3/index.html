@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Async vs Promise</title>
+</head>
+<body>
+  <h1>⚖️ Async vs Promise</h1>
+  <button onclick="runBoth()">Run Demo</button>
+
+  <script>
+    // Simulates a delayed fetch
+    function fetchDataPromiseStyle() {
+      return new Promise((resolve) => {
+        setTimeout(() => resolve("🔥 Data from Promise"), 1000);
+      });
+    }
+
+    // Promise Chain Style
+    function usingPromise() {
+      fetchDataPromiseStyle()
+        .then(data => {
+          console.log("Promise style:", data);
+        })
+        .catch(err => console.error("Promise Error:", err));
+    }
+
+    // Async/Await Style
+    async function usingAsyncAwait() {
+      try {
+        const data = await fetchDataPromiseStyle();
+        console.log("Async/Await style:", data);
+      } catch (err) {
+        console.error("Async/Await Error:", err);
+      }
+    }
+
+    // Run both for comparison
+    function runBoth() {
+      usingPromise();
+      usingAsyncAwait();
+    }
+  </script>
+</body>
+</html>

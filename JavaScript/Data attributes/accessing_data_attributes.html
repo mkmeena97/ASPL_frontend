@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Attributes POC</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    #userInfo { padding: 10px; border: 1px solid #ccc; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <div id="userBox" data-user-id="007" data-role="fullstack" data-name="Rajeshwari"></div>
+
+  <div id="userInfo"></div>
+
+  <script>
+    // 🎯 Access the element
+    const userElement = document.getElementById("userBox");
+
+    // 📦 Grab data-* attributes
+    const userId = userElement.dataset.userId;
+    const userRole = userElement.dataset.role;
+    const userName = userElement.dataset.name;
+
+    // 📢 Output to console
+    console.log("User ID:", userId);
+    console.log("User Role:", userRole);
+    console.log("User Name:", userName);
+
+    // 💡 Show it on the page
+    const display = `
+      <h2>User Info</h2>
+      <p><strong>ID:</strong> ${userId}</p>
+      <p><strong>Name:</strong> ${userName}</p>
+      <p><strong>Role:</strong> ${userRole}</p>
+    `;
+    document.getElementById("userInfo").innerHTML = display;
+  </script>
+
+</body>
+</html>

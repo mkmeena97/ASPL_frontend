@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><title>Singleton Pattern</title></head>
+<body>
+  <script>
+    const Singleton = (function () {
+      let instance;
+
+      function createInstance() {
+        return { id: Math.random() };
+      }
+
+      return {
+        getInstance() {
+          if (!instance) {
+            instance = createInstance();
+          }
+          return instance;
+        }
+      };
+    })();
+
+    const a = Singleton.getInstance();
+    const b = Singleton.getInstance();
+    document.body.innerText = `Same instance: ${a.id === b.id}`; // true
+  </script>
+</body>
+</html>

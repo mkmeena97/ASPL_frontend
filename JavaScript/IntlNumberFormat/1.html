@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Intl.NumberFormat Demo</title>
+</head>
+<body>
+  <h2>🌐 Locale-Based Number Formatting</h2>
+  <pre id="output"></pre>
+
+  <script>
+    const output = document.getElementById("output");
+
+    const number = 1234567.89;
+
+    const formats = [
+      { locale: "en-US", label: "🇺🇸 US" },
+      { locale: "de-DE", label: "🇩🇪 Germany" },
+      { locale: "hi-IN", label: "🇮🇳 India" },
+      { locale: "ja-JP", label: "🇯🇵 Japan" },
+    ];
+
+    let result = "";
+
+    formats.forEach(({ locale, label }) => {
+      const formatted = new Intl.NumberFormat(locale).format(number);
+      result += `${label} (${locale}): ${formatted}\n`;
+    });
+
+    output.textContent = result;
+  </script>
+</body>
+</html>

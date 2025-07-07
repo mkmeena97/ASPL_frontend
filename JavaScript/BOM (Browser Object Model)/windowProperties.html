@@ -1,0 +1,23 @@
+<!-- windowProperties.html -->
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Window Properties</h2>
+  <pre id="output"></pre>
+
+  <script>
+    const props = {
+      innerWidth: window.innerWidth,
+      innerHeight: window.innerHeight,
+      outerWidth: window.outerWidth,
+      outerHeight: window.outerHeight,
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+      screenX: window.screenX,
+      screenY: window.screenY,
+    };
+
+    document.getElementById("output").textContent = JSON.stringify(props, null, 2);
+  </script>
+</body>
+</html>

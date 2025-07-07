@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Memory Management Demo</title>
+</head>
+<body>
+  <h1>🧠 Memory Management</h1>
+  <button id="leak">Simulate Leak</button>
+  <button id="fix">Fix Leak</button>
+
+  <script>
+    let leakyArray = [];
+
+    document.getElementById("leak").onclick = function () {
+      // ⚠️ Memory leak: elements never released
+      for (let i = 0; i < 10000; i++) {
+        leakyArray.push(() => console.log(i));
+      }
+      alert("🛑 Leak simulated!");
+    };
+
+    document.getElementById("fix").onclick = function () {
+      // 🧹 Release references
+      leakyArray = null;
+      alert("✅ Memory cleaned up!");
+    };
+  </script>
+</body>
+</html>

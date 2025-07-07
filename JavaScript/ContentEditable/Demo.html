@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>execCommand & contenteditable Example</title>
+    <style>
+        #editableDiv {
+            border: 1px solid #ccc;
+            padding: 10px;
+            min-height: 100px;
+            margin-bottom: 10px;
+        }
+        button {
+            margin-right: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rich Text Editor with Clipboard Copy</h1>
+    
+    <!-- Editable Area -->
+    <div id="editableDiv" contenteditable="true">Edit this text and try formatting!</div>
+    
+    <!-- Formatting Buttons -->
+    <button onclick="formatText('bold')">Bold</button>
+    <button onclick="formatText('italic')">Italic</button>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    
+    <script>
+        // Applies formatting (bold/italic) to selected text
+        function formatText(command) {
+            document.execCommand(command, false, null);
+        }
+
+        // Copies the content of the editable div to clipboard
+        function copyToClipboard() {
+            const editableDiv = document.getElementById('editableDiv');
+            
+            // Create a temporary textarea to hold the text
+            const textarea = document.createElement('textarea');
+            textarea.value = editableDiv.innerText; // Use innerText to avoid HTML tags
+            document.body.appendChild(textarea);
+            
+            // Select and copy the text
+            textarea.select();
+            document.execCommand('copy');
+            
+            // Remove the textarea
+            document.body.removeChild(textarea);
+            
+            alert('Copied to clipboard!');
+        }
+    </script>
+</body>
+</html>

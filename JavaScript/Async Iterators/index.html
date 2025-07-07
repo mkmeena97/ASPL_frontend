@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Async Iterator Demo</title>
+</head>
+<body>
+  <h2>🔁 Async Iterator Output</h2>
+  <pre id="output"></pre>
+
+  <script>
+    // Simulate an async data stream
+    async function* asyncCounter(limit) {
+      for (let i = 1; i <= limit; i++) {
+        await new Promise(resolve => setTimeout(resolve, 1000)); // simulate delay
+        yield `⏳ Value ${i}`;
+      }
+    }
+
+    async function run() {
+      const output = document.getElementById("output");
+
+      for await (const value of asyncCounter(5)) {
+        console.log(value);
+        output.textContent += value + '\n';
+      }
+
+      output.textContent += "✅ All done!";
+    }
+
+    run();
+  </script>
+</body>
+</html>

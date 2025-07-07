@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOMParser Example</title>
+</head>
+<body>
+  <h1>📜 Parse HTML String</h1>
+  <div id="output"></div>
+
+  <script>
+    const htmlString = `
+      <div class="card">
+        <h2>Hello from HTML string 👋</h2>
+        <p>This was parsed using DOMParser!</p>
+      </div>
+    `;
+
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlString, "text/html");
+
+    const parsedElement = doc.body.firstChild;
+    document.getElementById("output").appendChild(parsedElement);
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Percent Format</title>
+</head>
+<body>
+  <h2>📊 Percent Formatting</h2>
+  <pre id="percent"></pre>
+
+  <script>
+    const percent = document.getElementById("percent");
+
+    const values = [0.25, 0.5, 0.99];
+
+    let result = values.map(value =>
+      new Intl.NumberFormat("en-US", { style: "percent", maximumFractionDigits: 1 }).format(value)
+    ).join("\n");
+
+    percent.textContent = result;
+  </script>
+</body>
+</html>

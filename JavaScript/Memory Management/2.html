@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><title>Avoid Memory Leak</title></head>
+<body>
+  <h2>🚿 Clean Listener Demo</h2>
+  <button id="start">Add Listener</button>
+  <button id="stop">Remove Listener</button>
+
+  <script>
+    const startBtn = document.getElementById("start");
+    const stopBtn = document.getElementById("stop");
+
+    function clickHandler() {
+      console.log("Clicked!");
+    }
+
+    startBtn.addEventListener("click", () => {
+      document.addEventListener("click", clickHandler);
+      console.log("📌 Listener attached");
+    });
+
+    stopBtn.addEventListener("click", () => {
+      document.removeEventListener("click", clickHandler);
+      console.log("🧹 Listener removed");
+    });
+  </script>
+</body>
+</html>

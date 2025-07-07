@@ -1,0 +1,11 @@
+<!-- clickHandlerExample.html -->
+<button>Click 0</button>
+<button>Click 1</button>
+<script>
+  const buttons = document.querySelectorAll("button");
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", () => {
+      alert(`Button ${i} clicked`);
+    });
+  }
+</script>

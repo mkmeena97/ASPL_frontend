@@ -1,0 +1,17 @@
+<!-- copyToClipboard.html -->
+<!DOCTYPE html>
+<html>
+<body>
+  <textarea id="text">Copy this text!</textarea>
+  <button onclick="copyText()">Copy</button>
+
+  <script>
+    function copyText() {
+      const textarea = document.getElementById("text");
+      textarea.select();
+      document.execCommand("copy");
+      alert("Text copied!");
+    }
+  </script>
+</body>
+</html>

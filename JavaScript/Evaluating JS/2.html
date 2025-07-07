@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Evaluation Methods</title>
+</head>
+<body>
+  <h2>🚀 JavaScript Evaluation Demo</h2>
+  <script>
+    const code = "2 + 2";
+
+    // eval() - executes in current scope
+    const evalResult = eval(code);
+    console.log("eval:", evalResult); // 4
+
+    // Function constructor - creates a new scope
+    const funcResult = new Function(`return ${code}`)();
+    console.log("Function constructor:", funcResult); // 4
+
+    // But note: variables defined inside Function do NOT leak
+    const testEval = () => {
+      eval("var a = 123");
+      console.log("eval a =", a); // 123
+    };
+
+    const testFunc = () => {
+      const f = new Function("var b = 456; return b;");
+      console.log("function b =", f()); // 456
+      // console.log(b); // ❌ ReferenceError: b is not defined
+    };
+
+    testEval();
+    testFunc();
+  </script>
+</body>
+</html>

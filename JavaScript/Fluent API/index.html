@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fluent API - HTML Builder</title>
+  <style>
+    article {
+      border: 2px dashed purple;
+      padding: 1em;
+      margin: 1em;
+      background-color: lavender;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="container"></div>
+
+  <script>
+    // Fluent API for building HTML
+    class ArticleBuilder {
+      constructor() {
+        this.article = document.createElement('article');
+      }
+
+      withTitle(title) {
+        const h2 = document.createElement('h2');
+        h2.textContent = title;
+        this.article.appendChild(h2);
+        return this;
+      }
+
+      withAuthor(author) {
+        const p = document.createElement('p');
+        p.textContent = `Written by ${author}`;
+        this.article.appendChild(p);
+        return this;
+      }
+
+      withContent(content) {
+        const div = document.createElement('div');
+        div.innerHTML = content;
+        this.article.appendChild(div);
+        return this;
+      }
+
+      build() {
+        return this.article;
+      }
+    }
+
+    // Usage
+    const container = document.getElementById('container');
+    const article = new ArticleBuilder()
+      .withTitle("🔥 Fluent API in JavaScript")
+      .withAuthor("Rajeshwari")
+      .withContent("<p>This article is built using a chained API style. It's super readable and fun!</p>")
+      .build();
+
+    container.appendChild(article);
+  </script>
+
+</body>
+</html>

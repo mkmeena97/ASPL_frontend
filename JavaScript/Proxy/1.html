@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>Proxy Lookup</title></head>
+<body>
+  <h2>🕵️ Proxying Property Lookup</h2>
+  <pre id="out"></pre>
+
+  <script>
+    const target = {
+      name: "Rajeshwari",
+      role: "Dev Intern"
+    };
+
+    const handler = {
+      get: function (obj, prop) {
+        if (prop in obj) {
+          return obj[prop];
+        } else {
+          return `⚠️ Property "${prop}" not found.`;
+        }
+      }
+    };
+
+    const proxy = new Proxy(target, handler);
+
+    const log = [
+      proxy.name,               // Rajeshwari
+      proxy.role,               // Dev Intern
+      proxy.missingProperty     // ⚠️ Property "missingProperty" not found.
+    ].join('\n');
+
+    document.getElementById("out").textContent = log;
+  </script>
+</body>
+</html>

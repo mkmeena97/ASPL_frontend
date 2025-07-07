@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ASI Demo</title>
+</head>
+<body>
+  <h1>Check Console for ASI demo</h1>
+  <script>
+    function risky() {
+      return
+      {
+        name: "Rajeshwari"
+      };
+    }
+
+    function safe() {
+      return {
+        name: "Rajeshwari"
+      };
+    }
+
+    console.log("❌ Risky return gives:", risky());
+    console.log("✅ Safe return gives:", safe());
+  </script>
+</body>
+</html>

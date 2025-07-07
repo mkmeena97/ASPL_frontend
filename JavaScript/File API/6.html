@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>📥 Download CSV using Blob</title>
+</head>
+<body>
+  <h2>Generate and Download CSV</h2>
+  <button id="downloadBtn">Download CSV</button>
+
+  <script>
+    document.getElementById("downloadBtn").addEventListener("click", function () {
+      const headers = "Name,Email,Age\n";
+      const rows = [
+        "Rajeshwari,rajes@example.com,23",
+        "Tabbu,tabbu@example.com,25",
+        "Chintu,chintu@example.com,30"
+      ];
+      const csvContent = headers + rows.join("\n");
+
+      const blob = new Blob([csvContent], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "users.csv";
+      a.click();
+
+      URL.revokeObjectURL(url); // cleanup
+    });
+  </script>
+</body>
+</html>

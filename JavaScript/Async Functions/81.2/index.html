@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Await Precedence</title>
+</head>
+<body>
+  <h1>🔢 Await with Operators</h1>
+  <button onclick="run()">Run</button>
+
+  <script>
+    async function getNumber() {
+      return 10;
+    }
+
+    async function run() {
+      const result1 = await getNumber() + 5; // ❌ Mistake: await only applies to getNumber()
+      console.log("Wrong way result:", result1); // Might log: [object Promise]5
+
+      const result2 = await (getNumber()) + 5; // ✅ Correct: parentheses fix it
+      console.log("Correct result:", result2); // 15
+    }
+    
+  </script>
+</body>
+</html>

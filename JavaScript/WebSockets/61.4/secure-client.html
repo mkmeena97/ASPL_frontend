@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Secure WebSocket Client</title>
+</head>
+<body>
+  <h3>🔐 Secure WebSocket Client</h3>
+  <input id="msg" placeholder="Type message..." />
+  <button onclick="sendMessage()">Send</button>
+  <pre id="log"></pre>
+
+  <script>
+    // Use wss instead of ws
+    const socket = new WebSocket('wss://localhost:8443');
+
+    socket.onopen = () => log("🟢 Connected securely.");
+    socket.onmessage = e => log(`Server: ${e.data}`);
+    socket.onerror = e => log(`❌ WebSocket error: ${e.message}`);
+    
+    function sendMessage() {
+      const msg = document.getElementById('msg').value;
+      socket.send(msg);
+      log(`You: ${msg}`);
+    }
+
+    function log(text) {
+      document.getElementById('log').textContent += text + "\n";
+    }
+  </script>
+</body>
+</html>

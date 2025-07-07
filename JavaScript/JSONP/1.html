@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSONP Demo</title>
+</head>
+<body>
+  <h1>👩‍💻 JSONP Response:</h1>
+  <pre id="output">Waiting for data...</pre>
+
+  <script>
+    function callbackFunc(data) {
+      document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://example.com/jsonp-endpoint?callback=callbackFunc";
+    document.body.appendChild(script);
+  </script>
+</body>
+</html>

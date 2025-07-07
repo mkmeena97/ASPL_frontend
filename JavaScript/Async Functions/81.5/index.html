@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Less Indentation</title>
+</head>
+<body>
+  <h1>📉 Less Indentation Example</h1>
+  <button onclick="runTasks()">Run</button>
+
+  <script>
+    function task(msg, delayMs) {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          console.log(msg);
+          resolve(msg);
+        }, delayMs);
+      });
+    }
+
+    // 👇 Flat and readable
+    async function runTasks() {
+      await task("Step 1: Starting engine 🚗", 1000);
+      await task("Step 2: Loading fuel ⛽", 1000);
+      await task("Step 3: Vroom vroom 🏎️", 1000);
+      console.log("All tasks done! ✅");
+    }
+  </script>
+</body>
+</html>

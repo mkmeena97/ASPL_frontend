@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Symbol.for()</title></head>
+<body>
+  <script>
+    const globalSym1 = Symbol.for("shared");
+    const globalSym2 = Symbol.for("shared");
+
+    console.log("Are both Symbols same?", globalSym1 === globalSym2); // true
+
+    document.body.innerText = "✔️ Symbol.for() returns same global symbol. Check console.";
+  </script>
+</body>
+</html>

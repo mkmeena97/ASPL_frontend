@@ -1,0 +1,8 @@
+Stepping through code
+While paused in DevTools:
+
+▶️ Step over (F10) – run the next line
+
+↪️ Step into (F11) – go inside the function
+
+⬆️ Step out (Shift+F11) – jump out of current function

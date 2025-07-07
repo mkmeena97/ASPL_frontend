@@ -1,0 +1,38 @@
+<!-- 72.3-get-data.html -->
+<!DOCTYPE html>
+<html>
+<head><title>Read User</title></head>
+<body>
+  <h2>🔍 Get User</h2>
+  <button onclick="getUser()">Fetch User with ID = 1</button>
+  <p id="result"></p>
+
+  <script>
+    const request = indexedDB.open("MyDB", 1);
+    let db;
+
+    request.onsuccess = function(event) {
+      db = event.target.result;
+    };
+
+    function getUser() {
+      const tx = db.transaction("users", "readonly");
+      const store = tx.objectStore("users");
+
+      const getReq = store.get(1);
+
+      getReq.onsuccess = function() {
+        if (getReq.result) {
+          document.getElementById("result").textContent = `👤 Name: ${getReq.result.name}, Role: ${getReq.result.role}`;
+        } else {
+          document.getElementById("result").textContent = "❌ No user found.";
+        }
+      };
+
+      getReq.onerror = function() {
+        document.getElementById("result").textContent = "⚠️ Failed to retrieve user.";
+      };
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎨 CSS Variables + JS</title>
+  <style>
+    :root {
+      --main-color: teal;
+    }
+
+    body {
+      background-color: var(--main-color);
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      margin-top: 2rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔧 Manipulate CSS Variables with JS</h1>
+  <p>Current theme color: <span id="color-value"></span></p>
+
+  <button onclick="changeColor()">Change Color 🎨</button>
+
+  <script>
+    const root = document.documentElement;
+    const colorSpan = document.getElementById('color-value');
+
+    // Read current variable
+    function getCurrentColor() {
+      const color = getComputedStyle(root).getPropertyValue('--main-color').trim();
+      colorSpan.textContent = color;
+    }
+
+    // Set a new color
+    function changeColor() {
+      const colors = ['crimson', 'rebeccapurple', 'mediumseagreen', 'orangered', 'royalblue'];
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      root.style.setProperty('--main-color', randomColor);
+      getCurrentColor(); // Update display
+    }
+
+    // Initial load
+    getCurrentColor();
+  </script>
+
+</body>
+</html>

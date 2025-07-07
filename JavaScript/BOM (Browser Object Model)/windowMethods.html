@@ -1,0 +1,30 @@
+<!-- windowMethods.html -->
+<!DOCTYPE html>
+<html>
+<body>
+  <button onclick="openPopup()">Open Popup</button>
+  <button onclick="showAlert()">Alert</button>
+  <button onclick="askConfirm()">Confirm</button>
+  <button onclick="askPrompt()">Prompt</button>
+
+  <script>
+    function openPopup() {
+      window.open("https://www.google.com", "_blank", "width=600,height=400");
+    }
+
+    function showAlert() {
+      alert("Hello from BOM!");
+    }
+
+    function askConfirm() {
+      const result = confirm("Do you like JavaScript?");
+      alert("You clicked: " + (result ? "Yes" : "No"));
+    }
+
+    function askPrompt() {
+      const name = prompt("What's your name?");
+      alert("Hello, " + name + "!");
+    }
+  </script>
+</body>
+</html>

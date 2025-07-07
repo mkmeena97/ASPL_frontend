@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🎲 Cryptographic Random Numbers</title>
+</head>
+<body>
+  <h2>Get Secure Random Numbers</h2>
+  <button onclick="generateRandom()">Generate</button>
+  <pre id="output"></pre>
+
+  <script>
+    function generateRandom() {
+      const array = new Uint32Array(5);
+      window.crypto.getRandomValues(array);
+      document.getElementById('output').textContent = `Random Numbers: ${array.join(', ')}`;
+    }
+  </script>
+</body>
+</html>

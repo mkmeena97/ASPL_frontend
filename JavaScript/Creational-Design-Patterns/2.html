@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>Factory with Composition</title></head>
+<body>
+  <script>
+    const talk = state => ({
+      talk: () => `My name is ${state.name}`
+    });
+
+    const sleep = state => ({
+      sleep: () => `${state.name} is sleeping...`
+    });
+
+    function createRobot(name) {
+      const state = { name };
+      return Object.assign({}, talk(state), sleep(state));
+    }
+
+    const bot = createRobot("Robo");
+    document.body.innerText = `${bot.talk()} | ${bot.sleep()}`;
+  </script>
+</body>
+</html>

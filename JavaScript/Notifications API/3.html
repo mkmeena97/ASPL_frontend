@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>⏱️ Auto-Close Notification</title>
+</head>
+<body>
+  <h2>Auto-close Notification Demo</h2>
+  <button onclick="showAutoCloseNotif()">Show Notification</button>
+
+  <script>
+    function showAutoCloseNotif() {
+      if (Notification.permission === "granted") {
+        const notif = new Notification("⏰ Timed Notification", {
+          body: "This will close in 5 seconds.",
+        });
+
+        setTimeout(() => {
+          notif.close();
+          console.log("🔒 Notification closed manually");
+        }, 5000);
+      } else {
+        alert("Please allow notifications first.");
+      }
+    }
+  </script>
+</body>
+</html>

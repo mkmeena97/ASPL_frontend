@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vibration Pattern</title>
+</head>
+<body>
+  <h1>💥 Vibration Pattern</h1>
+  <button onclick="vibratePattern()">Start Pattern</button>
+
+  <script>
+    function vibratePattern() {
+      // vibrate 300ms, pause 200ms, vibrate 500ms
+      navigator.vibrate([300, 200, 500]);
+    }
+  </script>
+</body>
+</html>

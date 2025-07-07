@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Child Iframe</title>
+</head>
+<body>
+  <h2>👶 I am the iframe</h2>
+
+  <script>
+    // Send message to parent
+    window.parent.postMessage("👋 Hello from child!", "*");
+
+    window.addEventListener("message", function (event) {
+      console.log("📨 Message from parent:", event.data);
+    });
+  </script>
+</body>
+</html>

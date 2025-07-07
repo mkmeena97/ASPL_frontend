@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Symbol Basics</title></head>
+<body>
+  <script>
+    const sym1 = Symbol();
+    const sym2 = Symbol("desc");
+
+    console.log("Symbol 1:", sym1);
+    console.log("Symbol 2 with description:", sym2);
+    console.log("Symbol === Symbol:", sym1 === sym2); // false
+
+    document.body.innerText = "✔️ Symbol created and logged in console.";
+  </script>
+</body>
+</html>

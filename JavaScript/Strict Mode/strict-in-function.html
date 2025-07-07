@@ -1,0 +1,14 @@
+<!-- strict-in-function.html -->
+<script>
+  function sloppy() {
+    x = 42; // Allowed, creates global variable
+  }
+
+  function strict() {
+    "use strict";
+    y = 99; // ❌ Error
+  }
+
+  sloppy();
+  strict();
+</script>

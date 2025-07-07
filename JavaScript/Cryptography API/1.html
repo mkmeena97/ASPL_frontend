@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SHA-256 Hash Example</title>
+</head>
+<body>
+  <h2>🔐 SHA-256 Digest Generator</h2>
+  <input type="text" id="textInput" placeholder="Enter text">
+  <button onclick="generateHash()">Hash it</button>
+  <p><strong>SHA-256:</strong> <span id="output"></span></p>
+
+  <script>
+    async function generateHash() {
+      const text = document.getElementById('textInput').value;
+      const encoder = new TextEncoder();
+      const data = encoder.encode(text);
+
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+      document.getElementById('output').textContent = hashHex;
+    }
+  </script>
+</body>
+</html>

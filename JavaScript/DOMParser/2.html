@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOMParser XML</title>
+</head>
+<body>
+  <h1>📄 Parse XML</h1>
+  <p id="data"></p>
+
+  <script>
+    const xmlString = `
+      <note>
+        <to>Rajeshwari</to>
+        <from>ChatGPT</from>
+        <message>You're rocking this training! 🚀</message>
+      </note>
+    `;
+
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlString, "application/xml");
+
+    const to = xmlDoc.querySelector("to").textContent;
+    const from = xmlDoc.querySelector("from").textContent;
+    const message = xmlDoc.querySelector("message").textContent;
+
+    document.getElementById("data").innerText = `To: ${to}, From: ${from}, Message: "${message}"`;
+  </script>
+</body>
+</html>

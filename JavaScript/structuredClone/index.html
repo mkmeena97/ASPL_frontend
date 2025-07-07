@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>structuredClone Demo</title>
+</head>
+<body>
+  <h2>🔁 Check the console for deep clone output</h2>
+
+  <script>
+    const original = {
+      name: "Rajeshwari",
+      skills: ["JS", "Spring", "React"],
+      map: new Map([["key", "value"]]),
+      set: new Set([1, 2, 3]),
+      nested: {
+        date: new Date(),
+        regex: /hello/i,
+      }
+    };
+
+    // Add circular reference 🔁
+    original.self = original;
+
+    const clone = structuredClone(original);
+
+    console.log("🧬 Original:", original);
+    console.log("🧬 Clone:", clone);
+
+    // Test independence
+    clone.skills.push("Next.js");
+    console.log("🆚 Are they independent?", original.skills, clone.skills);
+  </script>
+</body>
+</html>

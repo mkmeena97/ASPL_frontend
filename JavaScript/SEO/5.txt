@@ -1,0 +1,8 @@
+ Lazy Load Wisely
+Don’t lazy-load content you want indexed (like your top products or hero banners).
+
+Either:
+
+Make sure they’re in the initial DOM
+
+Or serve them via SSR

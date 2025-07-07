@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>🔔 Request Notification Permission</title>
+</head>
+<body>
+  <h2>🔔 Notification Permission</h2>
+  <button onclick="askPermission()">Request Permission</button>
+
+  <script>
+    function askPermission() {
+      if (!("Notification" in window)) {
+        alert("Your browser does not support notifications 😢");
+        return;
+      }
+
+      Notification.requestPermission().then(permission => {
+        alert("Permission status: " + permission);
+      });
+    }
+  </script>
+</body>
+</html>

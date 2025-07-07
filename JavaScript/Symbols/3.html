@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Symbol to String</title></head>
+<body>
+  <script>
+    const sym = Symbol("convertMe");
+
+    // Use toString() or description
+    const str1 = sym.toString();       // "Symbol(convertMe)"
+    const str2 = sym.description;      // "convertMe"
+
+    console.log("Using toString:", str1);
+    console.log("Using description:", str2);
+
+    document.body.innerText = `Symbol description: ${str2}`;
+  </script>
+</body>
+</html>

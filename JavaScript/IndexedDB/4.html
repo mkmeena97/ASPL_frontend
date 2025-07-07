@@ -1,0 +1,19 @@
+<!-- 72.4-indexeddb-check.html -->
+<!DOCTYPE html>
+<html>
+<head><title>Check IndexedDB</title></head>
+<body>
+  <h2>🔎 IndexedDB Availability Check</h2>
+  <p id="output"></p>
+
+  <script>
+    const output = document.getElementById("output");
+
+    if (!window.indexedDB) {
+      output.textContent = "❌ IndexedDB is NOT supported in this browser.";
+    } else {
+      output.textContent = "✅ IndexedDB is supported.";
+    }
+  </script>
+</body>
+</html>

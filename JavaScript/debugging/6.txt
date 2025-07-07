@@ -1,0 +1,8 @@
+Elements inspector
+Inspect and modify HTML live:
+
+Right-click any DOM element → Inspect
+
+Edit attributes, styles, and classes live
+
+Super useful for front-end layout & style debugging

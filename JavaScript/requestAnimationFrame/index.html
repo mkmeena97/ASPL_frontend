@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>requestAnimationFrame Demo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+    #fadeBox, #moveBox {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 1rem;
+    }
+    #fadeBox {
+      background-color: red;
+      opacity: 0;
+    }
+    #moveBox {
+      background-color: blue;
+      position: relative;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>requestAnimationFrame Examples</h2>
+
+  <div id="fadeBox"></div>
+  <button id="startFade">Fade In</button>
+
+  <div id="moveBox"></div>
+  <button id="startMove">Move Box</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🧮 Math Evaluator</title>
+</head>
+<body>
+  <h2>🧠 Evaluate Math Expression</h2>
+  <input id="expr" placeholder="e.g. (5 + 2) * 10" />
+  <button onclick="calculate()">Calculate</button>
+  <p id="result">Result: </p>
+
+  <script>
+    function calculate() {
+      const expression = document.getElementById("expr").value;
+      try {
+        // Basic sanitization: Allow only numbers, operators, parentheses, and dots
+        if (/^[0-9+\-*/().\s]+$/.test(expression)) {
+          const result = eval(expression);
+          document.getElementById("result").textContent = `Result: ${result}`;
+        } else {
+          throw new Error("Invalid characters detected!");
+        }
+      } catch (e) {
+        document.getElementById("result").textContent = `❌ Error: ${e.message}`;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>📲 Notification Events</title>
+</head>
+<body>
+  <h2>Notification Events Demo</h2>
+  <button onclick="showEventNotif()">Fire Notification</button>
+
+  <script>
+    function showEventNotif() {
+      if (Notification.permission === "granted") {
+        const notif = new Notification("📡 You clicked me!", {
+          body: "Click to open Google!",
+        });
+
+        notif.onclick = () => {
+          console.log("✅ Notification clicked");
+          window.open("https://www.google.com", "_blank");
+        };
+
+        notif.onclose = () => console.log("❌ Notification closed");
+        notif.onerror = () => console.log("💥 Notification error");
+        notif.onshow = () => console.log("📢 Notification shown");
+      } else {
+        alert("Please allow notifications first.");
+      }
+    }
+  </script>
+</body>
+</html>

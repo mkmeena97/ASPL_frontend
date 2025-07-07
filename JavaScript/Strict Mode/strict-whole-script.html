@@ -1,0 +1,21 @@
+<!-- strict-whole-script.html -->
+<script>
+  "use strict";
+
+  // Without strict mode, this would silently create a global variable
+  myVar = 10; // ❌ Error in strict mode
+</script>
+<script>
+  "use strict";
+
+  // This will throw an error in strict mode
+  function myFunction() {
+    undeclaredVar = 20; // ❌ Error: undeclaredVar is not defined
+  }
+
+  try {
+    myFunction();
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+</script>

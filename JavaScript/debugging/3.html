@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Track Property Changes</title></head>
+<body>
+  <script>
+    let _score = 0;
+    const player = {
+      get score() {
+        return _score;
+      },
+      set score(value) {
+        console.log("🔁 Score changed to:", value);
+        _score = value;
+      }
+    };
+
+    player.score = 100;
+    player.score = 200;
+  </script>
+</body>
+</html>

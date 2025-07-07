@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Single Vibration</title>
+</head>
+<body>
+  <h1>🔔 Single Vibration</h1>
+  <button onclick="vibrateOnce()">Vibrate</button>
+
+  <script>
+    function vibrateOnce() {
+      if (navigator.vibrate) {
+        navigator.vibrate(1000); // vibrates for 1 second
+      } else {
+        alert("Vibration API not supported on this device!");
+      }
+    }
+  </script>
+</body>
+</html>

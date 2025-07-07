@@ -1,0 +1,35 @@
+<!-- 72.2-add-object.html -->
+<!DOCTYPE html>
+<html>
+<head><title>Add Data</title></head>
+<body>
+  <h2>➕ Add User</h2>
+  <button onclick="addUser()">Add Dummy User</button>
+  <p id="status">Waiting...</p>
+
+  <script>
+    const request = indexedDB.open("MyDB", 1);
+
+    let db;
+    request.onsuccess = function(event) {
+      db = event.target.result;
+    };
+
+    function addUser() {
+      const tx = db.transaction("users", "readwrite");
+      const store = tx.objectStore("users");
+      const user = { id: 1, name: "Rajeshwari", role: "Developer" };
+
+      const addReq = store.add(user);
+
+      addReq.onsuccess = () => {
+        document.getElementById("status").textContent = "✅ User added!";
+      };
+
+      addReq.onerror = () => {
+        document.getElementById("status").textContent = "❌ Failed to add user.";
+      };
+    }
+  </script>
+</body>
+</html>

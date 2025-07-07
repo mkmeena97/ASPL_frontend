@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🔍 Text Selection API</title>
+</head>
+<body>
+  <h2>Select any text below and click the button</h2>
+  <p>
+    JavaScript is the language of the web, powering everything from tiny to-do apps to full-blown games.
+  </p>
+
+  <button onclick="getSelectedText()">Get Selected Text</button>
+  <p><strong>You selected:</strong> <span id="output">nothing yet</span></p>
+
+  <script>
+    function getSelectedText() {
+      const selectedText = window.getSelection().toString();
+      document.getElementById("output").textContent = selectedText || 'nothing';
+    }
+  </script>
+</body>
+</html>

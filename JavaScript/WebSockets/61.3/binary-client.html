@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Binary WebSocket</title>
+</head>
+<body>
+  <h2>Send File over WebSocket</h2>
+  <input type="file" id="fileInput" />
+  <button onclick="sendFile()">Send File</button>
+  <p id="status"></p>
+
+  <script>
+    const socket = new WebSocket('ws://localhost:8081');
+
+    socket.onopen = () => {
+      document.getElementById('status').textContent = '🟢 Connected';
+    };
+
+    socket.onmessage = event => {
+      document.getElementById('status').textContent = `✅ Server says: ${event.data}`;
+    };
+
+    function sendFile() {
+      const fileInput = document.getElementById('fileInput');
+      if (fileInput.files.length === 0) {
+        alert('Please choose a file first!');
+        return;
+      }
+
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        socket.send(reader.result);
+      };
+
+      reader.readAsArrayBuffer(file);
+    }
+  </script>
+</body>
+</html>

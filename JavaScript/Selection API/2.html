@@ -1,0 +1,9 @@
+<button onclick="clearSelection()">Clear Selection ❌</button>
+
+<script>
+  function clearSelection() {
+    if (window.getSelection) {
+      window.getSelection().removeAllRanges();
+    }
+  }
+</script>

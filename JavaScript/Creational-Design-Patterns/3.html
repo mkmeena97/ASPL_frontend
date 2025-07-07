@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Revealing Module Pattern</title></head>
+<body>
+  <script>
+    const counterModule = (function () {
+      let count = 0;
+      function increment() { count++; }
+      function getCount() { return count; }
+
+      return {
+        increment,
+        getCount
+      };
+    })();
+
+    counterModule.increment();
+    counterModule.increment();
+    document.body.innerText = `Count: ${counterModule.getCount()}`; // Count: 2
+  </script>
+</body>
+</html>

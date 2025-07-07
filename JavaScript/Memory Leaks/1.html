@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>DOM Leak Example</title></head>
+<body>
+  <button id="create">Create Leaky Elements</button>
+  <button id="clean">Clean Up</button>
+
+  <script>
+    let leakedElements = [];
+
+    document.getElementById("create").onclick = function () {
+      const div = document.createElement("div");
+      div.innerText = "I am a leaky div!";
+      document.body.appendChild(div);
+      
+      // ❌ Still referenced after removal
+      leakedElements.push(div);
+      document.body.removeChild(div);
+    };
+
+    document.getElementById("clean").onclick = function () {
+      leakedElements = null; // ✅ Let garbage collector do its thing
+      console.log("🧹 Cleaned up");
+    };
+  </script>
+</body>
+</html>

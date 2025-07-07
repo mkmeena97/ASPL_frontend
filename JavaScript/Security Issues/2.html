@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>Persistent XSS</title></head>
+<body>
+  <h2>📝 Comment Box</h2>
+  <textarea id="comment" rows="4" cols="40" placeholder="Enter comment"></textarea><br>
+  <button onclick="saveComment()">Save</button>
+  <h3>📋 Saved Comments</h3>
+  <div id="comments"></div>
+
+  <script>
+    function saveComment() {
+      const comment = document.getElementById("comment").value;
+      localStorage.setItem("comment", comment);
+      location.reload();
+    }
+
+    const saved = localStorage.getItem("comment");
+    if (saved) {
+      // 🔥 UNSAFE display of stored user input
+      document.getElementById("comments").innerHTML = saved;
+    }
+  </script>
+</body>
+</html>

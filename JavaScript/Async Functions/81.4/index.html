@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Async Loop</title>
+</head>
+<body>
+  <h1>🔄 Async Loop with await</h1>
+  <button onclick="runAsyncLoop()">Start Loop</button>
+
+  <script>
+    function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function runAsyncLoop() {
+      const items = ['🍕', '🍔', '🌮', '🥗'];
+
+      console.log("Start Loop");
+
+      for (const item of items) {
+        await delay(1000); // wait 1 sec between items
+        console.log("Item:", item);
+      }
+
+      console.log("Loop Finished ✅");
+    }
+  </script>
+</body>
+</html>

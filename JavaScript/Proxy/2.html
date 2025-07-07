@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head><title>Proxy Set</title></head>
+<body>
+  <h2>🛡️ Intercepting Property Set</h2>
+  <pre id="output"></pre>
+
+  <script>
+    const user = {
+      name: "Raj"
+    };
+
+    const handler = {
+      set: function (obj, prop, value) {
+        if (typeof value === 'string' && value.trim() !== '') {
+          obj[prop] = value;
+          return true;
+        } else {
+          throw new Error(`❌ Invalid value for ${prop}`);
+        }
+      }
+    };
+
+    const proxyUser = new Proxy(user, handler);
+
+    let results = [];
+
+    try {
+      proxyUser.name = "Rajeshwari"; // OK
+      results.push(`✅ name set to: ${proxyUser.name}`);
+      proxyUser.role = ""; // Fails
+    } catch (e) {
+      results.push(e.message);
+    }
+const safeUser = new Proxy({}, {
+  get: (obj, prop) => prop in obj ? obj[prop] : "🚫 Not available",
+  set: (obj, prop, value) => {
+    if (typeof value === 'string' && value.length > 0) {
+      obj[prop] = value;
+      return true;
+    }
+    console.warn(`Invalid value for "${prop}"`);
+    return false;
+  }
+});
+
+safeUser.name = "Raje";
+safeUser.age = ""; // Invalid
+
+console.log(safeUser.name); // Raje
+console.log(safeUser.age);  // 🚫 Not available
+
+    document.getElementById("output").textContent = results.join('\n');
+  </script>
+</body>
+</html>

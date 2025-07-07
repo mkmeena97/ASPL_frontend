@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Eval JSON Injection</title></head>
+<body>
+  <h2>🚨 Eval Vulnerability</h2>
+  <script>
+    const userData = '{"name": "Rajeshwari", "role": "dev"}';
+
+    // DON'T DO THIS:
+    const obj = eval("(" + userData + ")");
+
+    console.log("User role:", obj.role);
+  </script>
+</body>
+</html>

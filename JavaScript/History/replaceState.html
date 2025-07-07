@@ -1,0 +1,14 @@
+<!-- replaceState.html -->
+<!DOCTYPE html>
+<html>
+<body>
+  <button onclick="updateState()">Update State</button>
+
+  <script>
+    function updateState() {
+      history.replaceState({ page: "updated" }, "Updated Page", "?page=updated");
+      document.body.innerHTML += "<p>URL updated with replaceState.</p>";
+    }
+  </script>
+</body>
+</html>

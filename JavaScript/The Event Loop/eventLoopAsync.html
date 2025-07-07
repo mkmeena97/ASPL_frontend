@@ -1,0 +1,23 @@
+<!-- eventLoopAsync.html -->
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Async/Await + Event Loop</h2>
+  <pre id="result"></pre>
+
+  <script>
+    const output = [];
+
+    async function asyncFunction() {
+      output.push("1️⃣ Async function start");
+      await new Promise(resolve => setTimeout(resolve, 0));
+      output.push("2️⃣ After await");
+      document.getElementById("result").textContent = output.join("\n");
+    }
+
+    output.push("0️⃣ Script start");
+    asyncFunction();
+    output.push("3️⃣ Script end");
+  </script>
+</body>
+</html>

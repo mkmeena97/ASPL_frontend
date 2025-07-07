@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>Error Types</title></head>
+<body>
+  <script>
+    try {
+      null.f(); // TypeError
+    } catch (e) {
+      console.log("📛 Type:", e.constructor.name); // TypeError
+    }
+
+    try {
+      eval("if)"); // SyntaxError
+    } catch (e) {
+      console.log("📛 Type:", e.constructor.name); // SyntaxError
+    }
+
+    try {
+      decodeURIComponent('%'); // URIError
+    } catch (e) {
+      console.log("📛 Type:", e.constructor.name); // URIError
+    }
+
+    try {
+      new Array(-1); // RangeError
+    } catch (e) {
+      console.log("📛 Type:", e.constructor.name); // RangeError
+    }
+  </script>
+</body>
+</html>

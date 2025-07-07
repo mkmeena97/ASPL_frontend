@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parent Window</title>
+</head>
+<body>
+  <h2>👨‍👧 Parent Window</h2>
+  <iframe src="child.html" width="400" height="200" id="childFrame"></iframe>
+
+  <script>
+    window.addEventListener("message", function (event) {
+      if (event.origin !== window.origin && event.data) {
+        console.log("📨 Message from child:", event.data);
+
+        // Send reply to child
+        const iframe = document.getElementById("childFrame");
+        iframe.contentWindow.postMessage("👋 Hello from parent!", "*");
+      }
+    });
+  </script>
+</body>
+</html>

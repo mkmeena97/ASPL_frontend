@@ -1,0 +1,27 @@
+<!-- 72.1-open-database.html -->
+<!DOCTYPE html>
+<html>
+<head><title>Open IndexedDB</title></head>
+<body>
+  <h2>📂 Open IndexedDB</h2>
+  <p id="status">Opening database...</p>
+
+  <script>
+    const request = indexedDB.open("MyDB", 1);
+
+    request.onupgradeneeded = function(event) {
+      const db = event.target.result;
+      db.createObjectStore("users", { keyPath: "id" });
+      console.log("🚀 Object store created.");
+    };
+
+    request.onsuccess = function() {
+      document.getElementById("status").textContent = "✅ Database opened successfully.";
+    };
+
+    request.onerror = function() {
+      document.getElementById("status").textContent = "❌ Failed to open database.";
+    };
+  </script>
+</body>
+</html>

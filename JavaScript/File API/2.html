@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>🖼️ Read Image as Data URL</title>
+</head>
+<body>
+  <h2>Upload and preview an image</h2>
+  <input type="file" id="imageInput" />
+  <br /><br />
+  <img id="preview" width="300" style="border:1px solid #ccc;" />
+
+  <script>
+    document.getElementById("imageInput").addEventListener("change", function() {
+      const file = this.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById("preview").src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  </script>
+</body>
+</html>

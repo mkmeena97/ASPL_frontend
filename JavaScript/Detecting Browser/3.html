@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Custom Feature Detection Library</title></head>
+<body>
+  <script>
+    const Features = {
+      localStorage: function () {
+        try {
+          localStorage.setItem('test', 'yes');
+          localStorage.removeItem('test');
+          return true;
+        } catch (e) {
+          return false;
+        }
+      },
+      serviceWorker: function () {
+        return 'serviceWorker' in navigator;
+      }
+    };
+
+    const results = `
+      Local Storage Supported: ${Features.localStorage()}
+      Service Worker Supported: ${Features.serviceWorker()}
+    `;
+
+    document.body.innerText = results;
+  </script>
+</body>
+</html>

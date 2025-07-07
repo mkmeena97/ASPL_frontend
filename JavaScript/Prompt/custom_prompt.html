@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Prompt Modal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .modal.hidden {
+      display: none;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px 25px;
+      border-radius: 10px;
+      min-width: 300px;
+      max-width: 90%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 8px 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .modal-buttons button {
+      padding: 8px 14px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    #submitBtn {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #cancelBtn {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="openModalBtn">Enter Name</button>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>What's your name?</h2>
+      <input type="text" id="nameInput" placeholder="Enter your name" />
+      <div class="modal-buttons">
+        <button id="cancelBtn">Cancel</button>
+        <button id="submitBtn">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("modal");
+    const openBtn = document.getElementById("openModalBtn");
+    const cancelBtn = document.getElementById("cancelBtn");
+    const submitBtn = document.getElementById("submitBtn");
+    const input = document.getElementById("nameInput");
+
+    openBtn.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+      input.value = "";
+      input.focus();
+    });
+
+    cancelBtn.addEventListener("click", () => {
+      modal.classList.add("hidden");
+    });
+
+    submitBtn.addEventListener("click", () => {
+      const name = input.value.trim();
+      if (!name) {
+        alert("Please enter a name.");
+        return;
+      }
+      modal.classList.add("hidden");
+      console.log("User entered:", name);
+      alert(`Hi, ${name}!`);
+    });
+  </script>
+
+</body>
+</html>

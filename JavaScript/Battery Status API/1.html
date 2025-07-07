@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Battery Status</title>
+</head>
+<body>
+  <h1>🔋 Battery Status</h1>
+  <p id="batteryLevel">Checking battery...</p>
+
+  <script>
+    if ("getBattery" in navigator) {
+      navigator.getBattery().then(function(battery) {
+        const level = Math.round(battery.level * 100);
+        const charging = battery.charging ? "⚡ Charging" : "🔌 Not Charging";
+
+        document.getElementById("batteryLevel").innerText = `Battery: ${level}% - ${charging}`;
+      });
+    } else {
+      document.getElementById("batteryLevel").innerText = "Battery API not supported 🔧";
+    }
+  </script>
+</body>
+</html>

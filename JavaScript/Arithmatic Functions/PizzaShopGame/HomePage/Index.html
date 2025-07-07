@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pizza Shop Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <body>
+  <h1>🍕 Welcome to Rajeshwari's Pizza Shop! 🍕</h1>
+  <button id="startGameBtn">Start Game</button>
+
+  <div id="orderPanel" style="display: none;">
+    <h2 id="customerName"></h2>
+    <p id="pizzaOrder"></p>
+    <button id="makePizzaBtn">Make Pizza</button>
+  </div>
+
+  <div id="makePizzaPanel" style="display: none;">
+    <h3>Make the Pizza 🍕</h3>
+    <p id="pizzaStatus">Status: Waiting to start...</p>
+    <button onclick="addSauce()">Add Sauce 🍅</button>
+    <button onclick="addCheese()">Add Cheese 🧀</button>
+    <button onclick="addTopping()">Add Topping 🌽</button>
+    <button onclick="bakePizza()">Bake Pizza 🔥</button>
+   </div>
+
+   <div id="deliveryPanel" style="display: none;">
+    <h3>🚚 Delivery in Progress...</h3>
+    <p id="deliveryMessage">Delivering pizza...</p>
+    <p id="customerFeedback"></p>
+    <button onclick="newOrder()">Serve Next Customer 🍽️</button>
+   </div>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</body>
+</html>

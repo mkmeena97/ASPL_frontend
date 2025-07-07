@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Performance Timing</title>
+</head>
+<body>
+  <h1>⏱ Code Execution Time</h1>
+  <p id="result"></p>
+
+  <script>
+    // Start measuring
+    performance.mark("start");
+
+    // 🧠 Expensive operation simulation
+    let sum = 0;
+    for (let i = 0; i < 1e6; i++) {
+      sum += i;
+    }
+
+    // End measuring
+    performance.mark("end");
+
+    // Measure the duration
+    performance.measure("sumLoopTime", "start", "end");
+
+    // Get the result
+    const measurement = performance.getEntriesByName("sumLoopTime")[0];
+    document.getElementById("result").innerText = `⏳ Loop took: ${measurement.duration.toFixed(2)} ms`;
+  </script>
+</body>
+</html>

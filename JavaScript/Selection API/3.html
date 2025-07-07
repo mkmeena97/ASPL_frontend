@@ -1,0 +1,15 @@
+<p id="copyMe">Click the button to select this text</p>
+<button onclick="selectText()">Select This Text</button>
+
+<script>
+  function selectText() {
+    const range = document.createRange();
+    const element = document.getElementById("copyMe");
+
+    range.selectNodeContents(element);
+
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+</script>

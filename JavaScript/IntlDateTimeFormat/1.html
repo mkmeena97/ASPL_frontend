@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date Formatting</title>
+</head>
+<body>
+  <h2>📅 Locale-based Date Formatting</h2>
+  <pre id="dates"></pre>
+
+  <script>
+    const output = document.getElementById("dates");
+
+    const date = new Date(2025, 6, 6); // July 6, 2025
+
+    const formats = [
+      { locale: "en-US", label: "🇺🇸 US" },
+      { locale: "en-GB", label: "🇬🇧 UK" },
+      { locale: "de-DE", label: "🇩🇪 Germany" },
+      { locale: "hi-IN", label: "🇮🇳 India" },
+      { locale: "ja-JP", label: "🇯🇵 Japan" },
+    ];
+
+    let result = "";
+
+    formats.forEach(({ locale, label }) => {
+      const formatted = new Intl.DateTimeFormat(locale).format(date);
+      result += `${label} (${locale}): ${formatted}\n`;
+    });
+
+    output.textContent = result;
+  </script>
+</body>
+</html>
