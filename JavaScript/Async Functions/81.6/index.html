@@ -5,21 +5,21 @@
   <title>Parallel Async/Await</title>
 </head>
 <body>
-  <h2>⚡ Parallel Data Fetch</h2>
+  <h2> Parallel Data Fetch</h2>
   <button onclick="runParallel()">Start Parallel</button>
 
   <script>
     function fakeFetch(msg, delay) {
       return new Promise(resolve => {
         setTimeout(() => {
-          console.log(msg + " ✅");
+          console.log(msg + " msg");
           resolve(msg);
         }, delay);
       });
     }
 
     async function runParallel() {
-      console.time("⏱️ Parallel Time");
+      console.time(" Parallel Time");
 
       const promise1 = fakeFetch("Fetching Pizza", 2000);
       const promise2 = fakeFetch("Fetching Burger", 1000);
@@ -27,8 +27,8 @@
 
       const results = await Promise.all([promise1, promise2, promise3]);
 
-      console.log("🍽️ All food ready:", results);
-      console.timeEnd("⏱️ Parallel Time");
+      console.log(" All food ready:", results);
+      console.timeEnd(" Parallel Time");
     }
   </script>
 </body>

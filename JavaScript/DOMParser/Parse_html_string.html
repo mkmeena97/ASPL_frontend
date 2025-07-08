@@ -4,13 +4,13 @@
   <title>DOMParser Example</title>
 </head>
 <body>
-  <h1>📜 Parse HTML String</h1>
+  <h1>Parse HTML String</h1>
   <div id="output"></div>
 
   <script>
     const htmlString = `
       <div class="card">
-        <h2>Hello from HTML string 👋</h2>
+        <h2>Hello from HTML string </h2>
         <p>This was parsed using DOMParser!</p>
       </div>
     `;
@@ -18,8 +18,13 @@
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlString, "text/html");
 
-    const parsedElement = doc.body.firstChild;
-    document.getElementById("output").appendChild(parsedElement);
+    // Ensure you get the actual element
+    const parsedElement = doc.body.firstElementChild;
+
+    // Clone it for safety
+    const clone = parsedElement.cloneNode(true);
+
+    document.getElementById("output").appendChild(clone);
   </script>
 </body>
 </html>

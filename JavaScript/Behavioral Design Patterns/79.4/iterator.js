@@ -1,6 +1,6 @@
 class NameCollection {
   constructor() {
-    this.names = ["Rajeshwari", "Aman", "Sita", "Rahul"];
+    this.names = ["Tez", "Tez", "Tilak", "Rahul"];
   }
 
   // Custom iterable using Symbol.iterator
@@ -27,6 +27,6 @@ function iterate() {
   const nameCollection = new NameCollection();
 
   for (let name of nameCollection) {
-    output.textContent += `👤 ${name}\n`;
+    output.textContent += ` ${name}\n`;
   }
 }

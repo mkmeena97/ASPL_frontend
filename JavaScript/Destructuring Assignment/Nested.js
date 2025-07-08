@@ -1,5 +1,5 @@
 const student = {
-  name: "Rajeshwari",
+  name: "Tez",
   marks: {
     math: 95,
     science: 90

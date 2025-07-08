@@ -4,7 +4,7 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     title: 'POC Masterpiece',
-    body: 'Rajeshwari is unstoppable!',
+    body: 'Tez is unstoppable!',
     userId: 99
   })
 })

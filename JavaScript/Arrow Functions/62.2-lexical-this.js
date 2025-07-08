@@ -1,6 +1,6 @@
 // 62.2-lexical-this.js
 const person = {
-  name: "Rajeshwari",
+  name: "Tez",
   greet: function () {
     setTimeout(() => {
       console.log(`Hello from ${this.name}`); // 'this' is lexically bound
@@ -8,4 +8,4 @@ const person = {
   },
 };
 
-person.greet(); // Output after 1s: Hello from Rajeshwari
+person.greet(); // Output after 1s: Hello from Tez

@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>🧮 Math Evaluator</title>
+  <title> Math Evaluator</title>
 </head>
 <body>
-  <h2>🧠 Evaluate Math Expression</h2>
+  <h2> Evaluate Math Expression</h2>
   <input id="expr" placeholder="e.g. (5 + 2) * 10" />
   <button onclick="calculate()">Calculate</button>
   <p id="result">Result: </p>
@@ -22,7 +22,7 @@
           throw new Error("Invalid characters detected!");
         }
       } catch (e) {
-        document.getElementById("result").textContent = `❌ Error: ${e.message}`;
+        document.getElementById("result").textContent = ` Error: ${e.message}`;
       }
     }
   </script>

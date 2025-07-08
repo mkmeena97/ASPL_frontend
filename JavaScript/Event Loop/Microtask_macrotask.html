@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Microtask vs Macrotask Demo</title>
+</head>
+<body>
+  <h2> Check the Console</h2>
+  <script>
+    console.log(" Script Start");
+
+    setTimeout(() => {
+      console.log(" Macrotask: setTimeout");
+    }, 0);
+
+    Promise.resolve().then(() => {
+      console.log(" Microtask 1: Promise.then");
+    });
+
+    queueMicrotask(() => {
+      console.log(" Microtask 2: queueMicrotask");
+    });
+
+    setTimeout(() => {
+      console.log(" Macrotask: Another setTimeout");
+    }, 0);
+
+    console.log(" Script End");
+  </script>
+</body>
+</html>

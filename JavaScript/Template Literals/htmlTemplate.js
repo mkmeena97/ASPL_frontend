@@ -1,5 +1,5 @@
 // htmlTemplate.js
-const user = "Rajeshwari";
+const user = "Tez";
 const role = "Full Stack Developer";
 
 const html = `

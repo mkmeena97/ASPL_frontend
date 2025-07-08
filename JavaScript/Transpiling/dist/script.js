@@ -2,7 +2,7 @@
 
 // ES6+ code
 var user = {
-  name: "Rajeshwari",
+  name: "Tez",
   greet: function greet() {
     console.log("Hi, ".concat(this.name, "!"));
   }

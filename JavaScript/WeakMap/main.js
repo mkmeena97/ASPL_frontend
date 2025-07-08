@@ -1,7 +1,7 @@
 const loginStatus = new WeakMap();
 
 function simulateLogin() {
-  const user = { name: "Rajeshwari" };
+  const user = { name: "Tez" };
   loginStatus.set(user, true);
   console.log("✅ User logged in:", user.name);
 

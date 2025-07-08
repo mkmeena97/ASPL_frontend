@@ -5,7 +5,7 @@
   <title>Async Iterator Demo</title>
 </head>
 <body>
-  <h2>🔁 Async Iterator Output</h2>
+  <h2> Async Iterator Output</h2>
   <pre id="output"></pre>
 
   <script>
@@ -13,7 +13,7 @@
     async function* asyncCounter(limit) {
       for (let i = 1; i <= limit; i++) {
         await new Promise(resolve => setTimeout(resolve, 1000)); // simulate delay
-        yield `⏳ Value ${i}`;
+        yield ` Value ${i}`;
       }
     }
 
@@ -25,7 +25,7 @@
         output.textContent += value + '\n';
       }
 
-      output.textContent += "✅ All done!";
+      output.textContent += "All done!";
     }
 
     run();

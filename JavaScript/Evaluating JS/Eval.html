@@ -5,7 +5,7 @@
   <title>Eval Example</title>
 </head>
 <body>
-  <h2>🔮 Eval Playground</h2>
+  <h2> Eval Playground</h2>
   <input id="code" placeholder="Type JS code..." />
   <button onclick="evaluateCode()">Run</button>
   <p id="output"></p>
@@ -15,9 +15,9 @@
       const code = document.getElementById("code").value;
       try {
         const result = eval(code);
-        document.getElementById("output").textContent = "✅ Result: " + result;
+        document.getElementById("output").textContent = " Result: " + result;
       } catch (err) {
-        document.getElementById("output").textContent = "❌ Error: " + err.message;
+        document.getElementById("output").textContent = " Error: " + err.message;
       }
     }
   </script>

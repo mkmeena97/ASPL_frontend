@@ -4,9 +4,9 @@ function deliverPackage(address, callback) {
 }
 
 deliverPackage('Jaipur', function() {
-  console.log('Customer notified 📦');
+  console.log('Customer notified ');
 });
 
-$.getJSON('foo.json', {}, function(data) {
-  console.log('Data loaded:', data); // callback runs *after* data is fetched
-});
+// $.getJSON('foo.json', {}, function(data) {
+//   console.log('Data loaded:', data); // callback runs *after* data is fetched
+// });

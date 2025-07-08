@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Event Loop Demo</title></head>
+<body>
+  <h3> Event Loop Order</h3>
+  <script>
+    console.log(" Synchronous - Start");
+
+    setTimeout(() => {
+      console.log(" Macrotask - setTimeout");
+    }, 0);
+
+    Promise.resolve().then(() => {
+      console.log(" Microtask - Promise");
+    });
+
+    console.log(" Synchronous - End");
+  </script>
+</body>
+</html>

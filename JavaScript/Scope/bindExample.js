@@ -1,10 +1,10 @@
 // bindExample.js
 const dev = {
-  name: "Rajeshwari",
+  name: "Tez",
   say() {
     console.log(`I'm ${this.name}`);
   }
 };
 
 const speak = dev.say.bind(dev);
-speak(); // I'm Rajeshwari
+speak(); // I'm Tez

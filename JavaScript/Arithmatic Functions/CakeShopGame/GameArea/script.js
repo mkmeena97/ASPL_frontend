@@ -127,7 +127,7 @@ function spawnIngredient() {
   ing.style.left = `${startX + offsetX}px`;
   
 
-    // Collision check with Rajeshwari
+    // Collision check with Tez
     const charRect = character.getBoundingClientRect();
     const ingRect = ing.getBoundingClientRect();
 

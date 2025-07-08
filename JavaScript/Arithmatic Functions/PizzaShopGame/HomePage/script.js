@@ -13,11 +13,11 @@ function generateOrder() {
   const pizza = pizzas[Math.floor(Math.random() * pizzas.length)];
 
   document.getElementById('customerName').textContent = `${customer} wants to order:`;
-  document.getElementById('pizzaOrder').textContent = `🍕 ${pizza}`;
+  document.getElementById('pizzaOrder').textContent = ` ${pizza}`;
 }
 
 document.getElementById('makePizzaBtn').addEventListener('click', function () {
-  alert("Pizza is being made... 🔥🍕 Stay tuned for Step 3!");
+  alert("Pizza is being made...  Stay tuned for Step 3!");
 });
 
 let stepsDone = {
@@ -93,7 +93,7 @@ function startDelivery() {
   const tip = tips[randomIndex];
 
   document.getElementById('deliveryMessage').textContent = "Delivered to customer!";
-  document.getElementById('customerFeedback').textContent = `💬 "${feedback}" | 💸 You earned ₹${tip}`;
+  document.getElementById('customerFeedback').textContent = `💬 "${feedback}" |  You earned ₹${tip}`;
 }
 
 function newOrder() {

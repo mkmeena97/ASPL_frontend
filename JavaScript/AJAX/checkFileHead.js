@@ -7,9 +7,9 @@ fetch('https://jsonplaceholder.typicode.com/posts/1', {
 })
   .then(res => {
     if (res.ok) {
-      console.log("✅ File exists.");
+      console.log(" File exists.");
     } else {
-      console.log("❌ File does not exist.");
+      console.log(" File does not exist.");
     }
   })
   .catch(console.error);

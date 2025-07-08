@@ -1,5 +1,5 @@
 // templateBasic.js
-const name = "Rajeshwari";
+const name = "Tez";
 const task = "JavaScript POCs";
 
 const message = `Hey ${name}, 

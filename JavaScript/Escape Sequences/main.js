@@ -8,8 +8,8 @@ function showSequences() {
 🔹 Tab: Hello\\tWorld
     → "Hello\tWorld"
 
-🔹 Backslash: C:\\\\Users\\\\Rajeshwari
-    → "C:\\Users\\Rajeshwari"
+🔹 Backslash: C:\\\\Users\\\\Tez
+    → "C:\\Users\\Tez"
 
 🔹 Single quote: It\\'s working!
     → 'It\'s working!'

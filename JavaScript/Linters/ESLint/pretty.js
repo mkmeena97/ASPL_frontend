@@ -1,4 +1,4 @@
-const name = 'Rajeshwari';
+const name = 'Tez';
 
 function greet() {
   console.log('Hey there, ' + name);

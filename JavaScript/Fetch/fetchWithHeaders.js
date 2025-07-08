@@ -3,7 +3,7 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
   method: 'GET',
   headers: {
     'Content-Type': 'application/json',
-    'Custom-Header': 'RajeshwariPower'
+    'Custom-Header': 'MahendraPower'
   }
 })
 .then(res => res.json())

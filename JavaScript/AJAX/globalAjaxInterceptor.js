@@ -4,11 +4,11 @@ function globalFetchInterceptor(url, options) {
 
   return fetch(url, options)
     .then(response => {
-      console.log("✅ AJAX Response Received");
+      console.log("AJAX Response Received");
       return response;
     })
     .catch(error => {
-      console.log("❌ AJAX Error Occurred");
+      console.log(" AJAX Error Occurred");
       throw error;
     });
 }

@@ -5,18 +5,18 @@
   <title>Async/Await Intro</title>
 </head>
 <body>
-  <h1>⏳ Async Function Test</h1>
+  <h1> Async Function Test</h1>
   <button onclick="start()">Start</button>
 
   <script>
     async function start() {
-      console.log("1️⃣ Before await");
+      console.log(" Before await");
 
       const result = await new Promise(resolve => {
-        setTimeout(() => resolve("✅ Done waiting!"), 2000);
+        setTimeout(() => resolve(" Done waiting!"), 2000);
       });
 
-      console.log("2️⃣ After await:", result);
+      console.log(" After await:", result);
     }
   </script>
 </body>

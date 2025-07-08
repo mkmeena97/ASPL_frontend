@@ -1,10 +1,10 @@
 class Light {
   turnOn() {
-    log("💡 Light is ON");
+    log(" Light is ON");
   }
 
   turnOff() {
-    log("💡 Light is OFF");
+    log(" Light is OFF");
   }
 }
 
@@ -63,7 +63,7 @@ class RemoteControl {
     if (lastCommand) {
       lastCommand.undo();
     } else {
-      log("⚠️ Nothing to undo");
+      log(" Nothing to undo");
     }
   }
 }

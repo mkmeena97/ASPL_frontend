@@ -25,6 +25,6 @@ newsChannel.subscribe(logger);
 newsChannel.subscribe(toaster);
 
 function notifyAll() {
-  output.textContent += "📣 Broadcasting message...\n";
+  output.textContent += " Broadcasting message...\n";
   newsChannel.notify("New article published!");
 }

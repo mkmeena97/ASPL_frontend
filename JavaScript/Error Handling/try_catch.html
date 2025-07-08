@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Error Objects</title></head>
+<body>
+  <script>
+    try {
+      throw new Error(" Something went wrong!");
+    } catch (e) {
+      console.log(" Name:", e.name);      // Error
+      console.log(" Message:", e.message); //  Something went wrong!
+      console.log(" Stack:", e.stack);    // Stack trace
+    }
+  </script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 function Person(name) {
   this.name = name;
 }
-const r = new Person("Rajeshwari");
+const r = new Person("Tez");
 console.log(r.name);
 console.log(r instanceof Person); // true
 console.log(r instanceof Object); // true

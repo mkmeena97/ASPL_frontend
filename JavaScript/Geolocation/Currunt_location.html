@@ -6,7 +6,7 @@
   <title>Get Current Location</title>
 </head>
 <body>
-  <h2>📌 Your Current Location:</h2>
+  <h2> Your Current Location:</h2>
   <button onclick="getLocation()">Get Location</button>
   <p id="location">Click the button to get your location</p>
 
@@ -21,11 +21,11 @@
             output.textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
           },
           err => {
-            output.textContent = `❌ Error: ${err.message}`;
+            output.textContent = ` Error: ${err.message}`;
           }
         );
       } else {
-        output.textContent = "❌ Geolocation is not supported by your browser.";
+        output.textContent = " Geolocation is not supported by your browser.";
       }
     }
   </script>

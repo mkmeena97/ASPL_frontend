@@ -11,11 +11,11 @@ class Chatroom {
   send(message, from, to) {
     const log = document.getElementById("chat");
     if (to) {
-      log.textContent += `📩 ${from.name} ➡️ ${to.name}: ${message}\n`;
+      log.textContent += ` ${from.name} => ${to.name}: ${message}\n`;
     } else {
       Object.values(this.users).forEach(user => {
         if (user !== from) {
-          log.textContent += `📢 ${from.name} ➡️ Everyone: ${message}\n`;
+          log.textContent += ` ${from.name} => Everyone: ${message}\n`;
         }
       });
     }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas Clock</title>
+  <style>
+    canvas {
+      background: #111;
+      display: block;
+      margin: 40px auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="clock" width="400" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById('clock');
+    const ctx = canvas.getContext('2d');
+    const radius = canvas.width / 2;
+
+    ctx.translate(radius, radius); // move origin to center
+
+    function drawClock() {
+      const now = new Date();
+      const sec = now.getSeconds();
+      const min = now.getMinutes();
+      const hr  = now.getHours() % 12;
+
+      ctx.clearRect(-radius, -radius, canvas.width, canvas.height);
+
+      // Clock face
+      ctx.beginPath();
+      ctx.arc(0, 0, radius - 10, 0, Math.PI * 2);
+      ctx.fillStyle = '#222';
+      ctx.fill();
+
+      // Hour marks
+      for (let i = 0; i < 12; i++) {
+        ctx.beginPath();
+        const angle = (i * Math.PI) / 6;
+        ctx.moveTo(Math.cos(angle) * (radius - 20), Math.sin(angle) * (radius - 20));
+        ctx.lineTo(Math.cos(angle) * (radius - 5), Math.sin(angle) * (radius - 5));
+        ctx.strokeStyle = '#fff';
+        ctx.stroke();
+      }
+
+      // Hour hand
+      let hourAngle = ((hr + min / 60) * Math.PI) / 6;
+      drawHand(hourAngle, radius * 0.5, 6);
+
+      // Minute hand
+      let minuteAngle = ((min + sec / 60) * Math.PI) / 30;
+      drawHand(minuteAngle, radius * 0.75, 4);
+
+      // Second hand
+      let secondAngle = (sec * Math.PI) / 30;
+      drawHand(secondAngle, radius * 0.85, 2, 'red');
+    }
+
+    function drawHand(angle, length, width, color = '#fff') {
+      ctx.beginPath();
+      ctx.lineWidth = width;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = color;
+      ctx.moveTo(0, 0);
+      ctx.rotate(angle);
+      ctx.lineTo(0, -length);
+      ctx.stroke();
+      ctx.rotate(-angle); // reset rotation
+    }
+
+    function animateClock() {
+      drawClock();
+      requestAnimationFrame(animateClock);
+    }
+
+    animateClock();
+  </script>
+</body>
+</html>

@@ -6,7 +6,7 @@
   <title>Live Location Tracker</title>
 </head>
 <body>
-  <h2>📍 Live Location Updates</h2>
+  <h2> Live Location Updates</h2>
   <p id="output">Waiting for location...</p>
 
   <script>
@@ -19,12 +19,12 @@
           output.textContent = `Latitude: ${latitude.toFixed(4)}, Longitude: ${longitude.toFixed(4)}`;
         },
         error => {
-          output.textContent = `⚠️ Error: ${error.message}`;
+          output.textContent = ` Error: ${error.message}`;
         },
         { enableHighAccuracy: true }
       );
     } else {
-      output.textContent = "❌ Geolocation not supported by your browser.";
+      output.textContent = " Geolocation not supported by your browser.";
     }
   </script>
 </body>

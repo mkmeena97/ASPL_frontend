@@ -7,7 +7,7 @@
 
   <script>
     const target = {
-      name: "Rajeshwari",
+      name: "Tez",
       role: "Dev Intern"
     };
 
@@ -24,7 +24,7 @@
     const proxy = new Proxy(target, handler);
 
     const log = [
-      proxy.name,               // Rajeshwari
+      proxy.name,               // Tez
       proxy.role,               // Dev Intern
       proxy.missingProperty     // ⚠️ Property "missingProperty" not found.
     ].join('\n');

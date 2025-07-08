@@ -5,4 +5,4 @@ function greet(name) {
   else
     console.log("Hello, stranger");
 }
-greet("Rajeshwari")
+greet("Tez")

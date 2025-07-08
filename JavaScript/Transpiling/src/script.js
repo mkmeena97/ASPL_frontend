@@ -1,6 +1,6 @@
 // ES6+ code
 const user = {
-  name: "Rajeshwari",
+  name: "Tez",
   greet() {
     console.log(`Hi, ${this.name}!`);
   }

@@ -6,4 +6,4 @@ function greet(name) {
   }
 }
 
-greet("Rajeshwari");
+greet("Tez");

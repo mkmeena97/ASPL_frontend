@@ -5,7 +5,7 @@
     }
   }
 
-  const raj = new User("Rajeshwari", "Dev Intern");
+  const raj = new User("Tez", "Dev Intern");
 
   const json = JSON.stringify(raj);
   const restored = Object.assign(new User(), JSON.parse(json));

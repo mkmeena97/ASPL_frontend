@@ -1,7 +1,7 @@
 const loggedInUsers = new WeakSet();
 
 function addUser() {
-  const user = { name: "Rajeshwari" };
+  const user = { name: "Tez" };
   loggedInUsers.add(user);
   console.log("✅ User added to WeakSet:", user.name);
 

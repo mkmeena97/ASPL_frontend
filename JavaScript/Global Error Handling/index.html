@@ -7,11 +7,11 @@
   <script>
     // Global error handler
     window.onerror = function (message, source, lineno, colno, error) {
-      console.error("🚨 Global Error Caught!");
-      console.log("🧾 Message:", message);
-      console.log("📁 Source:", source);
-      console.log("📍 Line:", lineno, "Column:", colno);
-      console.log("💥 Error Object:", error);
+      console.error(" Global Error Caught!");
+      console.log(" Message:", message);
+      console.log(" Source:", source);
+      console.log(" Line:", lineno, "Column:", colno);
+      console.log(" Error Object:", error);
 
       // Optional: Send error info to server
       /*
@@ -27,7 +27,7 @@
     };
 
     // Trigger a runtime error
-    notDefinedFunction(); // BOOM! 💣
+    notDefinedFunction(); // BOOM! 
 
     // This works for uncaught runtime errors only.
 
@@ -35,7 +35,7 @@
 
     // For Promise rejections, use:
     window.onunhandledrejection = e => {
-         console.warn("⚠️ Unhandled Promise rejection:", e.reason);
+         console.warn(" Unhandled Promise rejection:", e.reason);
     };
 
   </script>

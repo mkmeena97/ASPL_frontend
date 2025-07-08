@@ -1,4 +1,4 @@
-const person = { fullName: "Rajeshwari R" };
+const person = { fullName: "Tez R" };
 const { fullName: name } = person;
 
-console.log(name); // Rajeshwari R
+console.log(name); // Tez R

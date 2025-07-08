@@ -1,8 +1,8 @@
 // deleteOperator.js
 
-const obj = { name: "Rajeshwari", role: "Dev" };
+const obj = { name: "Tez", role: "Dev" };
 
-console.log(obj.name); // Rajeshwari
+console.log(obj.name); // Tez
 
 delete obj.name;
 

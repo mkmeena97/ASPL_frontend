@@ -1,6 +1,6 @@
 
-  const jsLiteral = { name: "Rajeshwari", age: 21 };
-  const jsonString = '{"name":"Rajeshwari","age":21}';
+  const jsLiteral = { name: "Tez", age: 21 };
+  const jsonString = '{"name":"Tez","age":21}';
 
   const parsed = JSON.parse(jsonString);
 

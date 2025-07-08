@@ -14,8 +14,8 @@ var Tilak = {
   fullname: "Tilak Bhau"
 };
 
-var Rajeshwari = {
-  firstname: "Rajeshwari",
+var Tez = {
+  firstname: "Tez",
   lastname: "Bhalerao",
   fullname: function () {
     return this.firstname + " " + this.lastname;
@@ -27,4 +27,4 @@ var Rajeshwari = {
 console.log(Mahendra.fullname);       // "John Doe"
 console.log(Tilak.firstname);     // "Billy"
 console.log(Tilak.lastname);     // "Billy"
-console.log(Rajeshwari.fullname());     // "Billy"
+console.log(Tez.fullname());     // "Billy"

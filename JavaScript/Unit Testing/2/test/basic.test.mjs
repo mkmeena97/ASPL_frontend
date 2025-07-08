@@ -9,8 +9,8 @@ describe('🔍 Basic Assertions', () => {
   });
 
   it('should check object deep equality', () => {
-    const obj1 = { name: 'Rajeshwari' };
-    const obj2 = { name: 'Rajeshwari' };
+    const obj1 = { name: 'Tez' };
+    const obj2 = { name: 'Tez' };
     expect(obj1).to.deep.equal(obj2);
   });
 

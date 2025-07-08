@@ -1,5 +1,5 @@
 const obj = {
-    name: "Rajeshwari",
+    name: "Tez",
     password: "secret123",
     role: "admin"
   };
