@@ -3,7 +3,7 @@
 <html>
 <head><title>Read User</title></head>
 <body>
-  <h2>🔍 Get User</h2>
+  <h2>Get User</h2>
   <button onclick="getUser()">Fetch User with ID = 1</button>
   <p id="result"></p>
 
@@ -23,14 +23,14 @@
 
       getReq.onsuccess = function() {
         if (getReq.result) {
-          document.getElementById("result").textContent = `👤 Name: ${getReq.result.name}, Role: ${getReq.result.role}`;
+          document.getElementById("result").textContent = ` Name: ${getReq.result.name}, Role: ${getReq.result.role}`;
         } else {
-          document.getElementById("result").textContent = "❌ No user found.";
+          document.getElementById("result").textContent = " No user found.";
         }
       };
 
       getReq.onerror = function() {
-        document.getElementById("result").textContent = "⚠️ Failed to retrieve user.";
+        document.getElementById("result").textContent = " Failed to retrieve user.";
       };
     }
   </script>

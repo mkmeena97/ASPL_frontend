@@ -2,7 +2,7 @@
 <html>
 <head><title>Avoid Memory Leak</title></head>
 <body>
-  <h2>🚿 Clean Listener Demo</h2>
+  <h2> Clean Listener Demo</h2>
   <button id="start">Add Listener</button>
   <button id="stop">Remove Listener</button>
 
@@ -16,12 +16,12 @@
 
     startBtn.addEventListener("click", () => {
       document.addEventListener("click", clickHandler);
-      console.log("📌 Listener attached");
+      console.log("Listener attached");
     });
 
     stopBtn.addEventListener("click", () => {
       document.removeEventListener("click", clickHandler);
-      console.log("🧹 Listener removed");
+      console.log(" Listener removed");
     });
   </script>
 </body>

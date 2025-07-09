@@ -13,14 +13,14 @@
       div.innerText = "I am a leaky div!";
       document.body.appendChild(div);
       
-      // ❌ Still referenced after removal
+      //  Still referenced after removal
       leakedElements.push(div);
       document.body.removeChild(div);
     };
 
     document.getElementById("clean").onclick = function () {
-      leakedElements = null; // ✅ Let garbage collector do its thing
-      console.log("🧹 Cleaned up");
+      leakedElements = null; // Let garbage collector do its thing
+      console.log(" Cleaned up");
     };
   </script>
 </body>

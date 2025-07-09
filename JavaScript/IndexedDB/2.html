@@ -3,7 +3,7 @@
 <html>
 <head><title>Add Data</title></head>
 <body>
-  <h2>➕ Add User</h2>
+  <h2> Add User</h2>
   <button onclick="addUser()">Add Dummy User</button>
   <p id="status">Waiting...</p>
 
@@ -23,11 +23,11 @@
       const addReq = store.add(user);
 
       addReq.onsuccess = () => {
-        document.getElementById("status").textContent = "✅ User added!";
+        document.getElementById("status").textContent = " User added!";
       };
 
       addReq.onerror = () => {
-        document.getElementById("status").textContent = "❌ Failed to add user.";
+        document.getElementById("status").textContent = " Failed to add user.";
       };
     }
   </script>

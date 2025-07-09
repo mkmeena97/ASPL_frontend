@@ -3,7 +3,7 @@ const app = express();
 
 app.get('/jsonp-endpoint', (req, res) => {
   const callback = req.query.callback;
-  const data = { tech: "JavaScript", trick: "JSONP", status: "Working 😎" };
+  const data = { tech: "JavaScript", trick: "JSONP", status: "Working " };
   res.send(`${callback}(${JSON.stringify(data)})`);
 });
 
