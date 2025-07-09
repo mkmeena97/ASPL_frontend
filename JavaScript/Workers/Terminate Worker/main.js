@@ -8,5 +8,5 @@ worker.onmessage = (e) => {
 
 document.getElementById("stop").addEventListener("click", () => {
   worker.terminate();
-  console.log("❌ Worker terminated.");
+  console.log(" Worker terminated.");
 });
