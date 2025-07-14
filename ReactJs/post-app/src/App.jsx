@@ -1,20 +1,19 @@
-
 import { createBrowserRouter, RouterProvider, redirect } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import Posts from './pages/Posts';
-import PostDetail from './pages/PostDetail';
+import Posts, { loader as postsLoader } from './pages/Posts';
+import PostDetail, { loader as postDetailLoader } from './pages/PostDetail';
 import Login from './pages/Login';
-import Profile from './pages/Profile';
+import Register from './pages/Register';
 import Settings from './pages/Settings';
-import { lazy, Suspense } from 'react';
+import NewPost from './pages/NewPage';
+import EditPost, { loader as editPostLoader } from './pages/EditPost';
+import Profile, { loader as profileLoader } from './pages/Profile';
 import LoadingSpinner from './components/LoadingSpinner';
 import ErrorPage from './components/ErrorPage';
-import db  from './utils/db'
-import auth from './utils/auth'
-import NewPost from './pages/NewPage';
+import { lazy, Suspense } from 'react';
 
-// Lazy-loaded route
+// Lazy load About page
 const About = lazy(() => import('./pages/About'));
 
 const router = createBrowserRouter([
@@ -27,54 +26,42 @@ const router = createBrowserRouter([
         path: 'posts',
         children: [
           { index: true, element: <Posts />, loader: postsLoader },
-          { path: 'new', element: <NewPost /> }, 
+          { path: 'new', element: <NewPost /> },
+          {
+            path: ':postId/edit',
+            element: <EditPost />,
+            loader: editPostLoader,
+          },
           {
             path: ':postId',
             element: <PostDetail />,
-            loader: postDetailLoader
-          }
-        ]
+            loader: postDetailLoader,
+          },
+        ],
       },
-      { 
+      {
         path: 'about',
         element: (
           <Suspense fallback={<LoadingSpinner />}>
             <About />
           </Suspense>
-        )
+        ),
       },
       { path: 'login', element: <Login /> },
-      { 
+      { path: 'register', element: <Register /> },
+      {
         path: 'profile',
         element: <Profile />,
-        loader: protectedLoader // Auth check
+        loader: profileLoader,
       },
-      { 
+      {
         path: 'settings',
         element: <Settings />,
-        errorElement: <ErrorPage /> // Custom error boundary
-      }
-    ]
-  }
+        errorElement: <ErrorPage />,
+      },
+    ],
+  },
 ]);
-
-// Data loading functions
-async function postsLoader() {
-  const posts = await db.getPosts();
-  return { posts };
-}
-
-async function postDetailLoader({ params }) {
-  const post = await db.getPost(Number(params.postId));
-  if (!post) throw new Error('Post not found');
-  return { post };
-}
-
-async function protectedLoader() {
-  const user = await auth.getCurrentUser();
-  if (!user) throw redirect('/login');
-  return { user };
-}
 
 export default function App() {
   return <RouterProvider router={router} />;
