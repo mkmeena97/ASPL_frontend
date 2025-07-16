@@ -1,0 +1,19 @@
+/* src/Counter.module.css */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button {
+  font-size: 2rem;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.value {
+  font-size: 2rem;
+  margin: 0 10px;
+}

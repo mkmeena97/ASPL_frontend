@@ -10,7 +10,10 @@ import GreetingCard from './component/GeetingCard'
 import CardWrapper from './component/Prop_as_children'
 import FormComponent from './component/FormComponent';
 import UserList from './component/UserData';
-
+import Counter from './redux/count';
+import {useDispatch} from 'react-redux'
+import Comp from './component/comp';
+import { number } from 'prop-types';
 
 function App() {
   function handleClick() {
@@ -18,6 +21,9 @@ function App() {
   }
 
   const tasks = ["Eat", "Code", "Sleep"];
+
+  //redux
+  const dispach = useDispatch();
 
   return (
     <>
@@ -51,6 +57,16 @@ function App() {
         <FormComponent />
         <UserList />
       </div>
+      <div>
+
+      </div>
+      <Comp>
+        <button onClick={e=>dispach({type:'INCREMENT'})}>Increment</button>
+        <h4>Redux Demo: <Counter></Counter></h4>
+        <button onClick={e=>dispach({type:'DECREMENT'})}>Decrement</button>
+        <button onClick={e=>dispach({type:'ADD', payload:7})}>THALA for 7 Reason </button>
+      </Comp>
+
     </>
   )
 }
